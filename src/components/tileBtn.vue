@@ -13,11 +13,11 @@ export default {
 a.btn--orange {
   margin-top: 32px;
   color: #fff;
-  background-color: #216b46;
+  background-color: rgb(184, 168, 77);
 }
 .btn--orange:hover,
 a.btn--orange:hover {
   color: #fff;
-  background: #24794e;
+  background:rgb(146, 133, 61);
 }
 </style>

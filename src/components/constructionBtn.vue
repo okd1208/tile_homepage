@@ -13,12 +13,12 @@ export default {
 a.btn--blue {
   margin-top: 32px;
   color: #fff;
-  background-color: #212c6b;
+  background-color: rgb(117, 185, 185);
   margin-left: 16px;
 }
 .btn--blue:hover,
 a.btn--blue:hover {
   color: #fff;
-  background: #273d86;
+  background: rgb(94, 148, 148);
 }
 </style>

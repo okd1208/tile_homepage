@@ -1,9 +1,10 @@
 <template>
   <div class="newTopic">
-    <h2 class="text-canter">最新情報</h2>
+    <h2 class="text-canter">お知らせ</h2>
     <ul class="topics">
      <li v-for="message in messages" :key="message.text" class="topic">
-       <span class="topicType" :class="message.color">{{ message.type }}</span>
+       <!-- <span class="topicType" :class="message.color">{{ message.type }}</span> -->
+       <span class="topicType">{{ message.type }}</span>
      <span class="topicDate">{{ message.date }}</span>
      {{ message.text }}</li>
     </ul>
@@ -37,7 +38,7 @@ export default {
 .newTopic {
   margin-top: 64px;
   /* height: 280px; */
-  width: 600px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
   /* background-color: wheat;
@@ -50,11 +51,28 @@ export default {
   margin: 12px 4px;
 }
 .topicType {
+  display: inline-block;
+  text-align: center;
   margin-right: 32px;
-  /* border: 1px solid black; */
-  border-radius: 25%;
+  width: 70px;
+  border: 1px solid  rgb(117, 185, 185);
+  border-radius: 20px;
   padding: 0 2px;
+  background-color: white;
+  /* font-weight: bold; */
+  color: rgb(117, 185, 185);
+  transition-duration: 0.6s;
+}
+.topic:hover .topicType {
+  transition-duration: 0.4s;
+  background-color: rgb(117, 185, 185);
   color: white;
+}
+.topic:hover {
+  cursor : pointer;
+  color:  rgb(117, 185, 185);
+  /* font-weight: bold; */
+  /* border-bottom: 1px solid  rgb(117, 185, 185); */
 }
 .topicDate {
   opacity: 0.5;
@@ -62,8 +80,8 @@ export default {
   font-size: 14px;
 }
 .topics {
-  height: 200px;
-  overflow: scroll;
-  background-color: wheat;
+  height: 300px;
+  overflow: auto;
+  background-color: rgb(223, 223, 223);
 }
 </style>
