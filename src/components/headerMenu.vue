@@ -28,7 +28,7 @@
             </ul>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link to="/contact" class="nav-link btn btn-success test4 text-light">お問い合わせ
+                <router-link to="/contact" class="nav-link btn contactBtn"><span class="contactText">お問い合わせ</span>
                 <!-- <p class="subTitle">Contact</p> -->
                 </router-link>
               </li>
@@ -126,8 +126,15 @@ export default {
   margin-left: 60px;
   margin-top: 40px;
 }
-.test4 {
+.contactBtn {
   margin-bottom: 36px;
+  background-color: rgb(117, 185, 185);
+}
+.contactBtn:hover {
+  background-color: rgb(94, 150, 150);
+}
+.contactText {
+  color: white;
 }
 #header {
   position: absolute;
