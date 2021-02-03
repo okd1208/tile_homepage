@@ -17,7 +17,7 @@
                     <router-link to="/contents" class="nav-link text-dark">事業内容<p class="subTitle" :class="{'activeSub':contentsActive}">Bisiness</p></router-link>
                 </li>
                 <li class="nav-item ml-3 mr-3" @click="changeRecruitActive">
-                    <router-link to="/recruit" class="nav-link text-dark">募集要項<p class="subTitle" :class="{'activeSub':recruitActive}">Recruit</p></router-link>
+                    <router-link to="/recruit" class="nav-link text-dark">採用情報<p class="subTitle" :class="{'activeSub':recruitActive}">Recruit</p></router-link>
                 </li>
                 <li class="nav-item ml-3 mr-3" @click="changeTilesActive">
                     <router-link to="/tiles" class="nav-link text-dark">タイル一覧<p class="subTitle" :class="{'activeSub':tilesActive}">tiles</p></router-link>

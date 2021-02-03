@@ -45,7 +45,6 @@ export default {
   border-radius: 10%; */
 }
 .topic {
-  /* background-color: gold; */
   list-style: none;
   text-align: left;
   margin: 12px 4px;
@@ -59,7 +58,6 @@ export default {
   border-radius: 20px;
   padding: 0 2px;
   background-color: white;
-  /* font-weight: bold; */
   color: rgb(117, 185, 185);
   transition-duration: 0.6s;
 }
