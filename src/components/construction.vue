@@ -2,7 +2,7 @@
   <div class="construction">
     <h2 class="title">建設事例一覧</h2>
     <div>
-      <ul class="parent">
+      <ul class="constructionParent">
         <li v-for="example in examples" :key="example.title" class="example">
           <some-imgs>
             <template v-slot:img>
@@ -55,6 +55,7 @@ export default {
 }
 .title {
   margin-bottom: 32px;
+  font-family: 'Sawarabi Mincho', sans-serif;
 }
 .example {
   text-align: center;
@@ -65,7 +66,7 @@ export default {
   margin: 2px;
   color: white;
 }
-.parent {
+.constructionParent {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

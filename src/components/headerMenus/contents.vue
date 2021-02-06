@@ -12,12 +12,12 @@
        <construction-btn>施工例一覧を見る</construction-btn>
      </div>
      <div class="business divContainer">
-       <h2 class="divTitle">主な事業・サービス</h2>
-       <p>弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。</p>
+       <h2 class="contentsTitle">主な事業・サービス</h2>
+       <p class="contentsText">弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。</p>
      </div>
      <div class="flow divContainer">
-       <h2 class="divTitle">タイル工事までの流れ</h2>
-       <p>冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。</p>
+       <h2 class="contentsTitle">タイル工事までの流れ</h2>
+       <p class="contentsText">冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。</p>
      </div>
     <h2>タイル工事までの4STEP</h2>
      <div class="step">
@@ -101,19 +101,24 @@ header {
 }
 .stepTitle {
   margin: 24px;
+  font-family: 'Noto Serif JP', serif;
 }
 .stepText {
   text-align: left;
   margin-left: 160px;
   margin-right: 0;
 }
-.divTitle {
+.contentsTitle {
   text-align: left;
+  font-family: 'Sawarabi Mincho', sans-serif;
   border-bottom: black 1px solid;
 }
 .divContainer {
   width: 75%;
   margin: 64px auto;
   text-align: left;
+}
+.contentsText {
+  font-family: 'Sawarabi Mincho', sans-serif;
 }
 </style>

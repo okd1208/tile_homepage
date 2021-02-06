@@ -8,6 +8,7 @@ import constructionExample from '@/components/headerMenus/constructionExample'
 import tiles from '@/components/headerMenus/tiles'
 import contents from '@/components/headerMenus/contents'
 import contact from '@/components/headerMenus/contact'
+import detail from '@/components/detail'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -50,6 +51,11 @@ export default new Router({
       path: '/tiles',
       name: 'tiles',
       component: tiles
+    },
+    {
+      path: '/tile/:id',
+      name: 'detail',
+      component: detail
     }
   ]
 })

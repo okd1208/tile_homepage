@@ -13,22 +13,22 @@
     </table>
     <div class="flow">
       <h2>採用フロー</h2>
-      <div class="parent">
+      <div class="flowParent">
         <div class="flowBox">
           <h3 class="flowTitle">書類提出</h3>
           <!-- <p class="flowText">これを行います。</p> -->
         </div>
-        <h2 class="arrow">▶︎</h2>
+        <h2 class="flowArrow">▶︎</h2>
         <div class="flowBox">
           <h3 class="flowTitle">一次面接</h3>
           <!-- <p class="flowText">これを行います。</p> -->
         </div>
-        <h2 class="arrow">▶︎</h2>
+        <h2 class="flowArrow">▶︎</h2>
         <div class="flowBox">
           <h3 class="flowTitle">二次面接</h3>
           <!-- <p class="flowText">これを行います。</p> -->
         </div>
-        <h2 class="arrow">▶︎</h2>
+        <h2 class="flowArrow">▶︎</h2>
         <div class="flowBox">
           <h3 class="flowTitle">合否発表</h3>
           <!-- <p class="flowText">これを行います。</p> -->
@@ -114,8 +114,11 @@ export default {
 .flow {
   margin-top: 64px;
 }
-.parent {
+.flowParent {
   display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  justify-content: center;
 }
 .flowBox {
   width: 200px;
@@ -125,7 +128,7 @@ export default {
   margin: 16px;
   border-radius: 10px;
 }
-.arrow {
+.flowArrow {
   margin-top: 50px;
 }
 .flowTitle {

@@ -1,6 +1,6 @@
 <template>
   <div class="newTopic">
-    <h2 class="text-canter">お知らせ</h2>
+    <h2 class="text-canter title">お知らせ</h2>
     <ul class="topics">
      <li v-for="message in messages" :key="message.text" class="topic">
        <!-- <span class="topicType" :class="message.color">{{ message.type }}</span> -->
@@ -62,7 +62,7 @@ export default {
   transition-duration: 0.6s;
 }
 .topic:hover .topicType {
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
   background-color: rgb(117, 185, 185);
   color: white;
 }

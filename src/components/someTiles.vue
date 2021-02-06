@@ -6,6 +6,7 @@
         <li  v-for="tile in tiles" :key="tile.title" class="tile">
           <some-imgs>
             <template v-slot:img>
+              <router-link :to="{name: 'detail', params: {id: tile.id}}" class="signup-link">task edit</router-link>
               <img :src="tile.img" width="100%">
             </template>
             <template v-slot:title>
@@ -53,5 +54,11 @@ margin-bottom: 32px;
   width: 200px;
   background-color: skyblue;
   margin: 2px;
+}
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 </style>

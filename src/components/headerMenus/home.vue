@@ -8,13 +8,12 @@
       <new-topic></new-topic>
       <construction></construction>
       <some-tiles></some-tiles>
-      <!-- <v-icon>mdi-send-check</v-icon> -->
       <div class="bodyFooter">
         <div class="contact">
-          <h2 class="footerTitle">お問い合わせ</h2>
+          <h2 class="footerTitle"><span class="icon"><i class="far fa-envelope"></i></span>お問い合わせ</h2>
         </div>
         <div class="question">
-          <h2 class="footerTitle">よくある質問</h2>
+          <h2 class="footerTitle"><span class="icon"><i class="far fa-question-circle"></i></span>よくある質問</h2>
         </div>
       </div>
     </div>
@@ -62,6 +61,7 @@ export default {
 </script>
 
 <style scoped>
+/* @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap'); */
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
   margin-top: -60px;
@@ -94,7 +94,8 @@ export default {
   border-bottom: black 1px solid;
   /* line-height: 600px; */
   /* color: white; */
-  font-family: monospace;
+  /* font-family: monospace; */
+  font-family: 'Yusei Magic', sans-serif;
 }
 .headerbody {
   margin-left: 46px;
@@ -116,12 +117,23 @@ export default {
   height: 200px;
 }
 .contact {
-  background-color: rgb(231, 206, 231);
+  background-color:rgb(192, 228, 228);
 }
 .question {
-  background-color: rgb(208, 206, 231);
+  background-color:rgb(189, 210, 238);
 }
 .footerTitle {
-  line-height: 200px;
+  line-height: 120px;
+  margin-top: 40px;
+}
+.icon {
+  /* display: inline-block;
+  width: 100px; */
+  /* height: 100px; */
+  /* background-color: white; */
+  /* border-radius: 50%; */
+  /* text-align: left; */
+  margin-right: 8px;
+  /* padding-top: -32px; */
 }
 </style>
