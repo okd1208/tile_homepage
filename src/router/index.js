@@ -53,7 +53,7 @@ export default new Router({
       component: tiles
     },
     {
-      path: '/tile/:id',
+      path: '/:tilesOrConstructions/:id',
       name: 'detail',
       component: detail
     }

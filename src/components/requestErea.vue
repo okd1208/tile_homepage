@@ -1,0 +1,44 @@
+<template>
+  <div class="requestErea">
+    <div class="requestBox">
+      <p class="BoxTest"><i class="far fa-question-circle"></i>よくある質問</p>
+    </div>
+    <div class="requestBox">
+      <p class="BoxTest"><i class="far fa-envelope"></i>お問い合わせ</p>
+    </div>
+    <div class="requestBox">
+      <p class="BoxTest"><i class="fas fa-info-circle"></i>サポート（資料請求）</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'requestErea'
+}
+</script>
+
+<style scoped>
+.requestErea {
+  display: flex;
+  justify-content: center;
+  margin: 82px 0;
+}
+.requestBox {
+  width: 330px;
+  /* background-color: antiquewhite; */
+  margin: 32px;
+  /* padding: 32px; */
+  height: 70px;
+  line-height: 70px;
+  border: 2px solid rgba(196, 194, 194, 0.836);
+  font-weight: bold;
+  text-align: left;
+}
+.far, .fas{
+  display: inline-block;
+  margin-left: 32px;
+  margin-right: 52px;
+  text-align: left;
+}
+</style>

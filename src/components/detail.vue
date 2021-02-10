@@ -1,42 +1,47 @@
 <template>
   <div class="tileDetail">
     <div class="tileName">
-      <h2>{{ tile }}</h2>
-      <div>Profile No.{{ $route.params.id }}</div>
+      <div v-if="$route.params.tilesOrConstructions === 'tile'">
+        <body-header>タイル詳細</body-header>
+        <detail-tile :tile-id=$route.params.id></detail-tile>
+      </div>
+      <div v-else>
+        <body-header>建設例詳細</body-header>
+        <detail-construction :construction-id=$route.params.id></detail-construction>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import detailTile from '@/components/detailTile.vue'
+import detailConstruction from '@/components/detailConstruction.vue'
+import bodyHeader from '@/components//header.vue'
 export default {
   name: 'detail',
+  components: {
+    detailTile,
+    detailConstruction,
+    bodyHeader
+  },
   data: function () {
     return {
-      tileId: this.$route.params.id
     }
-  },
-  methods: {
-    getTileId () {
-      return this.tileId
-    }
-  },
-  computed: {
-    tiles () {
-      console.log('oooooooooooooo')
-      return this.$store.state.tiles
-    }
-    // tile: function () {
-    //   // this.getTileId()
-    //   return this.tiles.filter(
-    //     function (value) {
-    //       // console.log(this.getTileId())
-    //       return value.id === $route.params.id
-    //     }
-    //   )
-    // }
   }
 }
 </script>
 
-<style scoped>
+<style>
+.detailTitle {
+  margin: 32px;
+}
+.detailText {
+  margin: 52px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  text-align: left;
+}
+/* .detailImg {
+} */
 </style>

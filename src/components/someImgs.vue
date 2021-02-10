@@ -39,12 +39,12 @@ export default {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease; */
 }
-.imgWrap img{
+.imgWrap .signup-link{
   width: 100%;
   cursor: pointer;
   transition-duration: 0.6s;
 }
-.imgWrap:hover img{
+.imgWrap:hover .signup-link{
   opacity: 0.6;
   transition-duration: 0.6s;
 }

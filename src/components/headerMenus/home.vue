@@ -7,15 +7,18 @@
     <div class="body">
       <new-topic></new-topic>
       <construction></construction>
+      <construction-btn>タイルの使用例一覧をみる<br>click!</construction-btn>
       <some-tiles></some-tiles>
-      <div class="bodyFooter">
+      <tile-btn>タイル一覧を見てみる<br>click</tile-btn>
+      <!-- <div class="bodyFooter">
         <div class="contact">
           <h2 class="footerTitle"><span class="icon"><i class="far fa-envelope"></i></span>お問い合わせ</h2>
         </div>
         <div class="question">
           <h2 class="footerTitle"><span class="icon"><i class="far fa-question-circle"></i></span>よくある質問</h2>
         </div>
-      </div>
+      </div> -->
+      <request-erea></request-erea>
     </div>
  </div>
 </template>
@@ -24,6 +27,9 @@
 import newTopic from '@/components/newTopic.vue'
 import construction from '@/components/construction.vue'
 import someTiles from '@/components/someTiles.vue'
+import constructionBtn from '@/components/constructionBtn.vue'
+import tileBtn from '@/components/tileBtn'
+import requestErea from '@/components/requestErea'
 export default {
   name: 'home',
   data: function () {
@@ -36,7 +42,10 @@ export default {
   components: {
     newTopic,
     construction,
-    someTiles
+    constructionBtn,
+    tileBtn,
+    someTiles,
+    requestErea
   },
   methods: {
     headerClass: function () {
@@ -66,7 +75,7 @@ export default {
   transition: all 900ms 0s ease;
   margin-top: -60px;
   background-size: cover;
-  height: 600px;
+  height: 800px;
 }
 .header1{
   background-image: url('~@/assets/home/home1.jpg');

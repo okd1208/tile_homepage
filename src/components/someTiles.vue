@@ -2,12 +2,13 @@
   <div class="someTile">
     <h2 class="title">取り扱いタイル一覧</h2>
     <div>
-      <ul class="parent">
+      <ul class="tileParent">
         <li  v-for="tile in tiles" :key="tile.title" class="tile">
           <some-imgs>
             <template v-slot:img>
-              <router-link :to="{name: 'detail', params: {id: tile.id}}" class="signup-link">task edit</router-link>
-              <img :src="tile.img" width="100%">
+              <router-link :to="{name: 'detail', params: {id: tile.id, tilesOrConstructions: 'tile'}}" class="signup-link">
+                <img class="hoverImg" :src="tile.img" width="100%">
+              </router-link>
             </template>
             <template v-slot:title>
               {{ tile.title }}
@@ -15,18 +16,15 @@
           </some-imgs>
         </li>
       </ul>
-      <tile-btn>タイル一覧を見てみる<br>click</tile-btn>
     </div>
   </div>
 </template>
 
 <script>
 import someImgs from '@/components/someImgs.vue'
-import tileBtn from '@/components/tileBtn'
 export default {
   components: {
-    someImgs,
-    tileBtn
+    someImgs
   },
   name: 'someTile',
   data: function () {
@@ -42,11 +40,11 @@ export default {
 </script>
 
 <style>
-.title {
+/* .title {
 margin-bottom: 32px;
-}
+} */
 .someTile {
-  margin-top: 96px;
+  margin-top: 64px;
 }
 .tile {
   list-style: none;
@@ -55,7 +53,7 @@ margin-bottom: 32px;
   background-color: skyblue;
   margin: 2px;
 }
-.parent {
+.tileParent {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
