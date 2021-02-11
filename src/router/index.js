@@ -9,6 +9,7 @@ import tiles from '@/components/headerMenus/tiles'
 import contents from '@/components/headerMenus/contents'
 import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
+import topicDetail from '@/components/topicDetail'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -56,6 +57,19 @@ export default new Router({
       path: '/:tilesOrConstructions/:id',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/topics/:id',
+      name: 'topicDetail',
+      component: topicDetail
     }
-  ]
+  ],
+  // 画面遷移時にページスクロール状態を元に戻す
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

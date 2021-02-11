@@ -26,28 +26,29 @@
        <p>まずは、お客様がなにをどれだけ必要としているか、なにに使いたいのかを聞き、商品の提案をいたします。</p>
       </div>
       <div class="stepElement stepImg">
-       <img src='@/assets/hear.jpg' width="80%">
+        <!-- 写真の比率は2:3 -->
+       <img src='@/assets/step/step1.jpg' width="80%">
       </div>
       <div class="stepElement stepText">
-       <h2 class="stepTitle">STEP2.ヒアリング</h2>
+       <h2 class="stepTitle">STEP2.見積もり</h2>
        <p>まずは、お客様がなにをどれだけ必要としているか、なにに使いたいのかを聞き、商品の提案をいたします。</p>
       </div>
       <div class="stepElement stepImg">
-       <img src='@/assets/hear.jpg' width="80%" class="imgRight">
+       <img src='@/assets/step/step2.jpg' width="80%" class="imgRight">
       </div>
       <div class="stepElement stepText">
-       <h2 class="stepTitle">STEP3.ヒアリング</h2>
+       <h2 class="stepTitle">STEP3.工事</h2>
        <p>まずは、お客様がなにをどれだけ必要としているか、なにに使いたいのかを聞き、商品の提案をいたします。</p>
       </div>
       <div class="stepElement stepImg">
-       <img src='@/assets/hear.jpg' width="80%" class="imgRight">
+       <img src='@/assets/step/step3.jpg' width="80%" class="imgRight">
       </div>
       <div class="stepElement stepText">
-       <h2 class="stepTitle">STEP4.ヒアリング</h2>
+       <h2 class="stepTitle">STEP4.完成</h2>
        <p>まずは、お客様がなにをどれだけ必要としているか、なにに使いたいのかを聞き、商品の提案をいたします。</p>
       </div>
       <div class="stepElement stepImg">
-       <img src='@/assets/hear.jpg' width="80%" class="imgRight">
+       <img src='@/assets/step/step4.jpg' width="80%" class="imgRight">
       </div>
      </div>
    </div>
@@ -56,7 +57,7 @@
 
 <script>
 import constructionBtn from '@/components/constructionBtn.vue'
-import bodyHeader from '@/components//header.vue'
+import bodyHeader from '@/components/header.vue'
 import tileBtn from '@/components//tileBtn.vue'
 export default {
   name: 'Contents',

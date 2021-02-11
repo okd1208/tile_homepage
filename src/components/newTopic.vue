@@ -1,12 +1,15 @@
 <template>
   <div class="newTopic">
-    <h2 class="text-canter title">お知らせ</h2>
+    <h2 class="text-canter title"><slot></slot></h2>
     <ul class="topics">
-     <li v-for="message in messages" :key="message.text" class="topic">
-       <!-- <span class="topicType" :class="message.color">{{ message.type }}</span> -->
-       <span class="topicType">{{ message.type }}</span>
-     <span class="topicDate">{{ message.date }}</span>
-     {{ message.text }}</li>
+     <li v-for="topic in topics" :key="topic.id" class="topic">
+      <router-link :to="{name: 'topicDetail', params: {id: topic.id}}" class="signup-link topicLink">
+       <!-- <span class="topicType" :class="topic.color">{{ topic.type }}</span> -->
+       <span class="topicType">{{ topic.type }}</span>
+     <span class="topicDate">{{ topic.date }}</span>
+     {{ topic.title }}
+      </router-link>
+     </li>
     </ul>
   </div>
 </template>
@@ -16,19 +19,11 @@ export default {
   name: 'newTopic',
   data: function () {
     return {
-      messages: [
-        {text: 'mmタイル１０００枚入荷！', type: 'news', color: 'bg-danger', date: '2021/01/12'},
-        {text: '本日会社の改装工事を行いました。', type: 'blog', color: 'bg-warning', date: '2021/01/12'},
-        {text: 'mmタイル１9０００枚入荷！', type: 'news', color: 'bg-danger', date: '2021/01/12'},
-        {text: '2021年新卒採用募集事項', type: '採用', color: 'bg-primary', date: '2021/01/12'},
-        {text: '本日会社の改装工事を行いました,', type: 'blog', color: 'bg-warning', date: '2021/01/12'},
-        {text: '2021年新卒採用募集事項。', type: '採用', color: 'bg-primary', date: '2021/01/12'},
-        {text: 'mmタイル１０００枚入荷！?', type: 'news', color: 'bg-danger', date: '2021/01/12'},
-        {text: '本日会社の改装工事を行いました..。', type: 'blog', color: 'bg-warning', date: '2021/01/12'},
-        {text: 'mmタイル１9０００枚入荷?！', type: 'news', color: 'bg-danger', date: '2021/01/12'},
-        {text: '2021年新卒採用募集事項?', type: '採用', color: 'bg-primary', date: '2021/01/12'},
-        {text: '本日会社の改装工事を行いました!!', type: '採用', color: 'bg-primary', date: '2021/01/12'}
-      ]
+    }
+  },
+  computed: {
+    topics () {
+      return this.$store.state.topics
     }
   }
 }
@@ -66,9 +61,10 @@ export default {
   background-color: rgb(117, 185, 185);
   color: white;
 }
-.topic:hover {
+.topic:hover .topicLink{
   cursor : pointer;
   color:  rgb(117, 185, 185);
+  /* transition-duration: 0.3s; */
   /* font-weight: bold; */
   /* border-bottom: 1px solid  rgb(117, 185, 185); */
 }
@@ -80,6 +76,9 @@ export default {
 .topics {
   height: 300px;
   overflow: auto;
-  background-color: rgb(223, 223, 223);
+  background-color: rgba(223, 223, 223, 0.322);
+}
+.topicLink {
+  color: rgb(18, 29, 29);
 }
 </style>

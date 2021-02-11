@@ -23,8 +23,11 @@ export default {
   display: flex;
   justify-content: center;
   margin: 82px 0;
+  transition-duration: 0.5s;
 }
 .requestBox {
+  transition-duration: 0.5s;
+  /* hover解除時のtaransitionができていない */
   width: 330px;
   /* background-color: antiquewhite; */
   margin: 32px;
@@ -40,5 +43,11 @@ export default {
   margin-left: 32px;
   margin-right: 52px;
   text-align: left;
+}
+.requestBox :hover{
+  background-color: rgba(90, 87, 87, 0.836);
+  color: aliceblue;
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
 </style>

@@ -12,28 +12,51 @@
       </tr>
     </table>
     <div class="flow">
-      <h2>採用フロー</h2>
+      <p class="Recruitflow">採用フロー</p>
       <div class="flowParent">
-        <div class="flowBox">
-          <h3 class="flowTitle">書類提出</h3>
-          <!-- <p class="flowText">これを行います。</p> -->
+        <div class="step">
+          step1
         </div>
-        <h2 class="flowArrow">▶︎</h2>
-        <div class="flowBox">
-          <h3 class="flowTitle">一次面接</h3>
-          <!-- <p class="flowText">これを行います。</p> -->
-        </div>
-        <h2 class="flowArrow">▶︎</h2>
-        <div class="flowBox">
-          <h3 class="flowTitle">二次面接</h3>
-          <!-- <p class="flowText">これを行います。</p> -->
-        </div>
-        <h2 class="flowArrow">▶︎</h2>
-        <div class="flowBox">
-          <h3 class="flowTitle">合否発表</h3>
-          <!-- <p class="flowText">これを行います。</p> -->
+        <div class="flowbox">
+          <p class="stepTitle">書類提出</p>
+          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
         </div>
       </div>
+      <h2 class="flowArrow">↓</h2>
+        <!-- step -->
+      <div class="flowParent">
+        <div class="step">
+          step2
+        </div>
+        <div class="flowbox">
+          <p class="stepTitle">１次面接</p>
+          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+        </div>
+      </div>
+      <h2 class="flowArrow">↓</h2>
+        <!-- step -->
+      <div class="flowParent">
+        <div class="step">
+          step3
+        </div>
+        <div class="flowbox">
+          <p class="stepTitle">２次面接</p>
+          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+        </div>
+      </div>
+      <h2 class="flowArrow">↓</h2>
+        <!-- step -->
+      <div class="flowParent">
+        <div class="step">
+          step4
+        </div>
+        <div class="flowbox">
+          <p class="stepTitle">最終面接</p>
+          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+        </div>
+      </div>
+      <h2 class="flowArrow">↓</h2>
+      <h2 class="finishStep">採用</h2>
     </div>
   </div>
   <div class="Btn">
@@ -73,7 +96,7 @@ export default {
 
 <style scoped>
 .recruitMentTitle {
-  background-color: rgb(235, 232, 228);
+  background-color: rgb(238, 238, 238);
   height: 300px;
   margin-top: 32px;
   text-align: left;
@@ -111,29 +134,50 @@ export default {
   text-align: left;
   padding: 24px;
 }
+.Recruitflow {
+  font-size: 28px;
+  margin-bottom: 28px;
+}
 .flow {
   margin-top: 64px;
+  font-family: serif;
 }
 .flowParent {
-  display: flex;
-  /* flex-direction: row;
-  flex-wrap: wrap; */
-  justify-content: center;
+ font-size: 20px;
+ display: flex;
+ margin: 0 auto;
+ background-color: rgba(236, 240, 241, 0.699);
+ width: 800px;
+}
+.step {
+  display: inline-block;
+  background-color: rgb(197, 132, 48);
+  line-height: 130px;
+  color: aliceblue;
+  width: 150px;
+  text-align: center;
+}
+.stepTitle {
+  font-weight: bold;
+  margin: 32px 0 16px 32px;
+  font-size: 20px;
+  text-align: left;
+}
+.stepText {
+  margin-left: 32px;
+  text-align: left;
+  font-size: 16px;
 }
 .flowBox {
-  width: 200px;
-  height: 120px;
-  /* border: 1px solid black; */
-  background-color: rgba(241, 236, 236, 0.966);
-  margin: 16px;
-  border-radius: 10px;
+  background-color: rgba(236, 240, 241, 0.699);
 }
 .flowArrow {
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
-.flowTitle {
-  line-height: 120px;
+.finishStep {
   font-weight: bold;
+  color: rgb(197, 132, 48);
+  margin-bottom: 100px;
 }
 .Btn {
   display: flex;
