@@ -1,4 +1,6 @@
 <template>
+<div>
+  <h2 class="requestEriaTitle">Contact</h2>
   <div class="requestErea">
     <div class="requestBox">
       <p class="BoxTest"><i class="far fa-question-circle"></i>よくある質問</p>
@@ -10,6 +12,7 @@
       <p class="BoxTest"><i class="fas fa-info-circle"></i>サポート（資料請求）</p>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -19,10 +22,14 @@ export default {
 </script>
 
 <style scoped>
+.requestEriaTitle {
+  text-align: center;
+  margin-top: 82px;
+}
 .requestErea {
   display: flex;
+  margin-bottom: 82px;
   justify-content: center;
-  margin: 82px 0;
   transition-duration: 0.5s;
 }
 .requestBox {

@@ -1,25 +1,24 @@
 <template>
  <div>
-   <body-header>事業内容</body-header>
+   <!-- <body-header>事業内容</body-header> -->
    <div class="body">
-     <div class="top">
-       <h2 class="topTitle">場面に応じて使いわける</h2>
-       <p>冨永タイルでは、約1000種類の様々なタイルを取り扱っております。</p>
-       <p>そのため、お客様のニーズに合ったタイルをご提案し、発注しております。</p>
-       <p>冨永タイルでは、約1000種類の様々なタイルを取り扱っております。</p>
-       <p>そのため、お客様のニーズに合ったタイルをご提案し、発注しております。</p>
-       <tile-btn>タイル一覧をみる</tile-btn>
-       <construction-btn>施工例一覧を見る</construction-btn>
-     </div>
-     <div class="business divContainer">
-       <h2 class="contentsTitle">主な事業・サービス</h2>
-       <p class="contentsText">弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。</p>
-     </div>
-     <div class="flow divContainer">
-       <h2 class="contentsTitle">タイル工事までの流れ</h2>
-       <p class="contentsText">冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。</p>
-     </div>
-    <h2>タイル工事までの4STEP</h2>
+     <header-img className="contents">
+      <template v-slot:Title>BUSINESS</template>
+      <template v-slot:Text>事業内容</template>
+    </header-img>
+    <div class="businessContents">
+      <div class="divContainer">
+        <h2 class="contentsTitle">主な事業・サービス</h2>
+        <p class="keyPhrase">誰よりも何処よりも早く、丁寧に、をもっとウニ。</p>
+        <p class="contentsText">弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。</p>
+      </div>
+      <div class="flow divContainer">
+        <h2 class="contentsTitle">タイル工事までの流れ</h2>
+        <p class="keyPhrase">誰よりも何処よりも早く、丁寧に、をもっとウニ。</p>
+        <p class="contentsText">冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。冨永タイルではお客様に満足して頂けるように、以下の流れにそって行います。</p>
+      </div>
+    </div>
+    <h2 class="tileStep">タイル工事までの4STEP</h2>
      <div class="step">
       <div class="stepElement stepText">
        <h2 class="stepTitle">STEP1.ヒアリング</h2>
@@ -57,35 +56,22 @@
 
 <script>
 import constructionBtn from '@/components/constructionBtn.vue'
-import bodyHeader from '@/components/header.vue'
 import tileBtn from '@/components//tileBtn.vue'
+import headerImg from '@/components/headerImg.vue'
 export default {
   name: 'Contents',
   components: {
     constructionBtn,
     tileBtn,
-    bodyHeader
+    headerImg
   }
 }
 </script>
 
 <style scoped>
-header {
-  margin-top: 100px;
-  padding: 20px;
-  background-color: rgba(241, 236, 236, 0.966);
-  font-family: 'HiraMinPro-W6';
-}
-.top {
-  margin-top: 32px;
-  height: 400px;
-  background-image: url('~@/assets/whiteTile.jpeg');
-  background-size: contain;
-  color: white;
-}
-.topTitle {
-  padding: 16px;
+.tileStep {
   font-family: serif;
+  margin-bottom: 32px;
 }
 .step {
   display: flex;
@@ -102,6 +88,7 @@ header {
 }
 .stepTitle {
   margin: 24px;
+  padding-top: 32px;
   font-family: 'Noto Serif JP', serif;
 }
 .stepText {
@@ -109,17 +96,23 @@ header {
   margin-left: 160px;
   margin-right: 0;
 }
+.businessContents {
+  font-family: serif;
+}
 .contentsTitle {
-  text-align: left;
-  font-family: 'Sawarabi Mincho', sans-serif;
-  border-bottom: black 1px solid;
+  margin-bottom: 24px;
+}
+.keyPhrase {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(75, 137, 218, 0.884);
 }
 .divContainer {
-  width: 75%;
-  margin: 64px auto;
-  text-align: left;
+  width: 60%;
+  margin: 100px auto;
 }
-.contentsText {
-  font-family: 'Sawarabi Mincho', sans-serif;
+.contentsText{
+  line-height: 26px;
+  text-align: left;
 }
 </style>

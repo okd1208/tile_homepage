@@ -1,10 +1,11 @@
 <template>
 <div>
-  <body-header>採用情報</body-header>
   <div class="recruitMent">
-    <div class="recruitMentTitle">
-      <h2 class="recruitMentTitleText">募集要項</h2>
-    </div>
+    <header-img className="recruitImg">
+      <template v-slot:Title>RECRUITMENT</template>
+      <template v-slot:Text>採用情報</template>
+    </header-img>
+    <p class="RecuritTableTitle">募集要項</p>
     <table class="RecruitTable">
       <tr v-for="content in contents" :key="content.title" class="RecruitTableTr">
         <td class="contentsTitle">{{ content.title }}</td>
@@ -61,16 +62,17 @@
   </div>
   <div class="Btn">
     <div class="EntryBtn">
-      <h4 class="Btntext">エントリーする</h4>
+      <h4 class="Btntext">ENTRY</h4>
     </div>
-    <div class="TryBtn">
+    <!-- <div class="TryBtn">
       <h4 class="Btntext">まずは話を聞いてみる</h4>
-    </div>
+    </div> -->
   </div>
 </div>
 </template>
 
 <script>
+import headerImg from '@/components/headerImg.vue'
 import bodyHeader from '@/components/header.vue'
 export default {
   name: 'recruit',
@@ -89,50 +91,73 @@ export default {
     }
   },
   components: {
-    bodyHeader
+    bodyHeader,
+    headerImg
   }
 }
 </script>
 
 <style scoped>
-.recruitMentTitle {
+/* .recruitMentTitleErea {
   background-color: rgb(238, 238, 238);
-  height: 300px;
-  margin-top: 32px;
-  text-align: left;
-  background-image: url('~@/assets/recruit/recruit1.jpg');
+  height: 450px;
+  margin-top: 100px;
+  text-align: center;
+  background-image: url('~@/assets/recruit/recruit5.jpeg');
+  1800:600
   background-size: cover;
 }
 .recruitMentTitleText {
-  line-height: 300px;
+  height: 450px;
+  text-align: center;
+  padding-top: 160px;
+  font-size: 46px;
   padding-left: 100px;
-  font-size: 32ox;
   background-color: rgba(78, 77, 77, 0.548);
   color: white;
 }
+.recruitMentTitle {
+  font-size: 52px;
+  font-family: serif;
+  letter-spacing: 2px;
+}
+.recruitMentText {
+  font-family: serif;
+  font-size: 32px;
+} */
 .recruitTable {
   margin:20px auto;
   background-color: whitesmoke;
+  /* text-align: left; */
   /* border: yellow 1px solid; */
 }
 .RecruitTable {
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
-  width: 1000px;
-  border-top: 2px solid rgba(241, 236, 236, 0.966);
+  width: 800px;
+  text-align: left;
+  border-top: 1px solid rgba(241, 236, 236, 0.966);
 }
 .RecruitTableTr {
-  height: 46px;
-  border-bottom: 2px solid rgba(241, 236, 236, 0.966);
+  height: 100px;
+  border-bottom: 1px solid rgba(241, 236, 236, 0.966);
 }
 .contentsTitle {
-  width: 300px;
-  background-color: rgba(224, 222, 222, 0.966);
+  width: 140px;
+  /* text-align: left; */
+  font-weight: bold;
+  /* background-color: rgba(224, 222, 222, 0.966); */
 }
 .contentsText {
-  text-align: left;
+  /* text-align: left; */
   padding: 24px;
+}
+.RecuritTableTitle {
+  font-family: serif;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 100px;
 }
 .Recruitflow {
   font-size: 28px;
@@ -180,41 +205,48 @@ export default {
   margin-bottom: 100px;
 }
 .Btn {
-  display: flex;
+  /* display: flex; */
   /* margin: 10px auto; */
   margin-top: 36px;
+  margin-bottom: 64px;
 }
-.EntryBtn,.TryBtn {
+/* .EntryBtn,.TryBtn {
   width: 700px;
   height: 200px;
   margin: 10px auto;
-  /* border-radius: 16px; */
-}
+} */
 .EntryBtn {
-  background-color: rgb(209, 212, 187);
-  background-image: url('~@/assets/recruit/recruit2.jpeg');
+  background-color: rgb(197, 132, 48);
+  width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  /* background-image: url('~@/assets/recruit/recruit2.jpeg'); */
   /* 7:2 */
-  background-size: cover;
+  /* background-size: cover; */
 }
 .EntryBtn:hover .Btntext{
   cursor: pointer;
-  background-color: rgba(109, 108, 108, 0.541);
-  transition-duration: 0.4s;
+  background-color: rgb(143, 96, 35);
+  transition-duration: 0.3s;
+  font-size: 22px;
+  letter-spacing: 8px;
 }
-.TryBtn {
+.Btntext {
+  line-height: 100px;
+  /* background-color: rgba(109, 108, 108, 0.753); */
+  color: aliceblue;
+  transition-duration: 0.4s;
+  font-family: serif;
+  letter-spacing: 10px;
+}
+/* .TryBtn {
   background-color: rgb(187, 211, 212);
   background-image: url('~@/assets/recruit/recruit3.jpeg');
   background-size: cover;
-}
-.TryBtn:hover .Btntext{
+} */
+/* .TryBtn:hover .Btntext{
   cursor: pointer;
   background-color: rgba(109, 108, 108, 0.541);
   transition-duration: 0.4s;
-}
-.Btntext {
-  line-height: 200px;
-  background-color: rgba(109, 108, 108, 0.753);
-  color: aliceblue;
-  transition-duration: 0.4s;
-}
+} */
 </style>
