@@ -11,7 +11,7 @@
                     <router-link to="/" class="nav-link text-dark">トップ<p class="subTitle" :class="{'activeSub':topActive}">Top</p></router-link>
                 </li>
                 <li class="nav-item ml-3 mr-3" @click="changeOverViewActive">
-                    <router-link to="/OverView" class="nav-link text-dark">会社概要<p class="subTitle" :class="{'activeSub':OVActive}">Overview</p></router-link>
+                    <router-link to="/OverView" class="nav-link text-dark">会社情報<p class="subTitle" :class="{'activeSub':OVActive}">About</p></router-link>
                 </li>
                 <li class="nav-item ml-3 mr-3" @click="changeContentsActive">
                     <router-link to="/contents" class="nav-link text-dark">事業内容<p class="subTitle" :class="{'activeSub':contentsActive}">Bisiness</p></router-link>

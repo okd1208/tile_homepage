@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style scoped>
+.OverView {
+  background-image: url('~@/assets/OverView.jpeg');
+}
 .recruitImg {
   background-image: url('~@/assets/recruit/recruit5.jpeg');
 }

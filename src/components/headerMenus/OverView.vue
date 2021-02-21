@@ -1,6 +1,9 @@
 <template>
 <div>
-  <body-header>会社概要</body-header>
+  <header-img class="OverView">
+    <template v-slot:Title>ABOUT</template>
+    <template v-slot:Text>会社情報</template>
+  </header-img>
   <div class="body">
     <table class="OverViewTable">
       <tr v-for="content in contents" :key="content.title" class="OverViewTableTr">
@@ -13,11 +16,11 @@
 </template>
 
 <script>
-import bodyHeader from '@/components/header.vue'
+import headerImg from '@/components/headerImg.vue'
 export default {
   name: 'OverView',
   components: {
-    bodyHeader
+    headerImg
   },
   data: function () {
     return {
@@ -37,25 +40,22 @@ export default {
 </script>
 
 <style scoped>
-.header{
-  margin-top: 100px;
-  padding: 20px;
-  background-color: rgba(241, 236, 236, 0.966);
-}
 .OverViewTable {
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
   width: 1000px;
-  border-top: 2px solid rgba(241, 236, 236, 0.966);
+  /* border-top: 2px solid rgba(255, 255, 255, 0.966); */
 }
 .OverViewTableTr {
   height: 46px;
-  border-bottom: 2px solid rgba(241, 236, 236, 0.966);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.966);
+  /* margin-bottom: 100px; */
 }
 .contentsTitle {
   width: 300px;
-  background-color: rgba(236, 247, 236, 0.966);
+  color: white;
+  background-color: rgb(117, 185, 185);
 }
 .contentsText {
   text-align: left;
