@@ -4,31 +4,31 @@
       <div class="parent">
         <div class="container">
           <p class="containerTitle">知りたい</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>会社概要</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p>
+          <router-link to="/Overview" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>会社概要</p></router-link>
+          <router-link to="/Contents" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p></router-link>
+          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link>
         </div>
         <div class="container">
           <p class="containerTitle">見たい</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>建設事例一覧</p>
+          <router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link>
+          <router-link to="/ConstructionExample" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>建設事例一覧</p></router-link>
         </div>
         <div class="container">
           <p class="containerTitle">入りたい</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>技術職</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>総合職</p>
+          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link>
+          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>技術職</p></router-link>
+          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>総合職</p></router-link>
         </div>
         <div class="container">
           <p class="containerTitle">聞きたい</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>お問い合わせ</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>よくある質問</p>
+          <router-link to="/Contact" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>お問い合わせ</p></router-link>
+          <router-link to="/questions" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>よくある質問</p></router-link>
         </div>
         <div class="container">
           <p class="containerTitle">買いたい</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル入荷情報</p>
-          <p class="containerText"><i class="fas fa-angle-right arrow"></i>検索</p>
+          <router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link>
+          <router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル入荷情報</p></router-link>
+          <router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>検索</p></router-link>
         </div>
       </div>
       <div class="imformation">

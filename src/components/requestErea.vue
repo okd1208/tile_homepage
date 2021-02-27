@@ -3,13 +3,13 @@
   <h2 class="requestEriaTitle">Contact</h2>
   <div class="requestErea">
     <div class="requestBox">
-      <p class="BoxTest"><i class="far fa-question-circle"></i>よくある質問</p>
+      <router-link to="/questions" class="text-dark"><p class="BoxTest"><i class="far fa-question-circle"></i>よくある質問</p></router-link>
     </div>
     <div class="requestBox">
-      <p class="BoxTest"><i class="far fa-envelope"></i>お問い合わせ</p>
+      <router-link to="/contact" class="text-dark"><p class="BoxTest"><i class="far fa-envelope"></i>お問い合わせ</p></router-link>
     </div>
     <div class="requestBox">
-      <p class="BoxTest"><i class="fas fa-info-circle"></i>サポート（資料請求）</p>
+      <router-link to="/questions" class="text-dark"><p class="BoxTest"><i class="fas fa-info-circle"></i>サポート（資料請求）</p></router-link>
     </div>
   </div>
 </div>

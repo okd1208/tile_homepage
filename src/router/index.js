@@ -10,6 +10,7 @@ import contents from '@/components/headerMenus/contents'
 import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
+import questions from '@/components/questions'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -62,6 +63,11 @@ export default new Router({
       path: '/topics/:id',
       name: 'topicDetail',
       component: topicDetail
+    },
+    {
+      path: '/questions',
+      name: 'questions',
+      component: questions
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す
