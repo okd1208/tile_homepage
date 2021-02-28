@@ -135,7 +135,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
-  width: 800px;
+  width: 60%;
   text-align: left;
   border-top: 1px solid rgba(241, 236, 236, 0.966);
 }
@@ -172,7 +172,7 @@ export default {
  display: flex;
  margin: 0 auto;
  background-color: rgba(236, 240, 241, 0.699);
- width: 800px;
+ width: 60%;
 }
 .step {
   display: inline-block;
@@ -217,7 +217,7 @@ export default {
 } */
 .EntryBtn {
   background-color: rgb(197, 132, 48);
-  width: 800px;
+  width: 60%;
   height: 100px;
   margin: 10px auto;
   /* background-image: url('~@/assets/recruit/recruit2.jpeg'); */

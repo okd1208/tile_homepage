@@ -33,7 +33,7 @@ export default {
 .newTopic {
   margin-top: 64px;
   /* height: 280px; */
-  width: 800px;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   /* background-color: wheat;
@@ -80,5 +80,31 @@ export default {
 }
 .topicLink {
   color: rgb(18, 29, 29);
+}
+@media screen and (max-width: 534px) {
+  .newTopic {
+    width: 90%;
+  }
+  .topics {
+    height: 200px;
+    font-size: 14px;
+    padding-left: 16px;
+  }
+  .topic {
+    margin: 12px 2px;
+    /* font-size: 1px; */
+  }
+  .topicType {
+    margin-right: 4px;
+    width: 40px;
+    border-radius: 20px;
+    padding: 0 2px;
+    background-color: white;
+  }
+  .topicDate {
+    opacity: 0.5;
+    margin-right: 0;
+    font-size: 6px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-menu></header-menu>
-    <router-view/>
+    <header-menu id="headerMenu"></header-menu>
+    <router-view class="aaaa" />
     <footerMenu></footerMenu>
   </div>
 </template>
@@ -26,5 +26,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.aaaa {
+  z-index: 1;
+}
+#headerMenu {
+  z-index: 10;
+}
+@media screen and (max-width:534px) {
+  #app, #headerMenu {
+    width: 100%;
+  }
 }
 </style>

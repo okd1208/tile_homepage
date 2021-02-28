@@ -59,4 +59,9 @@ margin-bottom: 32px;
   flex-wrap: wrap;
   justify-content: center;
 }
+@media screen and (max-width: 534px) {
+  .tileParent {
+    padding-left: 0px;
+  }
+}
 </style>

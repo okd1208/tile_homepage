@@ -39,7 +39,7 @@ export default {
   margin: 52px;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 60%;
   text-align: left;
 }
 /* .detailImg {

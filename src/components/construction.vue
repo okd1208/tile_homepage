@@ -61,5 +61,12 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 0px;
+}
+@media screen and (max-width:300px) {
+  .constructionList {
+    width: 210px;
+    height: 140px;
+  }
 }
 </style>

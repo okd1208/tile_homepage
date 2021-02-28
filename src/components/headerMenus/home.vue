@@ -1,7 +1,7 @@
 <template>
  <div>
     <div :class="header">
-      <h1 class="headerTitle" @click="changeImg">タイルの事を任せるなら、冨永タイル</h1>
+      <h1 class="headerTitle">タイルの事を任せるなら、冨永タイル</h1>
       <h1 class="headerbody">Welcome to tileWorld!</h1>
     </div>
     <div class="body">
@@ -95,7 +95,7 @@ export default {
 }
 .headerTitle{
   margin-left: 46px;
-  width: 500px;
+  width: 30%;
   font-size: 46px;
   text-align: left;
   position: relative;
@@ -144,5 +144,25 @@ export default {
   /* text-align: left; */
   margin-right: 8px;
   /* padding-top: -32px; */
+}
+
+@media screen and (max-width:534px) {
+  .header1,.header2,.header3,.header4,.header5{
+    transition: all 900ms 0s ease;
+    margin-top: -60px;
+    background-size: cover;
+    height: 350px;
+  }
+  .headerbody,.headerTitle {
+    margin-left: 46px;
+    /* margin-top: 16px; */
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+    top: 180px;
+    /* line-height: 600px; */
+    /* color: white; */
+    font-family: monospace;
+  }
 }
 </style>

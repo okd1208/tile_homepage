@@ -21,7 +21,6 @@ export default {
   position: absolute;
   top: 100px;
   left: 10px;
-  z-index: 2;
   -webkit-transform: rotateX(-180deg);
   transform: rotateX(-180deg);
   -webkit-transition: all 0.6s ease;
@@ -30,7 +29,7 @@ export default {
 .imgWrap{
   /* border: 1px solid #ddd; */
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   margin: 0 auto;
   overflow: hidden;
   background: #000;

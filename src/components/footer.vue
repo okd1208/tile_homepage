@@ -2,34 +2,34 @@
   <footer>
     <div class="footer">
       <div class="parent">
-        <div class="container">
+        <ul class="container">
           <p class="containerTitle">知りたい</p>
-          <router-link to="/Overview" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>会社概要</p></router-link>
-          <router-link to="/Contents" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p></router-link>
-          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link>
-        </div>
-        <div class="container">
+          <li class="footerList"><router-link to="/Overview" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>会社概要</p></router-link></li>
+          <li class="footerList"><router-link to="/Contents" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p></router-link></li>
+          <li class="footerList"><router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link></li>
+        </ul>
+        <ul class="container">
           <p class="containerTitle">見たい</p>
-          <router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link>
-          <router-link to="/ConstructionExample" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>建設事例一覧</p></router-link>
-        </div>
-        <div class="container">
+          <li class="footerList"><router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link></li>
+          <li class="footerList"><router-link to="/ConstructionExample" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>建設事例一覧</p></router-link></li>
+        </ul>
+        <ul class="container">
           <p class="containerTitle">入りたい</p>
-          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link>
-          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>技術職</p></router-link>
-          <router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>総合職</p></router-link>
-        </div>
-        <div class="container">
+          <li class="footerList"><router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link></li>
+          <li class="footerList"><router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>技術職</p></router-link></li>
+          <li class="footerList"><router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>総合職</p></router-link></li>
+        </ul>
+        <ul class="container">
           <p class="containerTitle">聞きたい</p>
-          <router-link to="/Contact" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>お問い合わせ</p></router-link>
-          <router-link to="/questions" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>よくある質問</p></router-link>
-        </div>
-        <div class="container">
+          <li class="footerList"><router-link to="/Contact" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>お問い合わせ</p></router-link></li>
+          <li class="footerList"><router-link to="/questions" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>よくある質問</p></router-link></li>
+        </ul>
+        <ul class="container">
           <p class="containerTitle">買いたい</p>
-          <router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link>
-          <router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル入荷情報</p></router-link>
-          <router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>検索</p></router-link>
-        </div>
+          <li class="footerList"><router-link to="/tiles" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル一覧</p></router-link></li>
+          <li class="footerList"><router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>タイル入荷情報</p></router-link></li>
+          <li class="footerList"><router-link to="/" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>検索</p></router-link></li>
+        </ul>
       </div>
       <div class="imformation">
         <div class="company">
@@ -42,14 +42,13 @@
         </div>
         <div class="lastText"><p class="fooderText">@TOMINAGA TALE CO..,LTD ALL GOOD</p></div>
       </div>
-      <!-- <p class="fooderText">@TOMINAGA TALE CO..,LTD ALL GOOD</p> -->
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'footer'
+  name: 'footerArea'
 }
 </script>
 
@@ -69,6 +68,9 @@ export default {
   display: flex;
   padding-top: 32px;
   text-align: left;
+}
+.footerList {
+  list-style: none;
 }
 .container {
   height: 130px;
@@ -94,13 +96,32 @@ export default {
 }
 .companyTitle {
   margin-top: 55px;
+  margin-right: 50px;
 }
 .companyImfo {
-  margin-left: 50px;
+  /* padding-left: 50px; */
   margin-top: 16px;
   text-align: left;
 }
 .lastText {
-  width: 600px;
+  width: 60%;
+}
+
+@media screen and (max-width:800px) {
+  .container {
+    height: 30px;
+    width: 14%;
+  }
+  .containerText {
+    display: none;
+  }
+  .containerTitle:active .containerText{
+    display: inline-block;
+  }
+  .containerText:hover {
+    cursor: pointer;
+    /* border-bottom: 1px solid rgb(119, 114, 114); */
+    color:rgb(118, 146, 77);
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div id="header">
-    <nav class="navbar navbar-expand-sm navbar-dark test">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark test">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +35,7 @@
             </ul>
         </div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -136,8 +136,21 @@ export default {
 .contactText {
   color: white;
 }
-#header {
+header {
   position: absolute;
-  z-index: 3;
+  /* z-index: 3; */
+}
+@media screen and (max-width:1070px) {
+  /* .test2 {
+    position: relative;
+  }
+  .test2{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background: #072A24;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+  } */
 }
 </style>
