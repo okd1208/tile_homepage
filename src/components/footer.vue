@@ -54,7 +54,7 @@ export default {
 
 <style>
 .footer {
-  height: 400px;
+  /* height: 400px; */
   background-color: rgba(197, 190, 190, 0.5);
   margin-top: 32px;
 }
