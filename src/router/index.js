@@ -11,6 +11,7 @@ import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
 import questions from '@/components/questions'
+import edit from '@/components/edit'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -68,6 +69,11 @@ export default new Router({
       path: '/questions',
       name: 'questions',
       component: questions
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: edit
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す
