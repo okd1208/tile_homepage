@@ -3,15 +3,15 @@
     <h2 class="title">取り扱いタイル一覧</h2>
     <div>
       <ul class="tileParent">
-        <li  v-for="tile in tiles" :key="tile.title" class="tile">
+        <li v-for="tile in tiles" :key="tile.name" class="tile">
           <some-imgs>
             <template v-slot:img>
-              <router-link :to="{name: 'detail', params: {id: tile.id, tilesOrConstructions: 'tile'}}" class="signup-link">
-                <img class="hoverImg" :src="tile.img" width="100%">
+              <router-link :to="{name: 'detail', params: {id: tile.name, tilesOrConstructions: 'tile'}}" class="signup-link">
+                <img class="hoverImg" :src="tile.fotoURL" width="100%">
               </router-link>
             </template>
             <template v-slot:title>
-              {{ tile.title }}
+              {{ tile.name }}
             </template>
           </some-imgs>
         </li>
@@ -22,18 +22,15 @@
 
 <script>
 import someImgs from '@/components/someImgs.vue'
+import Mixin from '../mixin'
 export default {
   components: {
     someImgs
   },
+  mixins: [Mixin],
   name: 'someTile',
   data: function () {
     return {
-    }
-  },
-  computed: {
-    tiles () {
-      return this.$store.state.tiles
     }
   }
 }

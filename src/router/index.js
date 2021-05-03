@@ -11,7 +11,9 @@ import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
 import questions from '@/components/questions'
-import edit from '@/components/edit'
+import editTiles from '@/components/edit/editTiles'
+import editHome from '@/components/edit/editHome'
+import editConstruction from '@/components/edit/editConstruction'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -71,9 +73,19 @@ export default new Router({
       component: questions
     },
     {
-      path: '/edit',
-      name: 'edit',
-      component: edit
+      path: '/edit_tiles',
+      name: 'editTiles',
+      component: editTiles
+    },
+    {
+      path: '/edit_home',
+      name: 'editHome',
+      component: editHome
+    },
+    {
+      path: '/edit_construction',
+      name: 'editConstruction',
+      component: editConstruction
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す

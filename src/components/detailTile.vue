@@ -1,9 +1,9 @@
 <template>
   <div>
     <div v-for="tile in tiles" :key="tile.id">
-      <div v-if="tile.id === tileId">
-        <h1 class="detailTitle">{{ tile.title }}</h1>
-        <img class="detailImg" :src="tile.img" width=30%>
+      <div v-if="tile.name === tileId">
+        <h1 class="detailTitle">{{ tile.name }}</h1>
+        <img class="detailImg" :src="tile.fotoURL" width=30%>
         <p class="detailText">{{ tile.text }}</p>
       </div>
     </div>
@@ -11,42 +11,18 @@
 </template>
 
 <script>
+// import firebase from 'firebase'
+import Mixin from '../mixin'
 export default {
   name: 'detailTile',
+  mixins: [Mixin],
   data: function () {
     return {
-      // tile: this.$store.state.tiles.find({'id': 2})
     }
   },
   props: [
     'tileId'
-  ],
-  methods: {
-    // getTileId () {
-    //   return this.tileId
-    // }
-  },
-  computed: {
-    tiles () {
-      // console.log('oooooooooooooo')
-      // console.log(this.tileId)
-      return this.$store.state.tiles
-    }
-    // tile () {
-    // return {
-    // tile: this.$store.state.tiles.find(1)
-    // }
-    // }
-    // tile: function () {
-    //   console.log(this.tileId)
-    //   return this.tiles.filter(
-    // function (value) {
-    //   console.log(this.tileId)
-    //   return value.id === this.tileId
-    // }
-    //   )
-    // }
-  }
+  ]
 }
 </script>
 
