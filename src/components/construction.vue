@@ -3,15 +3,15 @@
     <h2 class="title">建設事例一覧</h2>
     <div>
       <ul class="constructionParent">
-        <li v-for="construction in constructions" :key="construction.id" class="constructionList">
+        <li v-for="construction in constructions" :key="construction.name" class="constructionList">
           <some-imgs>
             <template v-slot:img>
-              <router-link :to="{name: 'detail', params: {id: construction.id, tilesOrConstructions: 'construction'}}" class="signup-link">
-                <img :src="construction.img" width="100%">
+              <router-link :to="{name: 'detail', params: {id: construction.name, tilesOrConstructions: 'construction'}}" class="signup-link">
+                <img :src="construction.fotoURL" width="100%">
               </router-link>
             </template>
             <template v-slot:title>
-              {{ construction.title }}
+              {{ construction.name }}
             </template>
           </some-imgs>
         </li>
@@ -22,19 +22,21 @@
 
 <script>
 import someImgs from '@/components/someImgs.vue'
+import Mixin from '../mixin'
 export default {
   name: 'construction',
   components: {
     someImgs
   },
+  mixins: [Mixin],
   data: function () {
     return {
     }
   },
   computed: {
-    constructions () {
-      return this.$store.state.constructions
-    }
+    // constructions () {
+    //   return this.$store.state.constructions
+    // }
   }
 }
 </script>

@@ -2,8 +2,8 @@
   <div>
     <body-header>編集ページ</body-header>
     <ul id="nav">
-      <li @click="changeEditMenu('tile')">タイル一覧を編集</li>
-      <li @click="changeEditMenu('construction')">建設例一覧を編集</li>
+      <li :class="{openMenu: isOpen === 'tile'}" @click="changeEditMenu('tile')">タイル一覧を編集</li>
+      <li :class="{openMenu: isOpen === 'construction'}" @click="changeEditMenu('construction')">建設例一覧を編集</li>
       <li>お知らせを編集</li>
       <li>よくある質問</li>
     </ul>
@@ -59,6 +59,12 @@ export default {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+}
+
+.openMenu {
+  color: red;
+  height: 100px;
+  line-height: 100px;
 }
 
 #nav li:hover {

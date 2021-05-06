@@ -17,7 +17,9 @@ export default {
       storage: null,
       storageRef: null,
       ref: null,
-      imgURL: null
+      imgURL: null,
+      editKey: null,
+      editable: false
     }
   },
   created () {
@@ -121,6 +123,23 @@ export default {
     },
     removeConstruction (key) {
       this.constructionsRef.doc(key).delete()
+    },
+    selectEditItem (key) {
+      this.editKey = key
+      this.editable = true
+    },
+    upConstruction () {
+      console.log(this.editKey)
+      console.log(this.constructionsRef)
+      this.constructionsRef.doc(this.editKey).update({
+        name: this.newtileName,
+        fotoURL: this.fotoURL,
+        text: this.text
+      })
+      console.log('editKey')
+    },
+    closeEditEria () {
+      this.editable = false
     }
   }
 }

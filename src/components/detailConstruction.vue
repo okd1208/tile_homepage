@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-for="construction in constructions" :key="construction.id">
-      <div v-if="construction.id === constructionId">
-        <h1 class="detailTitle">{{ construction.title }}</h1>
-        <img class="detailImg" :src="construction.img" width=30%>
+    <div v-for="construction in constructions" :key="construction.name">
+      <div v-if="construction.name === constructionId">
+        <h1 class="detailTitle">{{ construction.name }}</h1>
+        <img class="detailImg" :src="construction.fotoURL" width=30%>
         <p class="detailText">{{ construction.text }}</p>
       </div>
     </div>
@@ -11,8 +11,10 @@
 </template>
 
 <script>
+import Mixin from '../mixin'
 export default {
   name: 'detailTile',
+  mixins: [Mixin],
   data: function () {
     return {
     }
