@@ -16,29 +16,57 @@
         <!-- <td>{{ tile.fotoURL }}</td> -->
         <td><img :src="tile.fotoURL" width="90%"></td>
         <button @click="removetile(key)">削除</button>
+        <button @click="selectEditItem(key,'tile')">編集</button>
       </tr>
     </table>
 
-    <div class="inputEria">
-      <h3>タイル編集</h3>
-      <p>タイル名<input v-model="newtileName" type="text" /></p>
-      <p>説明<input v-model="text" type="text" /></p>
-      <p>fotoURL<input v-model="fotoURL" id="fotoInput" type="text" /></p>
-      <p>file<input type="file" name="フィールド名@squareWidth" id="btnUpload" value="アップロード"></p>
-      <p id="foto"></p>
-      <button @click="tileFotoUp()">画像を選択した</button>
-      <button @click="addtile()">追加</button>
-    </div>
-    <!-- <button @click="fileConsole()">test</button> -->
-    <!-- <div v-if="imgURL != null">
-    </div> -->
+    <form class="itemEditEria" :class="{uneditable: !editable}">
+      <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
+      <h3>編集</h3>
+      <div class="cp_iptxt">
+        <input v-model="newtileName" class="ef" placeholder="" type="text" />
+        <label>タイル名</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <textarea v-model="text" rows="5" class="ef" type="text" required/>
+        <label>内容説明文</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+      </div>
+      <loading-ui></loading-ui>
+      <p href="#" class="btn04" @click="update('tile')">編集</p>
+    </form>
+
+    <form class="itemEditEria" :class="{uneditable: editable}">
+      <h3>新規登録</h3>
+      <div class="cp_iptxt">
+        <input v-model="newtileName" class="ef" placeholder="" type="text" />
+        <label>タイル名</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <textarea v-model="text" rows="5" class="ef" type="text" required/>
+        <label>内容説明文</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+      </div>
+      <loading-ui></loading-ui>
+      <p href="#" class="btn04" @click="addtile()">登録</p>
+    </form>
       <img src="" id="image" width="30%">
   </div>
 </template>
 
 <script>
 import Mixin from '../../mixin'
+import loadingUi from '../parts/loadingUI'
 export default {
+  components: { loadingUi },
   name: 'editTiles',
   mixins: [Mixin],
   data () {
@@ -49,33 +77,4 @@ export default {
 </script>
 
 <style>
-.editTr {
-  height: 150px;
-}
-.editTitle {
-  width: 200px;
-}
-.editScript{
-  width: 40%;
-}
-.editImg {
-  width: 200px;
-}
-.tilesTable {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-.inputEria{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 32px;
-  padding-bottom: 32px;
-  width: 60%;
-  border: 1px solid black;
-  border-radius: 30px;
-}
-.edit {
-  margin-top: 100px;
-}
 </style>

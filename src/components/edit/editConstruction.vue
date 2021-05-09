@@ -17,42 +17,56 @@
         <!-- <td>{{ Construction.fotoURL }}</td> -->
         <td><img :src="Construction.fotoURL" width="90%"></td>
         <button @click="removeConstruction(key)">削除</button>
-        <button @click="selectEditItem(key)">編集</button>
+        <button @click="selectEditItem(key,'cons')">編集</button>
       </tr>
     </table>
 
-    <div class="itemEditEria" :class="{uneditable: !editable}">
-      <p id="closeEditEria"><button @click="closeEditEria()">X</button></p>
-      <h3>建設工事編集</h3>
-      <p>建設工事名<input v-model="newConstructionName" type="text" /></p>
-      <p>説明<input v-model="text" type="text" /></p>
-      <p>fotoURL<input v-model="fotoURL" id="fotoInput" type="text" /></p>
-      <p>file<input type="file" name="フィールド名@squareWidth" id="btnUpload" value="アップロード"></p>
-      <p id="foto"></p>
-      <button @click="constructionFotoUp()">画像を選択した</button>
-      <button @click="upConstruction(key)">追加</button>
-    </div>
+    <form class="itemEditEria" :class="{uneditable: !editable}">
+      <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
+      <h3>編集</h3>
+      <div class="cp_iptxt">
+        <input v-model="newConstructionName" class="ef" placeholder="" type="text" />
+        <label>建設工事名</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <textarea v-model="text" rows="5" class="ef" type="text" required/>
+        <label>内容説明文</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <input @change="constructionFotoUp('editFileUp')" type="file" id="editFileUp" value="アップロード">
+      </div>
+      <p href="#" class="btn04" @click="update('cons')">編集</p>
+    </form>
 
-    <div class="inputEria">
-      <h3>建設工事例追加</h3>
-      <p>建設工事名<input v-model="newConstructionName" type="text" /></p>
-      <p>説明<input v-model="text" type="text" /></p>
-      <p>fotoURL<input v-model="fotoURL" id="fotoInput" type="text" /></p>
-      <p>file<input type="file" name="フィールド名@squareWidth" id="btnUpload" value="アップロード"></p>
-      <p id="foto"></p>
-      <button @click="constructionFotoUp()">画像を選択した</button>
-      <button @click="addConstruction()">追加</button>
-    </div>
-    <!-- <button @click="fileConsole()">test</button> -->
-    <!-- <div v-if="imgURL != null">
-    </div> -->
-      <img src="" id="image" width="30%">
+    <form class="itemEditEria" :class="{uneditable: editable}">
+      <h3>新規追加</h3>
+      <div class="cp_iptxt">
+        <input v-model="newConstructionName" class="ef" placeholder="" type="text" />
+        <label>建設工事名</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <textarea v-model="text" rows="5" class="ef" type="text" required/>
+        <label>内容説明文</label>
+        <span class="focus_line"><i></i></span>
+      </div>
+      <div class="cp_iptxt">
+        <input type="file" @change="constructionFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+      </div>
+      <loading-ui></loading-ui>
+      <p href="#" class="btn04" @click="addConstruction()">登録</p>
+    </form>
+    <img src="" id="image" width="30%">
   </div>
 </template>
 
 <script>
 import Mixin from '../../mixin'
+import loadingUi from '../parts/loadingUI'
 export default {
+  components: { loadingUi },
   name: 'editConstructions',
   mixins: [Mixin],
   data () {
@@ -63,46 +77,4 @@ export default {
 </script>
 
 <style>
-.editTr {
-  height: 150px;
-}
-.editTitle {
-  width: 200px;
-}
-.editScript{
-  width: 40%;
-}
-.editImg {
-  width: 200px;
-}
-.constructionsTable {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-.uneditable {
-  display: none;
-}
-.inputEria, .itemEditEria{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 32px;
-  padding-bottom: 32px;
-  width: 60%;
-  border: 1px solid black;
-  border-radius: 30px;
-}
-.edit {
-  margin-top: 100px;
-}
-#closeEditEria {
-  float: right;
-  margin-right: 20px;
-  font-weight: bold;
-}
-#closeEditEria:hover {
-  cursor: pointer;
-  color: rgb(56, 56, 56);
-  font-size: 20px;
-}
 </style>

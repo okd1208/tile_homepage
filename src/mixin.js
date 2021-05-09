@@ -18,6 +18,7 @@ export default {
       storageRef: null,
       ref: null,
       imgURL: null,
+      downloadURL: null,
       editKey: null,
       editable: false
     }
@@ -64,14 +65,11 @@ export default {
       this.error_message = null
       this.tilesRef.add({
         name: this.newtileName,
-        fotoURL: this.fotoURL,
+        fotoURL: document.getElementById('image').src,
         text: this.text
       })
       alert('タイルを追加しました。')
-      this.newtileName = ''
-      this.text = ''
-      this.fotoURL = ''
-      document.getElementById('foto').textContent = ''
+      this.clearEditEria()
     },
     addConstruction () {
       if (this.newConstructionName === '' ||
@@ -83,17 +81,15 @@ export default {
       this.error_message = null
       this.constructionsRef.add({
         name: this.newConstructionName,
-        fotoURL: this.fotoURL,
+        fotoURL: document.getElementById('image').src,
         text: this.text
       })
       alert('タイルを追加しました。')
-      this.newConstructionName = ''
-      this.text = ''
-      this.fotoURL = ''
-      document.getElementById('foto').textContent = ''
+      this.clearEditEria()
     },
-    tileFotoUp () {
-      var files = document.getElementById('btnUpload').files
+    tileFotoUp (inputFileId) {
+      document.getElementById('loading').classList.remove('invisible')
+      var files = document.getElementById(inputFileId).files
       var image = files[0]
       this.ref = firebase.storage().ref().child('images/tiles/' + this.newtileName)
       var refClone = this.ref
@@ -101,45 +97,91 @@ export default {
         alert('アップロードしました')
         refClone.getDownloadURL().then((downloadURL) => {
           document.getElementById('image').src = downloadURL
-          document.getElementById('foto').textContent = downloadURL
+          document.getElementById('loading').classList.add('invisible')
         })
       })
     },
-    constructionFotoUp () {
-      var files = document.getElementById('btnUpload').files
+    constructionFotoUp (inputFileId) {
+      document.getElementById('loading').classList.remove('invisible')
+      var files = document.getElementById(inputFileId).files
       var image = files[0]
-      this.ref = firebase.storage().ref().child('images/constructions/' + this.newtileName)
+      this.ref = firebase.storage().ref().child('images/constructions/' + this.newConstructionName)
       var refClone = this.ref
       this.ref.put(image).then(function (snapshot) {
         alert('アップロードしました')
         refClone.getDownloadURL().then((downloadURL) => {
           document.getElementById('image').src = downloadURL
-          document.getElementById('foto').textContent = downloadURL
+          document.getElementById('loading').classList.add('invisible')
         })
       })
     },
     removetile (key) {
-      this.tilesRef.doc(key).delete()
+      var result = window.confirm(this.tiles[key].name + 'を削除しますか？')
+      if (result) {
+        this.tilesRef.doc(key).delete()
+        alert('削除しました。')
+      } else {
+        alert('キャンセルしました。')
+      }
     },
     removeConstruction (key) {
-      this.constructionsRef.doc(key).delete()
+      var result = window.confirm(this.constructions[key].name + 'を削除しますか？')
+      if (result) {
+        this.constructionsRef.doc(key).delete()
+        alert('削除しました。')
+      } else {
+        alert('キャンセルしました。')
+      }
     },
-    selectEditItem (key) {
+    selectEditItem (key, editMenu) {
       this.editKey = key
       this.editable = true
+      if (editMenu === 'cons') {
+        this.newConstructionName = this.constructions[key].name
+        this.fotoURL = this.constructions[key].fotoURL
+        this.text = this.constructions[key].text
+        document.getElementById('image').src = this.constructions[key].fotoURL
+      } else if (editMenu === 'tile') {
+        this.newtileName = this.tiles[key].name
+        this.fotoURL = this.tiles[key].fotoURL
+        this.text = this.tiles[key].text
+        document.getElementById('image').src = this.tiles[key].fotoURL
+      }
+      var element = document.getElementById('image')
+      var rect = element.getBoundingClientRect()
+      var position = rect.top
+      scrollBy(0, position - 700)
     },
-    upConstruction () {
+    update (editMenu) {
       console.log(this.editKey)
-      console.log(this.constructionsRef)
-      this.constructionsRef.doc(this.editKey).update({
-        name: this.newtileName,
-        fotoURL: this.fotoURL,
-        text: this.text
-      })
+      if (editMenu === 'cons') {
+        this.constructionsRef.doc(this.editKey).update({
+          name: this.newConstructionName,
+          fotoURL: document.getElementById('image').src,
+          text: this.text
+        })
+      } else if (editMenu === 'tile') {
+        this.tilesRef.doc(this.editKey).update({
+          name: this.newtileName,
+          fotoURL: document.getElementById('image').src,
+          text: this.text
+        })
+      }
       console.log('editKey')
+      alert('変更しました。')
+      this.clearEditEria()
+      this.closeEditEria()
     },
     closeEditEria () {
       this.editable = false
+      this.clearEditEria()
+    },
+    clearEditEria () {
+      this.newConstructionName = ''
+      this.newtileName = ''
+      this.text = ''
+      this.fotoURL = ''
+      document.getElementById('image').src = null
     }
   }
 }
