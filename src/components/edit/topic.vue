@@ -8,15 +8,11 @@
         <th class="editTitle">タイル名</th>
         <th class="editScript">説明</th>
         <!-- <th class="editURL">URL</th> -->
-        <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
       <tr class="editTr" v-for="(tile,key) in tiles" :key="key">
         <td>{{ tile.name }}</td>
         <td>{{ tile.text }}</td>
-        <td>
-          {{ tile.date }}
-          <p>{{ getDate(tile.created) }}</p></td>
         <!-- <td>{{ tile.fotoURL }}</td> -->
         <td><img :src="tile.fotoURL" width="90%"></td>
         <button @click="removetile(key)">削除</button>
@@ -38,10 +34,6 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <label>日付: </label>
-        <input v-model="date" rows="5" class="ef" type="date" required/>
-      </div>
-      <div class="cp_iptxt">
         <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
@@ -61,10 +53,6 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <label>日付: </label>
-        <input v-model="date" rows="5" class="ef" type="date" required/>
-      </div>
-      <div class="cp_iptxt">
         <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
@@ -73,7 +61,6 @@
       <img src="" id="image" width="30%">
   </div>
 </template>
-
 <script>
 import Mixin from '../../mixin'
 import loadingUi from '../parts/loadingUI'

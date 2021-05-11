@@ -1,17 +1,20 @@
 <template>
   <div>
     <body-header>編集ページ</body-header>
-    <ul id="nav">
-      <li :class="{openMenu: isOpen === 'tile'}" @click="changeEditMenu('tile')">タイル一覧を編集</li>
-      <li :class="{openMenu: isOpen === 'construction'}" @click="changeEditMenu('construction')">建設例一覧を編集</li>
-      <li>お知らせを編集</li>
-      <li>よくある質問</li>
+    <ul id="editMenuNav">
+      <li :class="{current: isOpen === 'tile'}" @click="changeEditMenu('tile')"><a href="#">タイル一覧を編集</a></li>
+      <li :class="{current: isOpen === 'construction'}" @click="changeEditMenu('construction')"><a href="#">建設例一覧を編集</a></li>
+      <li :class="{current: isOpen === 'topic'}" @click="changeEditMenu('topic')"><a href="#">お知らせを編集</a></li>
+      <li :class="{current: isOpen === 'questions'}" @click="changeEditMenu('questions')"><a href="#">よくある質問</a></li>
     </ul>
     <div v-if="isOpen == 'tile'">
       <edit-tiles></edit-tiles>
     </div>
     <div v-if="isOpen == 'construction'">
       <edit-construction></edit-construction>
+    </div>
+    <div v-if="isOpen == 'topic'">
+      <edit-topic></edit-topic>
     </div>
   </div>
 </template>
@@ -20,12 +23,14 @@
 import bodyHeader from '@/components/header.vue'
 import editTiles from './editTiles'
 import editConstruction from './editConstruction'
+import editTopic from './topic'
 export default {
   name: 'editHome',
   components: {
     bodyHeader,
     editTiles,
-    editConstruction
+    editConstruction,
+    editTopic
   },
   data () {
     return {
@@ -41,39 +46,36 @@ export default {
 </script>
 
 <style>
-#nav {
-  list-style: none;
-  overflow: hidden;
-  padding: 0;
+#editMenuNav{
+display: table;
+margin: 20px auto;
+padding: 0 ;
+width: 80%;
+text-align: center;
 }
-
-#nav li {
-  /* width: 140px; */
-  text-align: center;
-  background-color: #333;
-  float: left;
-  margin: 4px;
-  /* margin-left: 0; */
-  width: 24%;
-  font-size: 20px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
+#editMenuNav li{
+display: table-cell;
+min-width: 50px;
 }
-
-.openMenu {
-  color: red;
-  height: 100px;
-  line-height: 100px;
+#editMenuNav a{
+display: block;
+width: 100%;
+text-decoration: none;
+color: #555;
+padding-bottom: 5px;
 }
-
-#nav li:hover {
-  cursor: pointer;
+#editMenuNav li.current{
+border-bottom: 3px solid rgba(63, 140, 143, 0.747);
 }
-
+#editMenuNav li:hover{
+color: #E7DA66;
+border-bottom: 3px solid rgba(238, 240, 152, 0.747);
+}
+.edit {
+  margin-top: 16px;
+}
 .editTr {
   height: 150px;
-  margin-top: 100px;
 }
 .editTitle {
   width: 200px;
@@ -89,9 +91,6 @@ export default {
   margin-right: auto;
   width: 80%;
 }
-.edit {
-  margin-top: 100px;
-}
 .uneditable {
   display: none;
 }
@@ -102,9 +101,6 @@ export default {
   padding: 32px;
   width: 60%;
   background-color: rgba(169, 226, 228, 0.274);
-}
-.edit {
-  margin-top: 100px;
 }
 #closeEditBtn {
   float: right;

@@ -7,6 +7,7 @@ export default {
       constructionsRef: null,
       newtileName: null,
       newConstructionName: null,
+      date: null,
       fotoURL: null,
       // fotoCURL: null,
       text: null,
@@ -55,6 +56,13 @@ export default {
     })
   },
   methods: {
+    getDate (timestamp) {
+      // console.log('imestamp[seconds]')
+      console.log(timestamp)
+      var Date = 1620723612
+      console.log(Date.toDate())
+      // return Date
+    },
     addtile () {
       if (this.newtileName === '' ||
        this.text === '') {
@@ -66,7 +74,9 @@ export default {
       this.tilesRef.add({
         name: this.newtileName,
         fotoURL: document.getElementById('image').src,
-        text: this.text
+        text: this.text,
+        date: this.date,
+        created: firebase.firestore.FieldValue.serverTimestamp()
       })
       alert('タイルを追加しました。')
       this.clearEditEria()
@@ -82,7 +92,8 @@ export default {
       this.constructionsRef.add({
         name: this.newConstructionName,
         fotoURL: document.getElementById('image').src,
-        text: this.text
+        text: this.text,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
       alert('タイルを追加しました。')
       this.clearEditEria()
@@ -145,6 +156,7 @@ export default {
         this.newtileName = this.tiles[key].name
         this.fotoURL = this.tiles[key].fotoURL
         this.text = this.tiles[key].text
+        this.date = this.tiles[key].date
         document.getElementById('image').src = this.tiles[key].fotoURL
       }
       var element = document.getElementById('image')
@@ -164,7 +176,8 @@ export default {
         this.tilesRef.doc(this.editKey).update({
           name: this.newtileName,
           fotoURL: document.getElementById('image').src,
-          text: this.text
+          text: this.text,
+          date: this.date
         })
       }
       console.log('editKey')
@@ -180,6 +193,7 @@ export default {
       this.newConstructionName = ''
       this.newtileName = ''
       this.text = ''
+      this.date = ''
       this.fotoURL = ''
       document.getElementById('image').src = null
     }
