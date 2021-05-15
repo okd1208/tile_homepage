@@ -5,18 +5,18 @@
     </div>
     <table class="tilesTable" border="1">
       <tr>
-        <th class="editTitle">タイル名</th>
-        <th class="editScript">説明</th>
+        <th class="editTitle">タイトル</th>
+        <th class="editScript">内容</th>
         <!-- <th class="editURL">URL</th> -->
         <th class="editImg">画像</th>
       </tr>
-      <tr class="editTr" v-for="(tile,key) in tiles" :key="key">
-        <td>{{ tile.name }}</td>
-        <td>{{ tile.text }}</td>
-        <!-- <td>{{ tile.fotoURL }}</td> -->
-        <td><img :src="tile.fotoURL" width="90%"></td>
-        <button @click="removetile(key)">削除</button>
-        <button @click="selectEditItem(key,'tile')">編集</button>
+      <tr class="editTr" v-for="(topic,key) in topics" :key="key">
+        <td>{{ topic.name }}</td>
+        <td>{{ topic.text }}</td>
+        <!-- <td>{{ topic.fotoURL }}</td> -->
+        <td><img :src="topic.fotoURL" width="90%"></td>
+        <button @click="removetopic(key)">削除</button>
+        <button @click="selectEditItem(key,'topic')">編集</button>
       </tr>
     </table>
 
@@ -24,8 +24,8 @@
       <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
       <h3>編集</h3>
       <div class="cp_iptxt">
-        <input v-model="newtileName" class="ef" placeholder="" type="text" />
-        <label>タイル名</label>
+        <input v-model="newTopicName" class="ef" placeholder="" type="text" />
+        <label>タイトル</label>
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
@@ -34,9 +34,8 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+        <input type="file" @change="topicFotoUp('newFileUp')" id="newFileUp" value="アップロード">
       </div>
-      <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="update('tile')">編集</p>
     </form>
 
@@ -53,9 +52,8 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+        <input type="file" @change="fotoUp('newFileUp')" id="newFileUp" value="アップロード">
       </div>
-      <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="addtile()">登録</p>
     </form>
       <img src="" id="image" width="30%">
@@ -63,10 +61,8 @@
 </template>
 <script>
 import Mixin from '../../mixin'
-import loadingUi from '../parts/loadingUI'
 export default {
-  components: { loadingUi },
-  name: 'editTiles',
+  name: 'topic',
   mixins: [Mixin],
   data () {
     return {

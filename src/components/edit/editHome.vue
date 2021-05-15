@@ -20,12 +20,14 @@
 </template>
 
 <script>
+import Mixin from '../../mixin'
 import bodyHeader from '@/components/header.vue'
 import editTiles from './editTiles'
 import editConstruction from './editConstruction'
 import editTopic from './topic'
 export default {
   name: 'editHome',
+  mixins: [Mixin],
   components: {
     bodyHeader,
     editTiles,
@@ -34,14 +36,13 @@ export default {
   },
   data () {
     return {
-      isOpen: 'tile'
-    }
-  },
-  methods: {
-    changeEditMenu (clickMenu) {
-      this.isOpen = clickMenu
     }
   }
+  // methods: {
+  //   changeEditMenu (clickMenu) {
+  //     this.isOpen = clickMenu
+  //   }
+  // }
 }
 </script>
 

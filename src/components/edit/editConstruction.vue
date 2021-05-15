@@ -9,11 +9,15 @@
         <th class="editTitle">建設工事名</th>
         <th class="editScript">説明</th>
         <!-- <th class="editURL">URL</th> -->
+        <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
       <tr class="editTr" v-for="(Construction,key) in constructions" :key="key">
         <td>{{ Construction.name }}</td>
         <td>{{ Construction.text }}</td>
+        <td>
+          {{ Construction.date }}
+          <p>作成日：{{ getDate(Construction.created) }}</p></td>
         <!-- <td>{{ Construction.fotoURL }}</td> -->
         <td><img :src="Construction.fotoURL" width="90%"></td>
         <button @click="removeConstruction(key)">削除</button>
@@ -35,7 +39,11 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <input @change="constructionFotoUp('editFileUp')" type="file" id="editFileUp" value="アップロード">
+        <label>日付: </label>
+        <input v-model="date" rows="5" class="ef" type="date" required/>
+      </div>
+      <div class="cp_iptxt">
+        <input @change="fotoUp('editFileUp', 'cons')" type="file" id="editFileUp" value="アップロード">
       </div>
       <p href="#" class="btn04" @click="update('cons')">編集</p>
     </form>
@@ -53,7 +61,11 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="constructionFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+        <label>日付: </label>
+        <input v-model="date" rows="5" class="ef" type="date" required/>
+      </div>
+      <div class="cp_iptxt">
+        <input type="file" @change="fotoUp('newFileUp', 'cons')" id="newFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="addConstruction()">登録</p>

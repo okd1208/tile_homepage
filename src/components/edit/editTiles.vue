@@ -14,9 +14,7 @@
       <tr class="editTr" v-for="(tile,key) in tiles" :key="key">
         <td>{{ tile.name }}</td>
         <td>{{ tile.text }}</td>
-        <td>
-          {{ tile.date }}
-          <p>{{ getDate(tile.created) }}</p></td>
+        <td>作成日：{{ getDate(tile.created) }}</td>
         <!-- <td>{{ tile.fotoURL }}</td> -->
         <td><img :src="tile.fotoURL" width="90%"></td>
         <button @click="removetile(key)">削除</button>
@@ -38,11 +36,7 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <label>日付: </label>
-        <input v-model="date" rows="5" class="ef" type="date" required/>
-      </div>
-      <div class="cp_iptxt">
-        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+        <input type="file" @change="fotoUp('editFileUp', 'tile')" id="editFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="update('tile')">編集</p>
@@ -61,11 +55,7 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div class="cp_iptxt">
-        <label>日付: </label>
-        <input v-model="date" rows="5" class="ef" type="date" required/>
-      </div>
-      <div class="cp_iptxt">
-        <input type="file" @change="tileFotoUp('newFileUp')" id="newFileUp" value="アップロード">
+        <input type="file" @change="fotoUp('newFileUp', 'tile')" id="newFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="addtile()">登録</p>
