@@ -58,7 +58,6 @@ export default {
         if (this.img === 6) {
           this.img = 1
         }
-        console.log(this.img)
         this.headerClass()
       }, 3000)
     }

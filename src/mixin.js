@@ -35,11 +35,9 @@ export default {
       const obj = {}
       querySnapshot.forEach(doc => {
         obj[doc.id] = doc.data()
-        console.log(obj[doc.id].total)
       })
       this.tiles = obj
       var key = Object.keys(obj)
-      console.log(key)
     })
     // 建設編集
     this.constructionsRef = this.db.collection('constructions')
@@ -48,18 +46,14 @@ export default {
       const obj = {}
       querySnapshot.forEach(doc => {
         obj[doc.id] = doc.data()
-        console.log(obj[doc.id].total)
       })
       this.constructions = obj
       var constructionkey = Object.keys(obj)
-      console.log(constructionkey)
     })
   },
   methods: {
     changeEditMenu (clickMenu) {
       this.isOpen = clickMenu
-      console.log(this.isOpen)
-      console.log('this.isOpen')
     },
     getDate (timestamp) {
       var date = timestamp.toDate()
@@ -74,7 +68,6 @@ export default {
     addtile () {
       if (this.newtileName === '' ||
        this.text === '') {
-        console.log('空です')
         this.error_message = '空の値があります'
         return
       }
@@ -91,7 +84,6 @@ export default {
     addConstruction () {
       if (this.newConstructionName === '' ||
        this.text === '') {
-        console.log('空です')
         this.error_message = '空の値があります'
         return
       }
@@ -107,8 +99,6 @@ export default {
       this.clearEditEria()
     },
     fotoUp (inputFileId, openMenu) {
-      console.log('tilefoto~~~~~~~~~~')
-      console.log(this.isOpen)
       var image
       var files
       var refClone

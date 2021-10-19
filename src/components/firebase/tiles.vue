@@ -38,11 +38,9 @@ export default {
       const obj = {}
       querySnapshot.forEach(doc => {
         obj[doc.id] = doc.data()
-        console.log(obj[doc.id].total)
       })
       this.tiles = obj
       var key = Object.keys(obj)
-      console.log(key)
     })
   }
 }
