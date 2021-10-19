@@ -38,6 +38,7 @@ export default {
       })
       this.tiles = obj
       var key = Object.keys(obj)
+      console.log(key)
     })
     // 建設編集
     this.constructionsRef = this.db.collection('constructions')
@@ -49,6 +50,7 @@ export default {
       })
       this.constructions = obj
       var constructionkey = Object.keys(obj)
+      console.log(constructionkey)
     })
   },
   methods: {
