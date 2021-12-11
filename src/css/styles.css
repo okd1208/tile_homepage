@@ -1,0 +1,9 @@
+@media screen and (max-width: 534px) {
+  .s-fontsize-15rem {
+    font-size: 1.5rem
+  }
+}
+
+.sinpleBtn {
+  padding: 16px;
+}

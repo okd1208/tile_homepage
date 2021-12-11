@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/constructionExample"><a href="" class="btn btn--blue"><slot></slot></a></router-link>
+  <router-link to="/constructionExample"><a href="" class="btn btn--blue sinpleBtn"><slot></slot></a></router-link>
 </template>
 
 <script>

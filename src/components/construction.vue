@@ -1,6 +1,6 @@
 <template>
   <div class="construction">
-    <h2 class="title">建設事例一覧</h2>
+    <h2 class="title s-fontsize-15rem">建設事例一覧</h2>
     <div>
       <ul class="constructionParent">
         <li v-for="construction in constructions" :key="construction.name" class="constructionList">

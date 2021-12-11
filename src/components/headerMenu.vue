@@ -1,11 +1,11 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark test">
+    <nav class="navbar navbar-expand-lg navbar-dark header-nav">
+        <a class="navbar-brand text-dark" href="/">冨永タイル株式会社</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-dark" href="/">冨永タイル株式会社</a>
-        <div class="collapse navbar-collapse justify-content-start test2">
+        <div class="collapse navbar-collapse justify-content-start header-nav-item">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ml-3 mr-3" @click="changeTopActive">
                     <router-link to="/" class="nav-link text-dark">トップ<p class="subTitle" :class="{'activeSub':topActive}">Top</p></router-link>
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style scoped>
-.test{
+.header-nav{
   height: 80px;
   opacity: 0.8;
   width: 100%;
@@ -122,7 +122,7 @@ export default {
 .activeSub {
   color: rgb(184, 168, 77);
 }
-.test2 {
+.header-nav-item {
   margin-left: 60px;
   margin-top: 40px;
 }
@@ -140,17 +140,15 @@ header {
   position: absolute;
   /* z-index: 3; */
 }
-@media screen and (max-width:1070px) {
-  /* .test2 {
-    position: relative;
+@media screen and (max-width:376px) {
+  .header-nav {
+    height: 48px;
   }
-  .test2{
-    position: absolute;
-    top: 40px;
-    width: 100%;
-    background: #072A24;
-    -webkit-transition: all .2s ease;
-    transition: all .2s ease;
-  } */
+  .header-nav > a {
+    font-size: 16px !important;
+  }
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
 }
 </style>

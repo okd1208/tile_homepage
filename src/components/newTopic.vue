@@ -1,6 +1,6 @@
 <template>
   <div class="newTopic">
-    <h2 class="text-canter title"><slot></slot></h2>
+    <h2 class="text-canter title s-fontsize-15rem"><slot></slot></h2>
     <ul class="topics">
      <li v-for="topic in topics" :key="topic.id" class="topic">
       <router-link :to="{name: 'topicDetail', params: {id: topic.id}}" class="signup-link topicLink">
@@ -87,7 +87,7 @@ export default {
   }
   .topics {
     height: 200px;
-    font-size: 14px;
+    font-size: 12px;
     padding-left: 16px;
   }
   .topic {

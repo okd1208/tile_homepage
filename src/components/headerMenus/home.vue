@@ -7,9 +7,9 @@
     <div class="body">
       <new-topic>お知らせ</new-topic>
       <construction></construction>
-      <construction-btn>タイルの使用例一覧をみる<br>click!</construction-btn>
+      <construction-btn>タイルの使用例一覧をみる</construction-btn>
       <some-tiles></some-tiles>
-      <tile-btn>タイル一覧を見てみる<br>click</tile-btn>
+      <tile-btn>タイル一覧を見てみる</tile-btn>
       <!-- <div class="bodyFooter">
         <div class="contact">
           <h2 class="footerTitle"><span class="icon"><i class="far fa-envelope"></i></span>お問い合わせ</h2>

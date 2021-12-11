@@ -27,6 +27,7 @@ export default {
   transition: all 0.6s ease;
 }
 .imgWrap{
+  height: 100%;
   /* border: 1px solid #ddd; */
   position: relative;
   /* z-index: 1; */

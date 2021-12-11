@@ -1,6 +1,6 @@
 <template>
   <div class="someTile">
-    <h2 class="title">取り扱いタイル一覧</h2>
+    <h2 class="title s-fontsize-15rem">取り扱いタイル一覧</h2>
     <div>
       <ul class="tileParent">
         <li v-for="tile in tiles" :key="tile.name" class="tile">
@@ -59,6 +59,10 @@ margin-bottom: 32px;
 @media screen and (max-width: 534px) {
   .tileParent {
     padding-left: 0px;
+  }
+  .tile {
+    width: 32%;
+    height: auto;
   }
 }
 </style>
