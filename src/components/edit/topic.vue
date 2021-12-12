@@ -28,7 +28,7 @@
         <label>タイトル</label>
         <span class="focus_line"><i></i></span>
       </div>
-      <div class="cp_iptxt">
+      <div class="cp_iptxt cp_textarea">
         <textarea v-model="text" rows="5" class="ef" type="text" required/>
         <label>内容説明文</label>
         <span class="focus_line"><i></i></span>
@@ -46,7 +46,7 @@
         <label>タイル名</label>
         <span class="focus_line"><i></i></span>
       </div>
-      <div class="cp_iptxt">
+      <div class="cp_iptxt cp_textarea">
         <textarea v-model="text" rows="5" class="ef" type="text" required/>
         <label>内容説明文</label>
         <span class="focus_line"><i></i></span>

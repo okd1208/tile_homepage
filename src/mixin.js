@@ -6,8 +6,7 @@ export default {
       db: null,
       tilesRef: null,
       constructionsRef: null,
-      newtileName: null,
-      newConstructionName: null,
+      targetName: null,
       date: null,
       fotoURL: null,
       text: null,
@@ -67,38 +66,37 @@ export default {
       // date = year + '/' + month + '/' + day + ' ' + hour + '時' + minute + '分'
       return date
     },
-    addtile () {
-      if (this.newtileName === '' ||
-       this.text === '') {
-        this.error_message = '空の値があります'
-        return
+    addDB (editType) {
+      if (editType === 'tile') {
+        if (this.targetName === '' || this.text === '') {
+          this.error_message = '空の値があります'
+          return
+        }
+        this.error_message = null
+        this.tilesRef.add({
+          name: this.targetName,
+          fotoURL: document.getElementById('image').src,
+          text: this.text,
+          created: new Date()
+        })
+        alert('タイルを追加しました。')
+        this.clearEditEria()
+      } else if (editType === 'construction') {
+        if (this.targetName === '' || this.text === '') {
+          this.error_message = '空の値があります'
+          return
+        }
+        this.error_message = null
+        this.constructionsRef.add({
+          name: this.targetName,
+          fotoURL: document.getElementById('image').src,
+          text: this.text,
+          date: this.date,
+          created: new Date()
+        })
+        alert('タイルを追加しました。')
+        this.clearEditEria()
       }
-      this.error_message = null
-      this.tilesRef.add({
-        name: this.newtileName,
-        fotoURL: document.getElementById('image').src,
-        text: this.text,
-        created: new Date()
-      })
-      alert('タイルを追加しました。')
-      this.clearEditEria()
-    },
-    addConstruction () {
-      if (this.newConstructionName === '' ||
-       this.text === '') {
-        this.error_message = '空の値があります'
-        return
-      }
-      this.error_message = null
-      this.constructionsRef.add({
-        name: this.newConstructionName,
-        fotoURL: document.getElementById('image').src,
-        text: this.text,
-        date: this.date,
-        created: new Date()
-      })
-      alert('タイルを追加しました。')
-      this.clearEditEria()
     },
     fotoUp (inputFileId, openMenu) {
       var image
@@ -109,7 +107,7 @@ export default {
         document.getElementById('loading').classList.remove('invisible')
         files = document.getElementById(inputFileId).files
         image = files[0]
-        this.ref = firebase.storage().ref().child('images/tiles/' + this.newtileName)
+        this.ref = firebase.storage().ref().child('images/tiles/' + this.targetName)
         refClone = this.ref
         this.ref.put(image).then(function (snapshot) {
           alert('アップロードしました')
@@ -118,11 +116,11 @@ export default {
             document.getElementById('loading').classList.add('invisible')
           })
         })
-      } else if (openMenu === 'cons') {
+      } else if (openMenu === 'construction') {
         document.getElementById('loading').classList.remove('invisible')
         files = document.getElementById(inputFileId).files
         image = files[0]
-        this.ref = firebase.storage().ref().child('images/constructions/' + this.newConstructionName)
+        this.ref = firebase.storage().ref().child('images/constructions/' + this.targetName)
         refClone = this.ref
         this.ref.put(image).then(function (snapshot) {
           alert('アップロードしました')
@@ -132,20 +130,6 @@ export default {
           })
         })
       }
-    },
-    constructionFotoUp (inputFileId) {
-      document.getElementById('loading').classList.remove('invisible')
-      var files = document.getElementById(inputFileId).files
-      var image = files[0]
-      this.ref = firebase.storage().ref().child('images/constructions/' + this.newConstructionName)
-      var refClone = this.ref
-      this.ref.put(image).then(function (snapshot) {
-        alert('アップロードしました')
-        refClone.getDownloadURL().then((downloadURL) => {
-          document.getElementById('image').src = downloadURL
-          document.getElementById('loading').classList.add('invisible')
-        })
-      })
     },
     removetile (key) {
       var result = window.confirm(this.tiles[key].name + 'を削除しますか？')
@@ -169,13 +153,13 @@ export default {
       this.editKey = key
       this.editable = true
       if (editMenu === 'cons') {
-        this.newConstructionName = this.constructions[key].name
+        this.targetName = this.constructions[key].name
         this.fotoURL = this.constructions[key].fotoURL
         this.text = this.constructions[key].text
         this.date = this.constructions[key].date
         document.getElementById('image').src = this.constructions[key].fotoURL
       } else if (editMenu === 'tile') {
-        this.newtileName = this.tiles[key].name
+        this.targetName = this.tiles[key].name
         this.fotoURL = this.tiles[key].fotoURL
         this.text = this.tiles[key].text
         document.getElementById('image').src = this.tiles[key].fotoURL
@@ -187,16 +171,16 @@ export default {
     },
     update (editMenu) {
       console.log(this.editKey)
-      if (editMenu === 'cons') {
+      if (editMenu === 'construction') {
         this.constructionsRef.doc(this.editKey).update({
-          name: this.newConstructionName,
+          name: this.targetName,
           fotoURL: document.getElementById('image').src,
           text: this.text,
           date: this.date
         })
       } else if (editMenu === 'tile') {
         this.tilesRef.doc(this.editKey).update({
-          name: this.newtileName,
+          name: this.targetName,
           fotoURL: document.getElementById('image').src,
           text: this.text
         })
@@ -211,8 +195,7 @@ export default {
       this.clearEditEria()
     },
     clearEditEria () {
-      this.newConstructionName = ''
-      this.newtileName = ''
+      this.targetName = ''
       this.text = ''
       this.date = ''
       this.fotoURL = ''
