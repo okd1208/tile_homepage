@@ -58,13 +58,7 @@ export default {
     },
     getDate (timestamp) {
       var date = timestamp.toDate()
-      // var year = moment(date).get('year')
-      // var month = moment(date).get('month')
-      // var day = moment(date).get('day')
-      // var hour = moment(date).get('hour')
-      // var minute = moment(date).get('minute')
-      // date = year + '/' + month + '/' + day + ' ' + hour + '時' + minute + '分'
-      return date
+      return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
     addDB (editType) {
       if (editType === 'tile') {
@@ -87,6 +81,9 @@ export default {
           return
         }
         this.error_message = null
+        // yyyy-mm-ddなので2回す
+        this.date = this.date.replace('-', '/')
+        this.date = this.date.replace('-', '/')
         this.constructionsRef.add({
           name: this.targetName,
           fotoURL: document.getElementById('image').src,
@@ -172,6 +169,9 @@ export default {
     update (editMenu) {
       console.log(this.editKey)
       if (editMenu === 'construction') {
+        // yyyy-mm-ddなので2回す
+        this.date = this.date.replace('-', '/')
+        this.date = this.date.replace('-', '/')
         this.constructionsRef.doc(this.editKey).update({
           name: this.targetName,
           fotoURL: document.getElementById('image').src,

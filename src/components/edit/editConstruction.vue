@@ -16,7 +16,7 @@
         <td>{{ Construction.name }}</td>
         <td>{{ Construction.text }}</td>
         <td>
-          {{ Construction.date }}
+          <p>建設日：{{ Construction.date }}</p>
           <p>作成日：{{ getDate(Construction.created) }}</p></td>
         <!-- <td>{{ Construction.fotoURL }}</td> -->
         <td><img :src="Construction.fotoURL" width="90%"></td>
