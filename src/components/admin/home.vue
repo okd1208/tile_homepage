@@ -43,29 +43,29 @@ export default {
 
 <style>
 #editMenuNav{
-display: table;
-margin: 20px auto;
-padding: 0 ;
-width: 80%;
-text-align: center;
+  display: table;
+  margin: 20px auto;
+  padding: 0 ;
+  width: 80%;
+  text-align: center;
 }
 #editMenuNav li{
-display: table-cell;
-min-width: 50px;
+  display: table-cell;
+  min-width: 50px;
 }
 #editMenuNav a{
-display: block;
-width: 100%;
-text-decoration: none;
-color: #555;
-padding-bottom: 5px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #555;
+  padding-bottom: 5px;
 }
 #editMenuNav li.current{
-border-bottom: 3px solid rgba(63, 140, 143, 0.747);
+  border-bottom: 3px solid rgba(63, 140, 143, 0.747);
 }
 #editMenuNav li:hover{
-color: #E7DA66;
-border-bottom: 3px solid rgba(238, 240, 152, 0.747);
+  color: #E7DA66;
+  border-bottom: 3px solid rgba(238, 240, 152, 0.747);
 }
 .edit {
   margin-top: 16px;

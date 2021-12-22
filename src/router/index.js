@@ -12,7 +12,7 @@ import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
 import questions from '@/components/questions'
 // import editTiles from '@/components/edit/editTiles'
-import editHome from '@/components/edit/editHome'
+import adminHome from '@/components/admin/home'
 // import editConstruction from '@/components/edit/editConstruction'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -73,9 +73,9 @@ export default new Router({
       component: questions
     },
     {
-      path: '/edit',
-      name: 'editHome',
-      component: editHome
+      path: '/admin',
+      name: 'adminHome',
+      component: adminHome
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す
