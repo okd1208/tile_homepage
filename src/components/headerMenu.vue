@@ -1,40 +1,28 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark header-nav">
-        <a class="navbar-brand text-dark" href="/">冨永タイル株式会社</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-start header-nav-item">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ml-3 mr-3" @click="changeTopActive">
-                    <router-link to="/" class="nav-link text-dark">トップ<p class="subTitle" :class="{'activeSub':topActive}">Top</p></router-link>
-                </li>
-                <li class="nav-item ml-3 mr-3" @click="changeOverViewActive">
-                    <router-link to="/OverView" class="nav-link text-dark">会社情報<p class="subTitle" :class="{'activeSub':OVActive}">About</p></router-link>
-                </li>
-                <li class="nav-item ml-3 mr-3" @click="changeContentsActive">
-                    <router-link to="/contents" class="nav-link text-dark">事業内容<p class="subTitle" :class="{'activeSub':contentsActive}">Bisiness</p></router-link>
-                </li>
-                <li class="nav-item ml-3 mr-3" @click="changeRecruitActive">
-                    <router-link to="/recruit" class="nav-link text-dark">採用情報<p class="subTitle" :class="{'activeSub':recruitActive}">Recruit</p></router-link>
-                </li>
-                <li class="nav-item ml-3 mr-3" @click="changeTilesActive">
-                    <router-link to="/tiles" class="nav-link text-dark">タイル一覧<p class="subTitle" :class="{'activeSub':tilesActive}">tiles</p></router-link>
-                </li>
-                <li class="nav-item ml-3 mr-3" @click="changeConstructionExampleActive">
-                    <router-link to="/constructionExample" class="nav-link text-dark">施工例<p class="subTitle" :class="{'activeSub':constructionExampleActive}">Example</p></router-link>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <router-link to="/contact" class="nav-link btn contactBtn"><span class="contactText">お問い合わせ</span>
-                <!-- <p class="subTitle">Contact</p> -->
-                </router-link>
-              </li>
-            </ul>
-        </div>
-    </nav>
+    <b-navbar toggleable="lg" type="light" class="header-nav">
+        <b-navbar-brand href="#">冨永タイル株式会社</b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse class="mt-4 ml-sm-5" id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item class="ml-3 mr-3" @click="changeTopActive"><router-link to="/" class="nav-link text-dark">トップ<p class="subTitle" :class="{'activeSub':topActive}">Top</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3" @click="changeOverViewActive"><router-link to="/OverView" class="nav-link text-dark">会社情報<p class="subTitle" :class="{'activeSub':OVActive}">About</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3" @click="changeContentsActive"><router-link to="/contents" class="nav-link text-dark">事業内容<p class="subTitle" :class="{'activeSub':contentsActive}">Bisiness</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3" @click="changeRecruitActive"><router-link to="/recruit" class="nav-link text-dark">採用情報<p class="subTitle" :class="{'activeSub':recruitActive}">Recruit</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3" @click="changeTilesActive"><router-link to="/tiles" class="nav-link text-dark">タイル一覧<p class="subTitle" :class="{'activeSub':tilesActive}">tiles</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3" @click="changeConstructionExampleActive"><router-link to="/constructionExample" class="nav-link text-dark">施工例<p class="subTitle" :class="{'activeSub':constructionExampleActive}">Example</p></router-link></b-nav-item>
+            <b-nav-item class="ml-3 mr-3 d-sm-none"><router-link to="/contact" class="nav-link text-dark">お問い合わせ<p class="subTitle">Contact</p></router-link></b-nav-item>
+            <!-- <b-nav-item href="#" disabled>Disabled</b-nav-item> -->
+          </b-navbar-nav>
+        </b-collapse>
+        <ul class="navbar-nav d-none d-sm-block mt-5">
+          <li class="nav-item">
+            <router-link to="/contact" class="nav-link btn contactBtn"><span class="contactText">お問い合わせ</span>
+            <!-- <p class="subTitle">Contact</p> -->
+            </router-link>
+          </li>
+        </ul>
+      </b-navbar>
   </header>
 </template>
 
@@ -107,10 +95,10 @@ export default {
 <style scoped>
 .header-nav{
   height: 80px;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 100%;
   position: fixed;
-   top: 0px;
+  top: 0px;
   left: 0px;
   background-color: rgb(255, 255, 255);
 }
@@ -142,7 +130,7 @@ header {
 }
 @media screen and (max-width:376px) {
   .header-nav {
-    height: 48px;
+    height: auto !important;
   }
   .header-nav > a {
     font-size: 16px !important;

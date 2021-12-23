@@ -142,8 +142,6 @@ export default {
       if (result) {
         this.constructionsRef.doc(key).delete()
         alert('削除しました。')
-      } else {
-        alert('キャンセルしました。')
       }
     },
     selectEditItem (key, editMenu) {
