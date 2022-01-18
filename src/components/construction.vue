@@ -3,7 +3,7 @@
     <h2 class="title s-fontsize-15rem">建設事例一覧</h2>
     <div>
       <ul class="constructionParent">
-        <li v-for="construction in constructions" :key="construction.name" class="constructionList">
+        <li v-for="construction in consData.constructions" :key="construction.name" class="constructionList">
           <some-imgs>
             <template v-slot:img>
               <router-link :to="{name: 'detail', params: {id: construction.name, tilesOrConstructions: 'construction'}}" class="signup-link">
@@ -32,11 +32,6 @@ export default {
   data: function () {
     return {
     }
-  },
-  computed: {
-    // constructions () {
-    //   return this.$store.state.constructions
-    // }
   }
 }
 </script>

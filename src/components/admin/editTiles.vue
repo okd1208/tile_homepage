@@ -11,7 +11,7 @@
         <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
-      <tr class="editTr" v-for="(tile,key) in tiles" :key="key">
+      <tr class="editTr" v-for="(tile,key) in tileData.tiles" :key="key">
         <td>{{ tile.name }}</td>
         <td>{{ tile.text }}</td>
         <td>作成日：{{ getDate(tile.created) }}</td>

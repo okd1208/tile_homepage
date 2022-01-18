@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="tile in tiles" :key="tile.id">
+    <div v-for="tile in tileData.tiles" :key="tile.id">
       <div v-if="tile.name === tileId">
         <h1 class="detailTitle">{{ tile.name }}</h1>
         <img class="detailImg" :src="tile.fotoURL" width=30%>

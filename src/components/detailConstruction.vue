@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="construction in constructions" :key="construction.name">
+    <div v-for="construction in consData.constructions" :key="construction.name">
       <div v-if="construction.name === constructionId">
         <h1 class="detailTitle">{{ construction.name }}</h1>
         <img class="detailImg" :src="construction.fotoURL" width=30%>
@@ -21,12 +21,7 @@ export default {
   },
   props: [
     'constructionId'
-  ],
-  computed: {
-    constructions () {
-      return this.$store.state.constructions
-    }
-  }
+  ]
 }
 </script>
 

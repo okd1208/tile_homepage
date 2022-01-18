@@ -12,7 +12,7 @@
         <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
-      <tr class="editTr" v-for="(Construction,key) in constructions" :key="key">
+      <tr class="editTr" v-for="(Construction,key) in consData.constructions" :key="key">
         <td>{{ Construction.name }}</td>
         <td>{{ Construction.text }}</td>
         <td>
