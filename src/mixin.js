@@ -10,7 +10,6 @@ export default {
       date: null,
       fotoURL: null,
       text: null,
-      error_message: null,
       storageRef: null,
       ref: null,
       imgURL: null,
@@ -30,6 +29,14 @@ export default {
     await this.tileData.loadData()
     await this.consData.loadData()
   },
+  watch: {
+    tileData: {
+      handler: function (newVal, oldVal) {
+        console.log(1000)
+        console.log(newVal)
+      }
+    }
+  },
   methods: {
     changeEditMenu (clickMenu) {
       this.isOpen = clickMenu
@@ -37,41 +44,6 @@ export default {
     getDate (timestamp) {
       var date = timestamp.toDate()
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
-    },
-    addDB (editType) {
-      if (editType === 'tile') {
-        if (this.targetName === '' || this.text === '') {
-          this.error_message = '空の値があります'
-          return
-        }
-        this.error_message = null
-        this.tileData.tilesRef.add({
-          name: this.targetName,
-          fotoURL: document.getElementById('image').src,
-          text: this.text,
-          created: new Date()
-        })
-        alert('タイルを追加しました。')
-        this.clearEditEria()
-      } else if (editType === 'construction') {
-        if (this.targetName === '' || this.text === '') {
-          this.error_message = '空の値があります'
-          return
-        }
-        this.error_message = null
-        // yyyy-mm-ddなので2回す
-        this.date = this.date.replace('-', '/')
-        this.date = this.date.replace('-', '/')
-        this.consData.constructionsRef.add({
-          name: this.targetName,
-          fotoURL: document.getElementById('image').src,
-          text: this.text,
-          date: this.date,
-          created: new Date()
-        })
-        alert('タイルを追加しました。')
-        this.clearEditEria()
-      }
     },
     fotoUp (inputFileId, openMenu) {
       var image

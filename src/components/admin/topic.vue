@@ -1,7 +1,7 @@
 <template>
   <div class="edit">
-    <div v-if="error_message">
-      {{ error_message }}
+    <div v-if="$store.state.error_message">
+      {{ $store.state.error_message }}
     </div>
     <table class="tilesTable" border="1">
       <tr>

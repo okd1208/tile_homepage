@@ -44,7 +44,8 @@
         <input type="file" @change="fotoUp('newFileUp', editType)" id="newFileUp" value="アップロード">
       </div>
       <loading-ui></loading-ui>
-      <p href="#" class="btn04" @click="addDB(editType)">登録</p>
+      <p v-if="editType === 'tile'" href="#" class="btn04" @click="tileData.addData(targetName, text)">登録</p>
+      <p v-else-if="editType === 'construction'" href="#" class="btn04" @click="consData.addData(targetName, text, date)">登録</p>
     </form>
       <img src="" id="image" width="30%">
   </div>
@@ -60,7 +61,9 @@ export default {
   mixins: [Mixin],
   data () {
     return {
-      targetName: null
+      targetName: null,
+      text: null,
+      date: null
     }
   },
   methods: {

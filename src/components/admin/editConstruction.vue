@@ -1,7 +1,7 @@
 <template>
   <div class="edit">
-    <div v-if="error_message">
-      {{ error_message }}
+    <div v-if="$store.state.error_message">
+      {{ $store.state.error_message }}
     </div>
     <p>※画像比率は３：２</p>
     <table class="constructionsTable" border="1">
