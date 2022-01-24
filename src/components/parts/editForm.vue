@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="itemEditEria" :class="{uneditable: !editable}">
+    <form class="itemEditEria" v-if="editable">
       <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
       <h3>編集</h3>
       <div class="cp_iptxt">
@@ -18,14 +18,14 @@
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="fotoUp('editFileUp', editType)" id="editFileUp" value="アップロード">
+        <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
       <p href="#" class="btn04" @click="update(editType)">編集</p>
     </form>
 
-    <form class="itemEditEria" :class="{uneditable: editable}">
-      <h3 @click="test()">新規登録</h3>
+    <form class="itemEditEria" v-else-if="!editable">
+      <h3>新規登録</h3>
       <div class="cp_iptxt">
         <input v-model="targetName" class="ef" placeholder="" type="text" />
         <label>名前</label>
@@ -41,7 +41,7 @@
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="fotoUp('newFileUp', editType)" id="newFileUp" value="アップロード">
+        <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
       <p v-if="editType === 'tile'" href="#" class="btn04" @click="tileData.addData(targetName, text)">登録</p>

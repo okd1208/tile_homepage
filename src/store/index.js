@@ -10,6 +10,7 @@ export default new Vuex.Store({
   actions,
   getters,
   state: {
+    openAdminMenu: 'tile',
     error_message: null,
     topics: [
       {id: 1, title: 'mmタイル１０００枚入荷！', text: 'こんにちはいい天気ですね。本日自社では改装工事を行いました。こういった文章を適当に書いていく。', type: 'news', color: 'bg-danger', date: '2021/01/12', img: require('@/assets/constructions/test1.jpeg')},

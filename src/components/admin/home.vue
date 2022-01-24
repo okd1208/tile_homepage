@@ -2,18 +2,18 @@
   <div>
     <body-header>編集ページ</body-header>
     <ul id="editMenuNav">
-      <li :class="{current: isOpen === 'tile'}" @click="changeEditMenu('tile')"><a href="#">タイル一覧を編集</a></li>
-      <li :class="{current: isOpen === 'construction'}" @click="changeEditMenu('construction')"><a href="#">建設例一覧を編集</a></li>
-      <li :class="{current: isOpen === 'topic'}" @click="changeEditMenu('topic')"><a href="#">お知らせを編集</a></li>
-      <li :class="{current: isOpen === 'questions'}" @click="changeEditMenu('questions')"><a href="#">よくある質問</a></li>
+      <li :class="{current: $store.state.openAdminMenu === 'tile'}" @click="changeEditMenu('tile')"><a href="#">タイル一覧を編集</a></li>
+      <li :class="{current: $store.state.openAdminMenu === 'construction'}" @click="changeEditMenu('construction')"><a href="#">建設例一覧を編集</a></li>
+      <li :class="{current: $store.state.openAdminMenu === 'topic'}" @click="changeEditMenu('topic')"><a href="#">お知らせを編集</a></li>
+      <li :class="{current: $store.state.openAdminMenu === 'questions'}" @click="changeEditMenu('questions')"><a href="#">よくある質問</a></li>
     </ul>
-    <div v-if="isOpen == 'tile'">
+    <div v-if="$store.state.openAdminMenu == 'tile'">
       <edit-tiles></edit-tiles>
     </div>
-    <div v-if="isOpen == 'construction'">
+    <div v-if="$store.state.openAdminMenu == 'construction'">
       <edit-construction></edit-construction>
     </div>
-    <div v-if="isOpen == 'topic'">
+    <div v-if="$store.state.openAdminMenu == 'topic'">
       <edit-topic></edit-topic>
     </div>
   </div>
@@ -86,9 +86,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-}
-.uneditable {
-  display: none;
 }
 .inputEria, .itemEditEria{
   margin-left: auto;

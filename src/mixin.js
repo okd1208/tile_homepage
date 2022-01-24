@@ -11,11 +11,7 @@ export default {
       fotoURL: null,
       text: null,
       storageRef: null,
-      ref: null,
-      imgURL: null,
-      downloadURL: null,
       editKey: null,
-      isOpen: 'tile',
       editable: false,
       tileData: null,
       consData: null
@@ -30,61 +26,32 @@ export default {
     await this.consData.loadData()
   },
   watch: {
-    tileData: {
-      handler: function (newVal, oldVal) {
-        console.log(1000)
-        console.log(newVal)
-      }
-    }
   },
   methods: {
     changeEditMenu (clickMenu) {
-      this.isOpen = clickMenu
+      this.$store.state.openAdminMenu = clickMenu
     },
     getDate (timestamp) {
       var date = timestamp.toDate()
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
-    fotoUp (inputFileId, openMenu) {
-      var image
-      var files
-      var refClone
-      // 本当は第二引数を取らずにisPpenで分岐したいがなぜか値が更新されていないので一旦これで
-      if (openMenu === 'tile') {
-        document.getElementById('loading').classList.remove('invisible')
-        files = document.getElementById(inputFileId).files
-        image = files[0]
-        this.ref = firebase.storage().ref().child('images/tiles/' + this.targetName)
-        refClone = this.ref
-        this.ref.put(image).then(function (snapshot) {
-          alert('アップロードしました')
-          refClone.getDownloadURL().then((downloadURL) => {
-            document.getElementById('image').src = downloadURL
-            document.getElementById('loading').classList.add('invisible')
-          })
+    fotoUp (e) {
+      var image = e.target.files[0]
+      document.getElementById('loading').classList.remove('invisible')
+      let ref = this.storageRef.child('images/' + this.$store.state.openAdminMenu + 's/' + this.targetName)
+      ref.put(image).then(function (snapshot) {
+        alert('アップロードしました')
+        ref.getDownloadURL().then((downloadURL) => {
+          document.getElementById('image').src = downloadURL
+          document.getElementById('loading').classList.add('invisible')
         })
-      } else if (openMenu === 'construction') {
-        document.getElementById('loading').classList.remove('invisible')
-        files = document.getElementById(inputFileId).files
-        image = files[0]
-        this.ref = firebase.storage().ref().child('images/constructions/' + this.targetName)
-        refClone = this.ref
-        this.ref.put(image).then(function (snapshot) {
-          alert('アップロードしました')
-          refClone.getDownloadURL().then((downloadURL) => {
-            document.getElementById('image').src = downloadURL
-            document.getElementById('loading').classList.add('invisible')
-          })
-        })
-      }
+      })
     },
     removetile (key) {
       var result = window.confirm(this.tileData.tiles[key].name + 'を削除しますか？')
       if (result) {
         this.tileData.tilesRef.doc(key).delete()
         alert('削除しました。')
-      } else {
-        alert('キャンセルしました。')
       }
     },
     removeConstruction (key) {
