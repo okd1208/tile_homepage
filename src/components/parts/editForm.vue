@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="itemEditEria" v-if="editable">
+    <form class="itemEditEria" v-if="$store.state.editKey">
       <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
       <h3>編集</h3>
       <div class="cp_iptxt">
@@ -24,7 +24,7 @@
       <p href="#" class="btn04" @click="update(editType)">編集</p>
     </form>
 
-    <form class="itemEditEria" v-else-if="!editable">
+    <form class="itemEditEria" v-else-if="!$store.state.editKey">
       <h3>新規登録</h3>
       <div class="cp_iptxt">
         <input v-model="targetName" class="ef" placeholder="" type="text" />
@@ -67,8 +67,8 @@ export default {
     }
   },
   methods: {
-    selectItem (key, type) {
-      this.selectEditItem(key, type)
+    selectItem (data) {
+      this.selectEditItem(data)
     }
   }
 }

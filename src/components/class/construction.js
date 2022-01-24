@@ -32,7 +32,6 @@ export class Construction {
       created: new Date()
     })
     alert('建設例を追加しました。')
-    // this.clearEditEria()
   }
 
   remove (key) {

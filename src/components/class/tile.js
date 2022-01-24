@@ -30,7 +30,6 @@ export class Tile {
       created: new Date()
     })
     alert('タイルを追加しました。')
-    // this.clearEditEria()
   }
 
   remove (key) {

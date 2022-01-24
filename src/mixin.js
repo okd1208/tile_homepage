@@ -11,8 +11,6 @@ export default {
       fotoURL: null,
       text: null,
       storageRef: null,
-      editKey: null,
-      editable: false,
       tileData: null,
       consData: null
     }
@@ -47,40 +45,28 @@ export default {
         })
       })
     },
-    selectEditItem (key, editMenu) {
-      this.editKey = key
-      this.editable = true
-      if (editMenu === 'cons') {
-        this.targetName = this.consData.constructions[key].name
-        this.fotoURL = this.consData.constructions[key].fotoURL
-        this.text = this.consData.constructions[key].text
-        this.date = this.consData.constructions[key].date
-        document.getElementById('image').src = this.consData.constructions[key].fotoURL
-      } else if (editMenu === 'tile') {
-        this.targetName = this.tileData.tiles[key].name
-        this.fotoURL = this.tileData.tiles[key].fotoURL
-        this.text = this.tileData.tiles[key].text
-        document.getElementById('image').src = this.tileData.tiles[key].fotoURL
+    selectEditItem (data) {
+      this.targetName = data.name
+      this.fotoURL = data.fotoURL
+      this.text = data.text
+      document.getElementById('image').src = data.fotoURL
+      if (this.$store.state.openAdminMenu === 'construction') {
+        this.date = data.date
       }
-      var element = document.getElementById('image')
-      var rect = element.getBoundingClientRect()
-      var position = rect.top
-      scrollBy(0, position - 700)
     },
-    update (editMenu) {
-      console.log(this.editKey)
-      if (editMenu === 'construction') {
+    update () {
+      if (this.$store.state.openAdminMenu === 'construction') {
         // yyyy-mm-ddなので2回す
         this.date = this.date.replace('-', '/')
         this.date = this.date.replace('-', '/')
-        this.consData.constructionsRef.doc(this.editKey).update({
+        this.consData.constructionsRef.doc(this.$store.state.editKey).update({
           name: this.targetName,
           fotoURL: document.getElementById('image').src,
           text: this.text,
           date: this.date
         })
-      } else if (editMenu === 'tile') {
-        this.tileData.tilesRef.doc(this.editKey).update({
+      } else if (this.$store.state.openAdminMenu === 'tile') {
+        this.tileData.tilesRef.doc(this.$store.state.editKey).update({
           name: this.targetName,
           fotoURL: document.getElementById('image').src,
           text: this.text
@@ -92,7 +78,7 @@ export default {
       this.closeEditEria()
     },
     closeEditEria () {
-      this.editable = false
+      this.$store.state.editKey = null
       this.clearEditEria()
     },
     clearEditEria () {

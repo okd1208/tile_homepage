@@ -8,20 +8,20 @@
       <tr>
         <th class="editTitle">建設工事名</th>
         <th class="editScript">説明</th>
-        <!-- <th class="editURL">URL</th> -->
         <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
-      <tr class="editTr" v-for="(Construction,key) in consData.constructions" :key="key">
-        <td>{{ Construction.name }}</td>
-        <td>{{ Construction.text }}</td>
+      <tr class="editTr" v-for="(construction,key) in consData.constructions" :key="key"
+       v-bind:class="{ 'd-none': ($store.state.editKey !== key && $store.state.editKey) }"
+       >
+        <td>{{ construction.name }}</td>
+        <td>{{ construction.text }}</td>
         <td>
-          <p>建設日：{{ Construction.date }}</p>
-          <p>作成日：{{ getDate(Construction.created) }}</p></td>
-        <!-- <td>{{ Construction.fotoURL }}</td> -->
-        <td><img :src="Construction.fotoURL" width="90%"></td>
+          <p>建設日：{{ construction.date }}</p>
+          <p>作成日：{{ getDate(construction.created) }}</p></td>
+        <td><img :src="construction.fotoURL" width="90%"></td>
         <button @click="consData.remove(key)">削除</button>
-        <button @click="selectItem(key,'cons')">編集</button>
+        <button @click="selectItem(key, construction)">編集</button>
       </tr>
     </table>
     <edit-form ref="child" editType='construction'></edit-form>
@@ -40,8 +40,9 @@ export default {
     }
   },
   methods: {
-    selectItem (key, type) {
-      this.$refs.child.selectItem(key, type)
+    selectItem (key, data) {
+      this.$store.state.editKey = key
+      this.$refs.child.selectItem(data)
     }
   }
 }
