@@ -34,4 +34,11 @@ export class Construction {
     alert('建設例を追加しました。')
     // this.clearEditEria()
   }
+
+  remove (key) {
+    var result = window.confirm(this.constructions[key].name + 'を削除しますか？')
+    if (result) {
+      this.constructionsRef.doc(key).delete()
+    }
+  }
 }

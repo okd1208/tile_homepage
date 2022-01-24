@@ -32,4 +32,11 @@ export class Tile {
     alert('タイルを追加しました。')
     // this.clearEditEria()
   }
+
+  remove (key) {
+    var result = window.confirm(this.tiles[key].name + 'を削除しますか？')
+    if (result) {
+      this.tilesRef.doc(key).delete()
+    }
+  }
 }

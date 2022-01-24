@@ -47,20 +47,6 @@ export default {
         })
       })
     },
-    removetile (key) {
-      var result = window.confirm(this.tileData.tiles[key].name + 'を削除しますか？')
-      if (result) {
-        this.tileData.tilesRef.doc(key).delete()
-        alert('削除しました。')
-      }
-    },
-    removeConstruction (key) {
-      var result = window.confirm(this.consData.constructions[key].name + 'を削除しますか？')
-      if (result) {
-        this.consData.constructionsRef.doc(key).delete()
-        alert('削除しました。')
-      }
-    },
     selectEditItem (key, editMenu) {
       this.editKey = key
       this.editable = true
