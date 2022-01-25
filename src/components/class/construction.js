@@ -21,9 +21,7 @@ export class Construction {
       return
     }
     this.error_message = null
-    // yyyy-mm-ddなので2回す
-    date = date.replace('-', '/')
-    date = date.replace('-', '/')
+    date = date.replace(/-/g, '/')
     this.constructionsRef.add({
       name: name,
       fotoURL: document.getElementById('image').src,
@@ -32,6 +30,16 @@ export class Construction {
       created: new Date()
     })
     alert('建設例を追加しました。')
+  }
+
+  update (key, name, text, date) {
+    date = date.replace(/-/g, '/')
+    this.constructionsRef.doc(key).update({
+      name: name,
+      fotoURL: document.getElementById('image').src,
+      text: text,
+      date: date
+    })
   }
 
   remove (key) {

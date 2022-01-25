@@ -51,31 +51,8 @@ export default {
       this.text = data.text
       document.getElementById('image').src = data.fotoURL
       if (this.$store.state.openAdminMenu === 'construction') {
-        this.date = data.date
+        this.date = data.date.replace(/\//g, '-')
       }
-    },
-    update () {
-      if (this.$store.state.openAdminMenu === 'construction') {
-        // yyyy-mm-ddなので2回す
-        this.date = this.date.replace('-', '/')
-        this.date = this.date.replace('-', '/')
-        this.consData.constructionsRef.doc(this.$store.state.editKey).update({
-          name: this.targetName,
-          fotoURL: document.getElementById('image').src,
-          text: this.text,
-          date: this.date
-        })
-      } else if (this.$store.state.openAdminMenu === 'tile') {
-        this.tileData.tilesRef.doc(this.$store.state.editKey).update({
-          name: this.targetName,
-          fotoURL: document.getElementById('image').src,
-          text: this.text
-        })
-      }
-      console.log('editKey')
-      alert('変更しました。')
-      this.clearEditEria()
-      this.closeEditEria()
     },
     closeEditEria () {
       this.$store.state.editKey = null

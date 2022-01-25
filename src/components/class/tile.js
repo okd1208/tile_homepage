@@ -8,7 +8,6 @@ export class Tile {
   async loadData () {
     await this.tilesRef.get().then(querySnapshot => {
       const obj = {}
-      console.log(querySnapshot)
       for (let i = 0; i < querySnapshot.size; i++) {
         obj[querySnapshot.docs[i].id] = querySnapshot.docs[i].data()
       }
@@ -30,6 +29,14 @@ export class Tile {
       created: new Date()
     })
     alert('タイルを追加しました。')
+  }
+
+  update (key, name, text) {
+    this.tilesRef.doc(key).update({
+      name: name,
+      fotoURL: document.getElementById('image').src,
+      text: text
+    })
   }
 
   remove (key) {

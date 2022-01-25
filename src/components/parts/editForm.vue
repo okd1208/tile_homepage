@@ -1,7 +1,7 @@
 <template>
   <div>
     <form class="itemEditEria" v-if="$store.state.editKey">
-      <p id="closeEditBtn"><button @click="closeEditEria()">X</button></p>
+      <p id="closeEditBtn"><button @click="closeEditEria">X</button></p>
       <h3>編集</h3>
       <div class="cp_iptxt">
         <input v-model="targetName" class="ef" placeholder="" type="text" />
@@ -21,7 +21,10 @@
         <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
-      <p href="#" class="btn04" @click="update(editType)">編集</p>
+      <p v-if="editType === 'tile'" class="btn04"
+       @click="tileData.update($store.state.editKey, targetName, text), closeEditEria()">編集</p>
+      <p v-else-if="editType === 'construction'" class="btn04"
+       @click="consData.update($store.state.editKey, targetName, text, date), closeEditEria()">編集</p>
     </form>
 
     <form class="itemEditEria" v-else-if="!$store.state.editKey">
@@ -44,8 +47,8 @@
         <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
-      <p v-if="editType === 'tile'" href="#" class="btn04" @click="tileData.addData(targetName, text)">登録</p>
-      <p v-else-if="editType === 'construction'" href="#" class="btn04" @click="consData.addData(targetName, text, date)">登録</p>
+      <p v-if="editType === 'tile'" class="btn04" @click="tileData.addData(targetName, text)">登録</p>
+      <p v-else-if="editType === 'construction'" class="btn04" @click="consData.addData(targetName, text, date)">登録</p>
     </form>
       <img src="" id="image" width="30%">
   </div>
