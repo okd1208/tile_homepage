@@ -26,17 +26,14 @@ export default {
   watch: {
   },
   methods: {
-    changeEditMenu (clickMenu) {
-      this.$store.state.openAdminMenu = clickMenu
-    },
     getDate (timestamp) {
-      var date = timestamp.toDate()
+      const date = timestamp.toDate()
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
     fotoUp (e) {
-      var image = e.target.files[0]
+      const image = e.target.files[0]
       document.getElementById('loading').classList.remove('invisible')
-      let ref = this.storageRef.child('images/' + this.$store.state.openAdminMenu + 's/' + this.targetName)
+      let ref = this.storageRef.child('images/' + this.$route.name + 's/' + this.targetName)
       ref.put(image).then(function (snapshot) {
         alert('アップロードしました')
         ref.getDownloadURL().then((downloadURL) => {
@@ -50,7 +47,7 @@ export default {
       this.fotoURL = data.fotoURL
       this.text = data.text
       document.getElementById('image').src = data.fotoURL
-      if (this.$store.state.openAdminMenu === 'construction') {
+      if (this.$route.name === 'construction') {
         this.date = data.date.replace(/\//g, '-')
       }
     },

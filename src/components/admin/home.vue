@@ -2,20 +2,13 @@
   <div>
     <body-header>編集ページ</body-header>
     <ul id="editMenuNav">
-      <li :class="{current: $store.state.openAdminMenu === 'tile'}" @click="changeEditMenu('tile')"><a href="#">タイル一覧を編集</a></li>
-      <li :class="{current: $store.state.openAdminMenu === 'construction'}" @click="changeEditMenu('construction')"><a href="#">建設例一覧を編集</a></li>
-      <li :class="{current: $store.state.openAdminMenu === 'topic'}" @click="changeEditMenu('topic')"><a href="#">お知らせを編集</a></li>
-      <li :class="{current: $store.state.openAdminMenu === 'questions'}" @click="changeEditMenu('questions')"><a href="#">よくある質問</a></li>
+      <li :class="{current: $route.name === 'tile'}"><router-link to="/admin/tile">タイル一覧を編集</router-link></li>
+      <li :class="{current: $route.name === 'construction'}"><router-link to="/admin/construction">建設例一覧を編集</router-link></li>
+      <li :class="{current: $route.name === 'topic'}"><a href="#">お知らせを編集</a></li>
+      <li :class="{current: $route.name === 'questions'}"><a href="#">よくある質問</a></li>
     </ul>
-    <div v-if="$store.state.openAdminMenu == 'tile'">
-      <edit-tiles></edit-tiles>
-    </div>
-    <div v-if="$store.state.openAdminMenu == 'construction'">
-      <edit-construction></edit-construction>
-    </div>
-    <div v-if="$store.state.openAdminMenu == 'topic'">
-      <edit-topic></edit-topic>
-    </div>
+    <p><router-link to="/">編集画面を抜ける</router-link></p>
+    <router-view />
   </div>
 </template>
 

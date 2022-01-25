@@ -11,16 +11,17 @@ import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
 import questions from '@/components/questions'
-// import editTiles from '@/components/edit/editTiles'
 import adminHome from '@/components/admin/home'
-// import editConstruction from '@/components/edit/editConstruction'
+import editTile from '@/components/admin/editTiles'
+import editConstruction from '@/components/admin/editConstruction'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.use(Router)
 Vue.use(BootstrapVue)
-export default new Router({
+Vue.use(Router)
+
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -58,11 +59,6 @@ export default new Router({
       component: tiles
     },
     {
-      path: '/:tilesOrConstructions/:id',
-      name: 'detail',
-      component: detail
-    },
-    {
       path: '/topics/:id',
       name: 'topicDetail',
       component: topicDetail
@@ -75,7 +71,25 @@ export default new Router({
     {
       path: '/admin',
       name: 'adminHome',
-      component: adminHome
+      component: adminHome,
+      meta: { requiresAuth: false },
+      children: [
+        {
+          path: 'tile',
+          name: 'tile',
+          component: editTile
+        },
+        {
+          path: 'construction',
+          name: 'construction',
+          component: editConstruction
+        }
+      ]
+    },
+    {
+      path: '/:tilesOrConstructions/:id',
+      name: 'detail',
+      component: detail
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す
@@ -87,3 +101,5 @@ export default new Router({
     }
   }
 })
+
+export default router
