@@ -12,7 +12,11 @@ export default {
       text: null,
       storageRef: null,
       tileData: null,
-      consData: null
+      consData: null,
+      selectItemData: null,
+      oldImagePath: null,
+      storagePath: null,
+      targetData: null
     }
   },
   async created () {
@@ -22,18 +26,45 @@ export default {
     this.consData = new Construction(this.db)
     await this.tileData.loadData()
     await this.consData.loadData()
+    if (this.$route.name === 'tile') {
+      this.targetData = this.tileData
+    } else if (this.$route.name === 'construction') {
+      this.targetData = this.consData
+    }
   },
   watch: {
   },
   methods: {
+    addData () {
+      this.targetData.addData(this.getNewData)
+      this.clearEditEria()
+    },
+    update () {
+      if (this.oldImagePath) {
+        this.imageDelete(this.oldImagePath)
+      }
+      this.targetData.update(this.getNewData)
+      this.closeEditEria()
+    },
+    remove (key, path) {
+      if (path) {
+        this.imageDelete(path)
+      }
+      this.targetData.remove(key)
+    },
     getDate (timestamp) {
       const date = timestamp.toDate()
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
-    fotoUp (e) {
+    imageUp (e) {
+      const path = 'images/' + this.$route.name + 's/' + this.targetName
+      if (this.storagePath && (this.selectItemData.storagePath !== path)) {
+        this.oldImagePath = this.storagePath
+      }
+      this.storagePath = path
       const image = e.target.files[0]
       document.getElementById('loading').classList.remove('invisible')
-      let ref = this.storageRef.child('images/' + this.$route.name + 's/' + this.targetName)
+      let ref = this.storageRef.child(this.storagePath)
       ref.put(image).then(function (snapshot) {
         alert('アップロードしました')
         ref.getDownloadURL().then((downloadURL) => {
@@ -42,14 +73,21 @@ export default {
         })
       })
     },
+    async imageDelete (path) {
+      let ref = this.storageRef.child(path)
+      await ref.delete()
+    },
     selectEditItem (data) {
+      this.selectItemData = data
       this.targetName = data.name
       this.fotoURL = data.fotoURL
       this.text = data.text
+      this.storagePath = data.storagePath
       document.getElementById('image').src = data.fotoURL
       if (this.$route.name === 'construction') {
         this.date = data.date.replace(/\//g, '-')
       }
+      console.log(this.getNewData)
     },
     closeEditEria () {
       this.$store.state.editKey = null
@@ -60,7 +98,19 @@ export default {
       this.text = ''
       this.date = ''
       this.fotoURL = ''
+      this.selectItemData = null
+      this.storagePath = null
+      this.oldImagePath = null
       document.getElementById('image').src = null
+    }
+  },
+  computed: {
+    getNewData () {
+      if (this.$route.name === 'tile') {
+        return {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath}
+      } else if (this.$route.name === 'construction') {
+        return {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath, date: this.date}
+      }
     }
   }
 }

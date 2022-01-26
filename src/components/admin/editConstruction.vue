@@ -20,7 +20,7 @@
           <p>建設日：{{ construction.date }}</p>
           <p>作成日：{{ getDate(construction.created) }}</p></td>
         <td><img :src="construction.fotoURL" width="90%"></td>
-        <button @click="consData.remove(key)">削除</button>
+        <button @click="remove(key, construction.storagePath)">削除</button>
         <button @click="selectItem(key, construction)">編集</button>
       </tr>
     </table>

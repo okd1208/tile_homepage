@@ -17,7 +17,7 @@
         <td>{{ tile.text }}</td>
         <td>作成日：{{ getDate(tile.created) }}</td>
         <td><img :src="tile.fotoURL" width="90%"></td>
-        <button @click="tileData.remove(key)">削除</button>
+        <button @click="remove(key, tile.storagePath)">削除</button>
         <button @click="selectItem(key, tile)">編集</button>
       </tr>
     </table>

@@ -15,34 +15,38 @@ export class Tile {
     })
   }
 
-  addData (name, text) {
-    if (name === null || text === null) {
+  async addData (data) {
+    if (!data.name || !data.text) {
       this.error_message = '空の値があります'
       // error_messageをstateに更新できてない
       return
     }
     this.error_message = null
-    this.tilesRef.add({
-      name: name,
+    await this.tilesRef.add({
+      name: data.name,
       fotoURL: document.getElementById('image').src,
-      text: text,
+      text: data.text,
+      storagePath: data.path,
       created: new Date()
     })
-    alert('タイルを追加しました。')
+    location.reload()
   }
 
-  update (key, name, text) {
-    this.tilesRef.doc(key).update({
-      name: name,
+  async update (data) {
+    await this.tilesRef.doc(data.key).update({
+      name: data.name,
       fotoURL: document.getElementById('image').src,
-      text: text
+      text: data.text,
+      storagePath: data.path
     })
+    location.reload()
   }
 
-  remove (key) {
+  async remove (key) {
     var result = window.confirm(this.tiles[key].name + 'を削除しますか？')
     if (result) {
-      this.tilesRef.doc(key).delete()
+      await this.tilesRef.doc(key).delete()
+      location.reload()
     }
   }
 }

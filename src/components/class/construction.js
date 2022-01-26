@@ -15,37 +15,41 @@ export class Construction {
     })
   }
 
-  addData (name, text, date) {
-    if (name === null || text === null) {
+  async addData (data) {
+    if (!data.name || !data.text) {
       this.error_message = '空の値があります'
       return
     }
     this.error_message = null
-    date = date.replace(/-/g, '/')
-    this.constructionsRef.add({
-      name: name,
+    data.date = data.date.replace(/-/g, '/')
+    await this.constructionsRef.add({
+      name: data.name,
       fotoURL: document.getElementById('image').src,
-      text: text,
-      date: date,
+      text: data.text,
+      storagePath: data.path,
+      date: data.date,
       created: new Date()
     })
-    alert('建設例を追加しました。')
+    location.reload()
   }
 
-  update (key, name, text, date) {
-    date = date.replace(/-/g, '/')
-    this.constructionsRef.doc(key).update({
-      name: name,
+  async update (data) {
+    data.date = data.date.replace(/-/g, '/')
+    await this.constructionsRef.doc(data.key).update({
+      name: data.name,
       fotoURL: document.getElementById('image').src,
-      text: text,
-      date: date
+      text: data.text,
+      storagePath: data.path,
+      date: data.date
     })
+    location.reload()
   }
 
-  remove (key) {
+  async remove (key) {
     var result = window.confirm(this.constructions[key].name + 'を削除しますか？')
     if (result) {
-      this.constructionsRef.doc(key).delete()
+      await this.constructionsRef.doc(key).delete()
+      location.reload()
     }
   }
 }

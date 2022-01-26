@@ -18,13 +18,10 @@
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
+        <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
-      <p v-if="editType === 'tile'" class="btn04"
-       @click="tileData.update($store.state.editKey, targetName, text), closeEditEria()">編集</p>
-      <p v-else-if="editType === 'construction'" class="btn04"
-       @click="consData.update($store.state.editKey, targetName, text, date), closeEditEria()">編集</p>
+      <p class="btn04" @click="update">編集</p>
     </form>
 
     <form class="itemEditEria" v-else-if="!$store.state.editKey">
@@ -44,11 +41,10 @@
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
       <div class="cp_iptxt">
-        <input type="file" @change="fotoUp" id="file-up-input" value="アップロード">
+        <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
       <loading-ui></loading-ui>
-      <p v-if="editType === 'tile'" class="btn04" @click="tileData.addData(targetName, text)">登録</p>
-      <p v-else-if="editType === 'construction'" class="btn04" @click="consData.addData(targetName, text, date)">登録</p>
+      <p class="btn04" @click="addData">登録</p>
     </form>
       <img src="" id="image" width="30%">
   </div>
