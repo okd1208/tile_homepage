@@ -2,7 +2,6 @@ export class Construction {
   constructor (db) {
     this.constructionsRef = db.collection('constructions')
     this.constructions = null
-    this.error_message = null
   }
 
   async loadData () {
@@ -16,12 +15,9 @@ export class Construction {
   }
 
   async addData (data) {
-    if (!data.name || !data.text) {
-      this.error_message = '空の値があります'
-      return
+    if (data.date) {
+      data.date = data.date.replace(/-/g, '/')
     }
-    this.error_message = null
-    data.date = data.date.replace(/-/g, '/')
     await this.constructionsRef.add({
       name: data.name,
       fotoURL: document.getElementById('image').src,
@@ -34,7 +30,9 @@ export class Construction {
   }
 
   async update (data) {
-    data.date = data.date.replace(/-/g, '/')
+    if (data.date) {
+      data.date = data.date.replace(/-/g, '/')
+    }
     await this.constructionsRef.doc(data.key).update({
       name: data.name,
       fotoURL: document.getElementById('image').src,

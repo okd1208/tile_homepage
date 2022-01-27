@@ -17,7 +17,8 @@ export default {
       oldImagePath: null,
       storagePath: null,
       targetData: null,
-      isLoading: false
+      isLoading: false,
+      imageUpError: null
     }
   },
   async created () {
@@ -58,6 +59,10 @@ export default {
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
     async imageUp (e) {
+      if (!this.targetName) {
+        this.imageUpError = '名前から入力してください'
+        return
+      }
       const path = 'images/' + this.$route.name + 's/' + this.targetName
       if (this.storagePath && (this.selectItemData.storagePath !== path)) {
         this.oldImagePath = this.storagePath
@@ -101,6 +106,7 @@ export default {
       this.selectItemData = null
       this.storagePath = null
       this.oldImagePath = null
+      this.imageUpError = null
       document.getElementById('image').src = null
     }
   },

@@ -20,8 +20,9 @@
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
+      <p v-if="imageUpError" class="error-message">{{ imageUpError }}</p>
       <loading-ui :class="{invisible: !isLoading}"></loading-ui>
-      <p class="btn04" :class="{loading: isLoading}" @click="update">編集</p>
+      <p class="btn04" :class="{loading: isLoading || !targetName}" @click="update">編集</p>
     </form>
 
     <form class="itemEditEria" v-else-if="!$store.state.editKey">
@@ -43,8 +44,9 @@
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
+      <p v-if="imageUpError" class="error-message">{{ imageUpError }}</p>
       <loading-ui :class="{invisible: !isLoading}"></loading-ui>
-      <p class="btn04" :class="{loading: isLoading}" @click="addData">登録</p>
+      <p class="btn04" :class="{loading: isLoading || !targetName}" @click="addData">登録</p>
     </form>
       <img src="" id="image" width="30%">
   </div>
@@ -201,5 +203,10 @@ export default {
 .loading {
   background: gray;
   pointer-events: none;
+}
+.error-message {
+  font-weight: bold;
+  text-align: center;
+  color: red;
 }
 </style>

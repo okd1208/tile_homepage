@@ -2,7 +2,6 @@ export class Tile {
   constructor (db) {
     this.tilesRef = db.collection('tiles')
     this.tiles = null
-    this.error_message = null
   }
 
   async loadData () {
@@ -16,12 +15,6 @@ export class Tile {
   }
 
   async addData (data) {
-    if (!data.name || !data.text) {
-      this.error_message = '空の値があります'
-      // error_messageをstateに更新できてない
-      return
-    }
-    this.error_message = null
     await this.tilesRef.add({
       name: data.name,
       fotoURL: document.getElementById('image').src,
