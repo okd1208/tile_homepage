@@ -1,8 +1,5 @@
 <template>
   <div class="edit">
-    <div v-if="$store.state.error_message">
-      {{ $store.state.error_message }}
-    </div>
     <table class="tilesTable" border="1">
       <tr>
         <th class="editTitle">タイル名</th>
