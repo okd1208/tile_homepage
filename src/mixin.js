@@ -16,7 +16,8 @@ export default {
       selectItemData: null,
       oldImagePath: null,
       storagePath: null,
-      targetData: null
+      targetData: null,
+      isLoading: false
     }
   },
   async created () {
@@ -56,22 +57,21 @@ export default {
       const date = timestamp.toDate()
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate()
     },
-    imageUp (e) {
+    async imageUp (e) {
       const path = 'images/' + this.$route.name + 's/' + this.targetName
       if (this.storagePath && (this.selectItemData.storagePath !== path)) {
         this.oldImagePath = this.storagePath
       }
       this.storagePath = path
       const image = e.target.files[0]
-      document.getElementById('loading').classList.remove('invisible')
+      this.isLoading = true
       let ref = this.storageRef.child(this.storagePath)
-      ref.put(image).then(function (snapshot) {
-        alert('アップロードしました')
+      await ref.put(image).then(function (snapshot) {
         ref.getDownloadURL().then((downloadURL) => {
           document.getElementById('image').src = downloadURL
-          document.getElementById('loading').classList.add('invisible')
         })
       })
+      this.isLoading = false
     },
     async imageDelete (path) {
       let ref = this.storageRef.child(path)

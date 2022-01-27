@@ -20,8 +20,8 @@
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
-      <loading-ui></loading-ui>
-      <p class="btn04" @click="update">編集</p>
+      <loading-ui :class="{invisible: !isLoading}"></loading-ui>
+      <p class="btn04" :class="{loading: isLoading}" @click="update">編集</p>
     </form>
 
     <form class="itemEditEria" v-else-if="!$store.state.editKey">
@@ -43,8 +43,8 @@
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
-      <loading-ui></loading-ui>
-      <p class="btn04" @click="addData">登録</p>
+      <loading-ui :class="{invisible: !isLoading}"></loading-ui>
+      <p class="btn04" :class="{loading: isLoading}" @click="addData">登録</p>
     </form>
       <img src="" id="image" width="30%">
   </div>
@@ -74,7 +74,6 @@ export default {
 </script>
 
 <style>
-
 /* inputタグモーション */
 .cp_iptxt {
   position: relative;
@@ -180,6 +179,7 @@ export default {
   transition: 0.3s;
   color: #da3c41;
 }
+
 .btn04{
   display: inline-block;
   width: 180px;
@@ -196,5 +196,10 @@ export default {
 }
 .btn04:hover {
   background-position: right center;
+  cursor: pointer;
+}
+.loading {
+  background: gray;
+  pointer-events: none;
 }
 </style>

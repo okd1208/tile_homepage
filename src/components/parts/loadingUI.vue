@@ -1,6 +1,6 @@
 <template>
 <div>
-    <span class="invisible" id="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+    <span id="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
 </div>
 </template>
 <script>
