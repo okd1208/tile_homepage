@@ -2,6 +2,7 @@ import firebase from 'firebase'
 // import moment from 'moment'
 import {Tile} from './components/class/tile'
 import {Construction} from './components/class/construction'
+import {Topic} from './components/class/topic'
 export default {
   data: function () {
     return {
@@ -10,9 +11,11 @@ export default {
       date: null,
       fotoURL: null,
       text: null,
+      category: null,
       storageRef: null,
       tileData: null,
       consData: null,
+      topicData: null,
       selectItemData: null,
       oldImagePath: null,
       storagePath: null,
@@ -26,12 +29,16 @@ export default {
     this.db = firebase.firestore()
     this.tileData = new Tile(this.db)
     this.consData = new Construction(this.db)
+    this.topicData = new Topic(this.db)
     await this.tileData.loadData()
     await this.consData.loadData()
+    await this.topicData.loadData()
     if (this.$route.name === 'tile') {
       this.targetData = this.tileData
     } else if (this.$route.name === 'construction') {
       this.targetData = this.consData
+    } else if (this.$route.name === 'topic') {
+      this.targetData = this.topicData
     }
   },
   watch: {
@@ -91,6 +98,8 @@ export default {
       document.getElementById('image').src = data.fotoURL
       if (this.$route.name === 'construction') {
         this.date = data.date.replace(/\//g, '-')
+      } else if (this.$route.name === 'topic') {
+        this.category = data.category
       }
       console.log(this.getNewData)
     },
@@ -112,11 +121,13 @@ export default {
   },
   computed: {
     getNewData () {
-      if (this.$route.name === 'tile') {
-        return {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath}
-      } else if (this.$route.name === 'construction') {
-        return {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath, date: this.date}
+      let data = {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath}
+      if (this.$route.name === 'construction') {
+        data.date = this.date
+      } else if (this.$route.name === 'topic') {
+        data.category = this.category
       }
+      return data
     }
   }
 }

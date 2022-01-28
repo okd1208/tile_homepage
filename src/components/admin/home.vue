@@ -4,7 +4,7 @@
     <ul id="editMenuNav">
       <li :class="{current: $route.name === 'tile'}"><router-link to="/admin/tile">タイル一覧を編集</router-link></li>
       <li :class="{current: $route.name === 'construction'}"><router-link to="/admin/construction">建設例一覧を編集</router-link></li>
-      <li :class="{current: $route.name === 'topic'}"><a href="#">お知らせを編集</a></li>
+      <li :class="{current: $route.name === 'topic'}"><router-link to="/admin/topic">お知らせを編集</router-link></li>
       <li :class="{current: $route.name === 'questions'}"><a href="#">よくある質問</a></li>
     </ul>
     <p><router-link to="/">編集画面を抜ける</router-link></p>
@@ -17,7 +17,7 @@ import Mixin from '../../mixin'
 import bodyHeader from '@/components/header.vue'
 import editTiles from './editTiles'
 import editConstruction from './editConstruction'
-import editTopic from './topic'
+import editTopic from './editTopic'
 export default {
   name: 'editHome',
   mixins: [Mixin],

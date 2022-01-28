@@ -14,6 +14,7 @@ import questions from '@/components/questions'
 import adminHome from '@/components/admin/home'
 import editTile from '@/components/admin/editTiles'
 import editConstruction from '@/components/admin/editConstruction'
+import editTopic from '@/components/admin/editTopic'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -83,6 +84,11 @@ let router = new Router({
           path: 'construction',
           name: 'construction',
           component: editConstruction
+        },
+        {
+          path: 'topic',
+          name: 'topic',
+          component: editTopic
         }
       ]
     },

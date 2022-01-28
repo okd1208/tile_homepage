@@ -17,6 +17,15 @@
         <label>日付: </label>
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
+      <div v-if="editType === 'topic'" class="cp_iptxt">
+        <p>カテゴリー: </p>
+        <input v-model="category" type="radio" id="category1" value="ニュース">
+        <label for="category1">ニュース</label>
+        <input v-model="category" type="radio" id="category2" value="入荷">
+        <label for="category2">入荷</label>
+        <input v-model="category" type="radio" id="category3" value="その他">
+        <label for="category3">その他</label>
+      </div>
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
       </div>
@@ -39,7 +48,16 @@
       </div>
       <div v-if="editType === 'construction'" class="cp_iptxt">
         <label>日付: </label>
-        <input v-model="date" rows="5" class="ef" type="date" required/>
+        <input v-model="date" class="ef" type="date" required/>
+      </div>
+      <div v-if="editType === 'topic'" class="cp_iptxt">
+        <p>カテゴリー: </p>
+        <input v-model="category" type="radio" id="category1" value="ニュース">
+        <label for="category1">ニュース</label>
+        <input v-model="category" type="radio" id="category2" value="入荷">
+        <label for="category2">入荷</label>
+        <input v-model="category" type="radio" id="category3" value="その他">
+        <label for="category3">その他</label>
       </div>
       <div class="cp_iptxt">
         <input type="file" @change="imageUp" id="file-up-input" value="アップロード">
