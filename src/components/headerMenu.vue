@@ -1,7 +1,7 @@
 <template>
   <header>
     <b-navbar toggleable="sm" type="light" class="header-nav">
-        <b-navbar-brand href="/">冨永タイル株式会社</b-navbar-brand>
+        <b-navbar-brand href="/"><img src='@/assets/logo/company_logo.png' width="70px">冨永タイル株式会社</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse class="mt-4 ml-lg-5" id="nav-collapse" is-nav>
           <b-navbar-nav>
