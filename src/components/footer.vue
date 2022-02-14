@@ -33,7 +33,7 @@
       </div>
       <div class="imformation">
         <div class="company">
-          <h4 class="companyTitle">冨永タイル株式会社</h4>
+          <h4 class="companyTitle">富永タイル株式会社</h4>
         </div>
         <div class="companyImfo">
           <p class="companyInfoText">福岡県福岡市長尾区</p>

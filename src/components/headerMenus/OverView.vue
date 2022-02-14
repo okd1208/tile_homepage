@@ -25,7 +25,7 @@ export default {
   data: function () {
     return {
       contents: [
-        {title: '会社名', text: '冨永タイル株式会社'},
+        {title: '会社名', text: '富永タイル株式会社'},
         {title: '創業', text: '1891年（明治24年）10月30日'},
         {title: '設立', text: '1918年（大正07年）09月'},
         {title: '資本金', text: '344億3,372万円（2019年12月31日現在）'},

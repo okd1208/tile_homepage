@@ -1,7 +1,7 @@
 <template>
  <div>
     <div :class="header">
-      <h1 class="headerTitle">タイルの事を任せるなら、冨永タイル</h1>
+      <h1 class="headerTitle">タイルの事を任せるなら、富永タイル</h1>
       <h1 class="headerbody">Welcome to tileWorld!</h1>
     </div>
     <div class="body">
