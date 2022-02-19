@@ -60,7 +60,6 @@ export default {
 }
 .fooderText {
   text-align: right;
-  /* opacity: 0.5; */
   margin-top:  100px;
   font-size: 14px;
 }
