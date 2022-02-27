@@ -1,8 +1,12 @@
 <template>
- <div>
-   <div class="header">
-     <h2>お問い合わせ</h2>
-   </div>
+  <div>
+    <header-img class="contact-img">
+      <template v-slot:Title>ABOUT</template>
+      <template v-slot:Text>会社情報</template>
+    </header-img>
+    <div class="header">
+      <h2>お問い合わせ</h2>
+    </div>
     <div>
         <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
             <h1 class="contact-title">お問い合わせ 内容入力</h1>
@@ -45,12 +49,16 @@
             <button type="submit">確認画面へ</button>
         </form>
     </div>
- </div>
+  </div>
 </template>
 
 <script>
+import headerImg from '@/components/headerImg.vue'
 export default {
-  name: 'contact'
+  name: 'contact',
+  components: {
+    headerImg
+  }
 }
 </script>
 

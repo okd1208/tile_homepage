@@ -1,18 +1,18 @@
 <template>
-<div>
-  <header-img class="OverView">
-    <template v-slot:Title>ABOUT</template>
-    <template v-slot:Text>会社情報</template>
-  </header-img>
-  <div class="body">
-    <table class="OverViewTable">
-      <tr v-for="content in contents" :key="content.title" class="OverViewTableTr">
-        <td class="contentsTitle">{{ content.title }}</td>
-        <td class="contentsText">{{ content.text }}</td>
-      </tr>
-    </table>
+  <div>
+    <header-img class="OverView">
+      <template v-slot:Title>ABOUT</template>
+      <template v-slot:Text>会社情報</template>
+    </header-img>
+    <div class="body">
+      <table class="OverViewTable">
+        <tr v-for="content in contents" :key="content.title" class="OverViewTableTr">
+          <td class="contentsTitle">{{ content.title }}</td>
+          <td class="contentsText">{{ content.text }}</td>
+        </tr>
+      </table>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
