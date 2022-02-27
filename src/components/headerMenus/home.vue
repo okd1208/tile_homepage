@@ -72,7 +72,6 @@ export default {
 /* @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap'); */
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
-  margin-top: -60px;
   background-size: cover;
   height: 800px;
 }
@@ -89,7 +88,6 @@ export default {
   background-image: url('~@/assets/home/home4.jpg');
 }
 .header5{
-  margin-top: -60px;
   background-image: url('~@/assets/home/home5.jpg');
 }
 .headerTitle{
