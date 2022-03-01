@@ -49,22 +49,27 @@ export default {
 .OverViewTable {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 32px;
-  width: 1000px;
+  min-width: 1000px;
+  margin-bottom: 136px;
   /* border-top: 2px solid rgba(255, 255, 255, 0.966); */
 }
+.OverViewTable tr:first-child {
+  border-top: 2px solid #D1D1D1;
+}
 .OverViewTableTr {
-  height: 46px;
-  border-bottom: 4px solid rgba(255, 255, 255, 0.966);
+  /* height: 46px; */
+  border-bottom: 2px solid #D1D1D1;
   /* margin-bottom: 100px; */
 }
 .contentsTitle {
+  padding: 24px 137px 24px 48px;
+  font-weight: bold;
   width: 300px;
-  color: white;
-  background-color: rgb(117, 185, 185);
+  color: #068273;
+  /* background-color: rgb(117, 185, 185); */
 }
 .contentsText {
+  font-weight: bold;
   text-align: left;
-  padding: 24px;
 }
 </style>
