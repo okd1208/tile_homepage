@@ -2,11 +2,14 @@
   <div class="tileDetail">
     <div class="tileName">
       <div v-if="$route.params.tilesOrConstructions === 'tile'">
-        <body-header>タイル詳細</body-header>
+        <content-title>タイル詳細</content-title>
         <detail-tile :tile-id=$route.params.id></detail-tile>
       </div>
       <div v-else>
-        <body-header>建設例詳細</body-header>
+        <content-title>
+          <template v-slot:mainTitle>Tiles</template>
+          <template v-slot:subTitle>タイル使用建設例</template>
+        </content-title>
         <detail-construction :construction-id=$route.params.id></detail-construction>
       </div>
     </div>
@@ -16,13 +19,13 @@
 <script>
 import detailTile from '@/components/detailTile.vue'
 import detailConstruction from '@/components/detailConstruction.vue'
-import bodyHeader from '@/components//header.vue'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'detail',
   components: {
     detailTile,
     detailConstruction,
-    bodyHeader
+    contentTitle
   },
   data: function () {
     return {

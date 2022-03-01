@@ -4,6 +4,10 @@
       <template v-slot:Title>ABOUT</template>
       <template v-slot:Text>会社情報</template>
     </header-img>
+    <content-title>
+      <template v-slot:mainTitle>会社情報</template>
+      <template v-slot:subTitle>Company info</template>
+    </content-title>
     <div class="body">
       <table class="OverViewTable">
         <tr v-for="content in contents" :key="content.title" class="OverViewTableTr">
@@ -17,10 +21,12 @@
 
 <script>
 import headerImg from '@/components/headerImg.vue'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'OverView',
   components: {
-    headerImg
+    headerImg,
+    contentTitle
   },
   data: function () {
     return {

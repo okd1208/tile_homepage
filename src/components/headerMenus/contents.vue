@@ -1,6 +1,6 @@
 <template>
  <div>
-   <!-- <body-header>事業内容</body-header> -->
+   <!-- <content-title>事業内容</content-title> -->
    <div class="body">
      <header-img className="contents">
       <template v-slot:Title>BUSINESS</template>

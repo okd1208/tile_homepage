@@ -1,6 +1,9 @@
 <template>
 <div>
-  <body-header>よくあるご質問</body-header>
+  <content-title>
+    <template v-slot:mainTitle>よくある質問</template>
+    <template v-slot:subTitle>questions</template>
+  </content-title>
   <div class="Qcategory">
     <div class="qa-list mts">
       <dl v-for="question in questions" :key="question.q" class="qa" :class='{open: question.isOpen}'>
@@ -15,7 +18,7 @@
 </template>
 
 <script>
-import bodyHeader from '@/components/header'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'questions',
   data: function () {
@@ -30,7 +33,7 @@ export default {
     }
   },
   components: {
-    bodyHeader
+    contentTitle
   }
 }
 </script>

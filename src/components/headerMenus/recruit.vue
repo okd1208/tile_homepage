@@ -73,7 +73,7 @@
 
 <script>
 import headerImg from '@/components/headerImg.vue'
-import bodyHeader from '@/components/header.vue'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'recruit',
   data: function () {
@@ -91,7 +91,7 @@ export default {
     }
   },
   components: {
-    bodyHeader,
+    contentTitle,
     headerImg
   }
 }

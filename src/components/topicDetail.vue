@@ -1,6 +1,9 @@
 <template>
   <div>
-    <body-header>お知らせ詳細</body-header>
+    <content-title>
+      <template v-slot:mainTitle>お知らせ</template>
+      <template v-slot:subTitle>NEWS</template>
+    </content-title>
     <div v-for="topic in topics" :key="topic.id" class="topicDetail">
       <div v-if="topic.id===$route.params.id">
         <p class="topicTitle"><span class="topicDetailType" :class="topic.type">{{ topic.type }}</span>{{ topic.title }}</p>
@@ -20,12 +23,12 @@
 </template>
 
 <script>
-import bodyHeader from '@/components/header'
+import contentTitle from '@/components/contentTitle'
 import newTopic from '@/components/newTopic.vue'
 export default {
   name: 'topicDetail',
   components: {
-    bodyHeader,
+    contentTitle,
     newTopic
   },
   computed: {

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <body-header>編集ページ</body-header>
+    <content-title>
+      <template v-slot:mainTitle>編集ページ</template>
+      <template v-slot:subTitle>edit</template>
+    </content-title>
     <ul id="editMenuNav">
       <li :class="{current: $route.name === 'tile'}"><router-link to="/admin/tile">タイル一覧を編集</router-link></li>
       <li :class="{current: $route.name === 'construction'}"><router-link to="/admin/construction">建設例一覧を編集</router-link></li>
@@ -13,7 +16,7 @@
 
 <script>
 import Mixin from '../../mixin'
-import bodyHeader from '@/components/header.vue'
+import contentTitle from '@/components/contentTitle'
 import editTiles from './editTiles'
 import editConstruction from './editConstruction'
 import editTopic from './editTopic'
@@ -21,7 +24,7 @@ export default {
   name: 'editHome',
   mixins: [Mixin],
   components: {
-    bodyHeader,
+    contentTitle,
     editTiles,
     editConstruction,
     editTopic
