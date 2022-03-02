@@ -20,8 +20,13 @@ export default {
 
 <style>
 @import "./css/styles.css";
+@font-face {
+  font-family: "Overpass";
+  src: url("https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap");
+  unicode-range: U+0000-00FF;
+}
 #app {
-  font-family: 'Noto Sans JP', 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Overpass", 'Noto Sans JP', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

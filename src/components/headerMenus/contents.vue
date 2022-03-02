@@ -1,64 +1,139 @@
 <template>
  <div>
-   <!-- <content-title>事業内容</content-title> -->
    <div class="body">
-     <header-img className="contents">
+    <header-img className="contents">
       <template v-slot:Title>BUSINESS</template>
       <template v-slot:Text>事業内容</template>
     </header-img>
-    <div class="businessContents">
-      <div class="divContainer">
-        <h2 class="contentsTitle">主な事業・サービス</h2>
-        <p class="keyPhrase">誰よりも何処よりも早く、丁寧に、をもっとウニ。</p>
-        <p class="contentsText">弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っております。</p>
+    <content-title>
+      <template v-slot:mainTitle>経営理念</template>
+      <template v-slot:subTitle>Philosophy</template>
+    </content-title>
+    <div>
+      <h2 class="green-title">誰よりも何処よりも早く、丁寧に、をもっとウニ。</h2>
+      <p>
+        弊社では、主にタイルをメインとした取引を行っております。<br>
+        弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っており<br>
+        ます。弊社では、主にタイルをメインとした取引を行っております。
+      </p>
+    </div>
+    <div class="business-main-content">
+      <div class="business-content-container">
+        <img class="business-floot-img" src="@/assets/town.jpg">
+        <div class="business-content">
+          <h2 class="green-title">誰よりも何処よりも早く、丁寧に。</h2>
+          <p>
+            弊社では、主にタイルをメインとした取引を行っております。
+            弊社では、主にタイルをメインとした取引を行っております。メインとした取引を行っております。<br>
+            弊社では、主にタイルをメインとした取引を行っております。
+          </p>
+        </div>
       </div>
-      <div class="divContainer">
-        <h2 class="contentsTitle">タイル工事までの流れ</h2>
-        <p class="keyPhrase">誰よりも何処よりも早く、丁寧に、をもっとウニ。</p>
-        <p class="contentsText">富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。富永タイルではお客様に満足して頂けるように、以下の流れにそって行います。</p>
+      <div class="business-flow">
+        <h2>タイル工事までの流れ</h2>
+        <div>
+          <div class="business-flow-step">
+            <img src="@/assets/town.jpg">
+            <h3>ヒアリング</h3>
+            <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+          </div>
+          <div class="business-flow-step">
+            <img src="@/assets/town.jpg">
+            <h3>見積もり</h3>
+            <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+          </div>
+          <div class="business-flow-step">
+            <img src="@/assets/town.jpg">
+            <h3>工事</h3>
+            <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+          </div>
+        </div>
       </div>
     </div>
-    <flow-step></flow-step>
    </div>
  </div>
 </template>
 
 <script>
-import constructionBtn from '@/components/constructionBtn.vue'
-import tileBtn from '@/components//tileBtn.vue'
-import headerImg from '@/components/headerImg.vue'
-import flowStep from '@/components/flowStep.vue'
+import headerImg from '@/components/headerImg'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'Contents',
   components: {
-    constructionBtn,
-    tileBtn,
     headerImg,
-    flowStep
+    contentTitle
   }
 }
 </script>
 
 <style scoped>
-.businessContents {
-  font-family: serif;
-}
-.contentsTitle {
+.green-title {
+  color: #068273;
+  font-size: 30px;
   font-weight: bold;
-  font-size: 36px;
-  margin-bottom: 24px;
+  text-shadow: 0 3px 6px #00000029;
 }
-.keyPhrase {
-  font-weight: bold;
-  font-size: 23px;
-  color: rgba(75, 137, 218, 0.884);
+.business-main-content {
+  margin-top: 125px;
+  padding: 94px 114px 0;
+  background-color: #F2F2F2;
 }
-.divContainer {
-  width: 60%;
-  margin: 100px auto;
+.business-content-container {
+  background-color: white;
 }
-.contentsText{
-  line-height: 26px;
+.business-floot-img {
+  position: absolute;
+  right: 0;
+  max-width: 40%;
+  margin-top: -32px;
+}
+.business-content {
+  width: 50%;
+  padding: 76px 0 32px 67px;
   text-align: left;
+}
+.business-content p {
+  margin-top: 70px;
+}
+.business-flow > h2 {
+  font-weight: bold;
+  font-size: 26px;
+  display: inline-block;
+  position: relative;
+  margin:164px 0 85px 0;
+}
+.business-flow > h2::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: -16px;
+  border-bottom: 3px solid #068273;
+}
+.business-flow > div {
+  display: flex;
+   justify-content: space-around;
+}
+.business-flow-step {
+  width: 25%;
+}
+.business-flow-step img{
+  width: 100%;
+}
+
+.business-flow-step > h3 {
+  font-weight: normal;
+  font-size: 26px;
+  display: inline-block;
+  position: relative;
+  margin:16px 0 25px 0;
+}
+.business-flow-step > h3::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: -9px;
+  border-bottom: 3px solid #068273;
 }
 </style>
