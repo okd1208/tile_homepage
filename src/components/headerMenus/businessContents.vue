@@ -1,7 +1,7 @@
 <template>
  <div>
    <div class="body">
-    <header-img className="contents">
+    <header-img className="businessContents">
       <template v-slot:Title>BUSINESS</template>
       <template v-slot:Text>事業内容</template>
     </header-img>

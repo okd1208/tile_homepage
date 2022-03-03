@@ -12,7 +12,7 @@
       <ul class="header-menubar">
         <li><router-link :class="{'active-menu':$route.name === 'home'}" to="/">ホーム</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'OverView'}" to="/OverView">会社情報</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'contents'}" to="/contents">事業内容</router-link></li>
+        <li><router-link :class="{'active-menu':$route.name === 'businessContents'}" to="/businessContents">事業内容</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'recruit'}" to="/recruit">採用情報</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'constructionExample'}" to="/constructionExample">施工例</router-link></li>
         <li class="contact-btn"><router-link to="/contact">お問い合わせ</router-link></li>

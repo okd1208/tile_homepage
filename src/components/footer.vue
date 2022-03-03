@@ -5,7 +5,7 @@
         <ul class="container">
           <p class="containerTitle">知りたい</p>
           <li class="footerList"><router-link to="/Overview" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>会社概要</p></router-link></li>
-          <li class="footerList"><router-link to="/Contents" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p></router-link></li>
+          <li class="footerList"><router-link to="/businessContents" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>事業内容</p></router-link></li>
           <li class="footerList"><router-link to="/Recruit" class="text-dark"><p class="containerText"><i class="fas fa-angle-right arrow"></i>採用情報</p></router-link></li>
         </ul>
         <ul class="container">

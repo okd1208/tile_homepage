@@ -6,7 +6,7 @@ import recruit from '@/components/headerMenus/recruit'
 import OverView from '@/components/headerMenus/OverView'
 import constructionExample from '@/components/headerMenus/constructionExample'
 import tiles from '@/components/headerMenus/tiles'
-import contents from '@/components/headerMenus/contents'
+import businessContents from '@/components/headerMenus/businessContents'
 import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/topicDetail'
@@ -50,9 +50,9 @@ let router = new Router({
       component: contact
     },
     {
-      path: '/contents',
-      name: 'contents',
-      component: contents
+      path: '/businessContents',
+      name: 'businessContents',
+      component: businessContents
     },
     {
       path: '/tiles',

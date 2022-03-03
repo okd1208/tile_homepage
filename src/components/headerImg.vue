@@ -23,8 +23,8 @@ export default {
 .recruitImg {
   background-image: url('~@/assets/recruit/recruit5.jpeg');
 }
-.contents {
-  background-image: url('~@/assets/contents.jpeg');
+.businessContents {
+  background-image: url('~@/assets/businessContents.jpeg');
 }
 .headerImg {
   background-color: rgb(238, 238, 238);
