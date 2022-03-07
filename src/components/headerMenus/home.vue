@@ -5,7 +5,7 @@
       <h1 class="headerbody">Welcome to tileWorld!</h1>
     </div>
     <div class="body">
-      <new-topic>お知らせ</new-topic>
+      <new-topic></new-topic>
       <construction></construction>
       <construction-btn>タイルの使用例一覧をみる</construction-btn>
       <some-tiles></some-tiles>
