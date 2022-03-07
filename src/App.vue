@@ -21,8 +21,8 @@ export default {
 <style>
 @import "./css/styles.css";
 @font-face {
-  font-family: "Overpass";
-  src: url("https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap");
+  font-family: 'Overpass';
+  src: url('./fonts/Overpass-VariableFont_wght.ttf');
   unicode-range: U+0000-00FF;
 }
 #app {
