@@ -1,8 +1,10 @@
 <template>
   <div class="headerImg" :class="className">
       <div class="headerImgBack">
-        <h2 class="headerImgTitle"><slot name="Title"></slot></h2>
-        <p class="headerImgText"><slot name="Text"></slot></p>
+        <div>
+          <h2 class="headerImgTitle"><slot name="Title"></slot></h2>
+          <p class="headerImgText"><slot name="Text"></slot></p>
+        </div>
       </div>
     </div>
 </template>
@@ -28,25 +30,27 @@ export default {
 }
 .headerImg {
   background-color: rgb(238, 238, 238);
-  height: 450px;
-  margin-top: 100px;
   text-align: center;
   /* 1800:600 */
   background-size: cover;
 }
 .headerImgBack {
-  height: 450px;
-  padding-top: 160px;
-  font-size: 46px;
-  background-color: rgba(78, 77, 77, 0.548);
+  text-shadow: 0px 3px 6px #00000029;
+  height: 304px;
+  background-color: rgba(206, 205, 205, 0.5);
   color: white;
 }
+.headerImgBack > div {
+  padding-top: 98px;
+  height: 200px;
+}
 .headerImgTitle {
-  font-size: 52px;
+  font-size: 46px;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 .headerImgText {
-  font-family: serif;
-  font-size: 32px;
+  font-size: 28px;
+  font-weight: 400;
 }
 </style>
