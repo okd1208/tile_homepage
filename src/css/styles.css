@@ -12,3 +12,16 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.green-underbar {
+  display: inline-block;
+  position: relative;
+}
+.green-underbar::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: -9px;
+  border-bottom: 3px solid #068273;
+}
