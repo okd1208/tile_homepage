@@ -6,18 +6,31 @@
     </div>
     <div class="body">
       <new-topic></new-topic>
+      <div class="toppage-appealing-point1">
+        <div>
+          <h2>タイルで地域に貢献したい。</h2>
+          <p>
+            富永タイルはどこまでも一途にお客様のニーズに応え、<br>
+            暮らしに寄り添ったサービスを提供します。<br>
+            タイルのことはお任せ下さい。
+          </p>
+          <div class="breen-button">事業内容</div>
+        </div>
+      </div>
       <construction></construction>
       <construction-btn>タイルの使用例一覧をみる</construction-btn>
-      <some-tiles></some-tiles>
-      <tile-btn>タイル一覧をみる</tile-btn>
-      <!-- <div class="bodyFooter">
-        <div class="contact">
-          <h2 class="footerTitle"><span class="icon"><i class="far fa-envelope"></i></span>お問い合わせ</h2>
+      <!-- <some-tiles></some-tiles>
+      <tile-btn>タイル一覧をみる</tile-btn> -->
+      <div class="toppage-appealing-point2">
+        <div>
+          <h2>タイルを仕事に。</h2>
+          <p>
+            タイルを１枚貼ると寿命が１年伸びるんだって。<br>
+             あなたも寿命伸ばしてみない？
+          </p>
+          <div class="white-button">事業内容</div>
         </div>
-        <div class="question">
-          <h2 class="footerTitle"><span class="icon"><i class="far fa-question-circle"></i></span>よくある質問</h2>
-        </div>
-      </div> -->
+      </div>
       <request-erea></request-erea>
     </div>
  </div>
@@ -114,33 +127,64 @@ export default {
   /* color: white; */
   font-family: monospace;
 }
-.bodyFooter {
-  display: flex;
-  margin-top: 64px;
+.toppage-appealing-point1 {
+  margin-top: 112px;
+  background-image: url("~@/assets/home2.jpeg");
+  background-position: left;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  height: 500px;
+  overflow: hidden;
 }
-.contact,.question{
-  width: 50%;
-  height: 200px;
+.toppage-appealing-point1 > div {
+  margin-left: 50%;
+  text-align: left;
+  margin-top: 128px;
 }
-.contact {
-  background-color:rgb(192, 228, 228);
+.toppage-appealing-point1 h2 {
+  margin-bottom: 32px;
+  background-color: #068274d7;
+  color: white;
+  padding: 12px 0 8px 88px;
 }
-.question {
-  background-color:rgb(189, 210, 238);
+.toppage-appealing-point1 p {
+  margin-left: 88px;
+  font-weight: 500;
+  font-size: 18px;
 }
-.footerTitle {
-  line-height: 120px;
-  margin-top: 40px;
+.toppage-appealing-point1 .breen-button {
+  position: relative;
+  top: 48px;
+  left: 50%;
 }
-.icon {
-  /* display: inline-block;
-  width: 100px; */
-  /* height: 100px; */
-  /* background-color: white; */
-  /* border-radius: 50%; */
-  /* text-align: left; */
-  margin-right: 8px;
-  /* padding-top: -32px; */
+
+.toppage-appealing-point2 {
+  margin-top: 112px;
+  background-image: url("~@/assets/home2.jpeg");
+  background-position: right;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  height: 500px;
+  overflow: hidden;
+}
+.toppage-appealing-point2 > div {
+  margin-right: 50%;
+  padding: 32px 0 32px 184px;
+  text-align: left;
+  color: white;
+  background-color: #068274d7;
+  margin-top: 48px;
+}
+.toppage-appealing-point2 h2 {
+  margin-bottom: 32px;
+}
+.toppage-appealing-point2 p {
+  font-weight: 500;
+  font-size: 18px;
+}
+.toppage-appealing-point2 .wthite-button {
+  position: relative;
+  margin: 48px 0;
 }
 
 @media screen and (max-width:534px) {
