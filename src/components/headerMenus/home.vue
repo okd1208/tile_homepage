@@ -18,6 +18,11 @@
         </div>
       </div>
       <construction></construction>
+      <slick ref="slick" :options="slickOptions" class="slick-outer construction-slick">
+        <div><img width="1000px" src="@/assets/town.jpg" class="slick-img"></div>
+        <div><img width="1000px" src="@/assets/hear.jpg" class="slick-img"></div>
+        <div><img width="1000px" src="@/assets/businessContents.jpeg" class="slick-img"></div>
+      </slick>
       <construction-btn>タイルの使用例一覧をみる</construction-btn>
       <!-- <some-tiles></some-tiles>
       <tile-btn>タイル一覧をみる</tile-btn> -->
@@ -43,13 +48,23 @@ import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
 import requestErea from '@/components/requestErea'
+import slick from 'vue-slick'
 export default {
   name: 'home',
   data: function () {
     return {
       header: 'header1',
       head: 'header',
-      img: 1
+      img: 1,
+      slickOptions: {
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnFocus: false,
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>'
+      }
     }
   },
   components: {
@@ -58,7 +73,8 @@ export default {
     constructionBtn,
     tileBtn,
     someTiles,
-    requestErea
+    requestErea,
+    slick
   },
   methods: {
     headerClass: function () {
@@ -83,6 +99,8 @@ export default {
 
 <style scoped>
 /* @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap'); */
+@import "../../css/slick-theme.css";
+@import "../../css/slick.css";
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
   background-size: cover;
@@ -186,6 +204,10 @@ export default {
   position: relative;
   margin: 48px 0;
 }
+
+/* .construction-slick div {
+  width: 30%;
+} */
 
 @media screen and (max-width:534px) {
   .header1,.header2,.header3,.header4,.header5{
