@@ -1,52 +1,43 @@
 <template>
   <div>
     <header-img class="contact-img">
-      <template v-slot:Title>ABOUT</template>
-      <template v-slot:Text>会社情報</template>
+      <template v-slot:Text>お問い合わせ</template>
+      <template v-slot:Title>CONTACT</template>
     </header-img>
     <div class="header">
-      <h2>お問い合わせ</h2>
+      <p>事業に関することや、サービスに関することなど<br>お気軽にお問い合わせください。</p>
     </div>
     <div>
-        <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
-            <h1 class="contact-title">お問い合わせ 内容入力</h1>
-            <p>お問い合わせ内容をご入力の上、「確認画面へ」ボタンをクリックしてください。</p>
+        <form class="contactpage-form">
             <div>
-                <div>
-                    <label>お名前<span>必須</span></label>
-                    <input type="text" name="name" placeholder="例）山田太郎" value="">
-                </div>
-                <div>
-                    <label>ふりがな<span>必須</span></label>
-                    <input type="text" name="furigana" placeholder="例）やまだたろう" value="">
-                </div>
-                <div>
-                    <label>メールアドレス<span>必須</span></label>
-                    <input type="text" name="email" placeholder="例）guest@example.com" value="">
-                </div>
-                <div>
-                    <label>電話番号<span>必須</span></label>
-                    <input type="text" name="tel" placeholder="例）0000000000" value="">
-                </div>
-                <div>
-                    <label>性別<span>必須</span></label>
-                    <input type="radio" name="sex" value="男性" checked> 男性
-                    <input type="radio" name="sex" value="女性"> 女性
-                </div>
-                <div>
-                    <label>お問い合わせ項目<span>必須</span></label>
-                    <select name="item">
-                        <option value="">お問い合わせ項目を選択してください</option>
-                        <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
-                        <option value="ご意見・ご感想">ご意見・ご感想</option>
-                    </select>
-                </div>
-                <div>
-                    <label>お問い合わせ内容<span>必須</span></label>
-                    <textarea name="content" rows="5" placeholder="お問合せ内容を入力"></textarea>
-                </div>
+                <label>お名前</label><span>必須</span>
+                <input type="text" name="name" value="">
             </div>
-            <button type="submit">確認画面へ</button>
+            <div>
+                <label>ふりがな</label><span>必須</span>
+                <input type="text" name="furigana" value="">
+            </div>
+            <div>
+                <label>メールアドレス</label><span>必須</span>
+                <input type="text" name="email" value="">
+            </div>
+            <div>
+                <label>電話番号</label><span>必須</span>
+                <input type="text" name="tel" placeholder="例）08012345678" value="">
+            </div>
+            <div>
+                <label>お問い合わせ項目</label><span>必須</span>
+                <select name="item">
+                    <option value="">お問い合わせ項目を選択してください</option>
+                    <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
+                    <option value="ご意見・ご感想">ご意見・ご感想</option>
+                </select>
+            </div>
+            <div>
+                <label for="content">お問い合わせ内容</label><span>必須</span>
+                <textarea name="content" style="color:000000;vertical-align:middle" rows="5"></textarea>
+            </div>
+            <p class="contact-submit-btn" type="submit">確認画面へ</p>
         </form>
     </div>
   </div>
@@ -64,6 +55,40 @@ export default {
 
 <style scoped>
 .header{
-  margin-top: 100px;
+  margin: 100px 0 60px 0;
+}
+.contactpage-form > div {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 60px;
+}
+.contactpage-form label {
+  width: 35%;
+}
+.contactpage-form input::before{
+   content: "→";
+   margin-right: 0;
+}
+.contactpage-form input, .contactpage-form select, .contactpage-form textarea {
+  width: 55%;
+}
+.contactpage-form span {
+  background-color: #068273;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  /* line-height: 30px; */
+  padding: 4px 8px;
+  display: inline-block;
+  position: relative;
+  right: 0;
+}
+.contactpage-form > .contact-submit-btn {
+  background-color: #068273;
+  color: white;
+  display: inline-block;
+  padding: 21px 63px;
+  font-size: 18px;
 }
 </style>
