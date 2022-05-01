@@ -7,27 +7,30 @@
     <div class="header">
       <p>事業に関することや、サービスに関することなど<br>お気軽にお問い合わせください。</p>
     </div>
+    <div v-if="errorMessage != []" class="error-massage">
+      <p v-for="m in errorMessage" :key="m">{{m}}</p>
+    </div>
     <div>
         <form class="contactpage-form">
             <div>
-                <label>お名前</label><span>必須</span>
-                <input type="text" name="name" value="">
+                <label>名前</label><span>必須</span>
+                <input v-model="fullName" type="text" name="name" value="">
             </div>
             <div>
-                <label>ふりがな</label><span>必須</span>
-                <input type="text" name="furigana" value="">
+                <label>フリガナ(空白なし)</label><span>必須</span>
+                <input v-model="ruby" type="text" name="furigana" value="">
             </div>
             <div>
                 <label>メールアドレス</label><span>必須</span>
-                <input type="text" name="email" value="">
+                <input v-model="email" type="text" name="email" value="">
             </div>
             <div>
-                <label>電話番号</label><span>必須</span>
-                <input type="text" name="tel" placeholder="例）08012345678" value="">
+                <label>電話番号(ハイフンあり)</label><span>必須</span>
+                <input v-model="phoneNumber" type="text" name="tel" placeholder="例）080-1234-5678" value="">
             </div>
             <div>
                 <label>お問い合わせ項目</label><span>必須</span>
-                <select name="item">
+                <select v-model="contactType" name="item">
                     <option value="">お問い合わせ項目を選択してください</option>
                     <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
                     <option value="ご意見・ご感想">ご意見・ご感想</option>
@@ -35,9 +38,9 @@
             </div>
             <div>
                 <label for="content">お問い合わせ内容</label><span>必須</span>
-                <textarea name="content" style="color:000000;vertical-align:middle" rows="5"></textarea>
+                <textarea v-model="contactContent" name="content" style="color:000000;vertical-align:top" rows="5"></textarea>
             </div>
-            <p class="contact-submit-btn" type="submit">確認画面へ</p>
+            <p @click="submitContactForm" class="contact-submit-btn" type="submit">確認画面へ</p>
         </form>
     </div>
   </div>
@@ -47,8 +50,44 @@
 import headerImg from '@/components/headerImg.vue'
 export default {
   name: 'contact',
+  data: function () {
+    return {
+      fullName: null,
+      ruby: null,
+      phoneNumber: null,
+      email: null,
+      contactType: '',
+      contactContent: null,
+      errorMessage: []
+    }
+  },
   components: {
     headerImg
+  },
+  methods: {
+    submitContactForm () {
+      this.errorMessage = []
+      if (!this.fullName || !this.fullName.match(/\S/g)) {
+        this.errorMessage.push('名前を入力してください。')
+      }
+      if (!this.ruby || !this.ruby.match(/^[ァ-ン]*$/)) {
+        this.errorMessage.push('カタカナでふりがなを入力してください。')
+      }
+      if (!this.email || !this.email.match(/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/)) {
+        this.errorMessage.push('メールアドレスを正しい形式で入力してください。')
+      }
+      if (!this.phoneNumber || !this.phoneNumber.match(/\d{2,4}-\d{2,4}-\d{4}/)) {
+        this.errorMessage.push('電話番号を正しい形式で入力してください。')
+      }
+      if (!this.contactType) {
+        this.errorMessage.push('お問い合わせ項目を選択してください。')
+      }
+      if (!this.contactContent) {
+        this.errorMessage.push('お問い合わせ内容を入力してください。')
+      } else if (this.contactContent.length > 1000) {
+        this.errorMessage.push('お問い合わせ内容を1000文字以内に変更してください。')
+      }
+    }
   }
 }
 </script>
@@ -90,5 +129,10 @@ export default {
   display: inline-block;
   padding: 21px 63px;
   font-size: 18px;
+}
+.error-massage {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 32px;
 }
 </style>
