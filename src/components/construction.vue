@@ -1,9 +1,12 @@
 <template>
   <div class="construction">
     <Slick v-if="showSlide" ref="slick" :options="slickOptions" class="slick-outer mt-4">
-      <div ref="item" v-for="construction in consData.constructions" :key="construction.name">
+      <div ref="item" class="slick-three-display" v-for="construction in consData.constructions" :key="construction.name">
         <router-link :to="{name: 'detail', params: {id: construction.name, tilesOrConstructions: 'construction'}}" class="signup-link">
-          <img :src="construction.fotoURL" width="90%" class="slick-img slick-three-img">
+          <span class="c-type">公共</span>
+          <img :src="construction.fotoURL" width="100%">
+          <p class="c-date">{{ construction.date }}</p>
+          <p class="c-name">{{ construction.name }}</p>
         </router-link>
       </div>
     </Slick>
@@ -73,11 +76,36 @@ export default {
 <style>
 @import "../css/slick-theme.css";
 @import "../css/slick.css";
-.slick-three-img {
+.slick-three-display {
+  text-align: left;
+  width: 90% !important;
   margin: auto;
+  padding: 52px 0;
 }
+
+.slick-three-display .c-date {
+  margin: 16px 0 4px;
+  font-size: 16px;
+  color: #5C5C5C;
+}
+
+.slick-three-display a:hover {
+  color: #5C5C5C;
+  text-decoration: none;
+}
+
+.slick-three-display .c-type {
+  color: #068273;
+  background-color: white;
+  position: relative;
+  top: 16px;
+  right: 16px;
+  padding: 3px 16px;
+  border-radius: 5px;
+}
+
 .slick-outer {
-  width: 80%;
+  width: 75%;
   margin: auto;
 }
 

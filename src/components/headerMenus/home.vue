@@ -17,7 +17,13 @@
           <div class="breen-button">事業内容</div>
         </div>
       </div>
-      <construction></construction>
+      <content-title>
+        <template v-slot:mainTitle>建設事例</template>
+        <template v-slot:subTitle>Works</template>
+      </content-title>
+      <div class="c-slick">
+        <construction></construction>
+      </div>
       <construction-btn>タイルの使用例一覧をみる</construction-btn>
       <!-- <some-tiles></some-tiles>
       <tile-btn>タイル一覧をみる</tile-btn> -->
@@ -43,6 +49,7 @@ import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
 import requestErea from '@/components/requestErea'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'home',
   data: function () {
@@ -58,7 +65,8 @@ export default {
     constructionBtn,
     tileBtn,
     someTiles,
-    requestErea
+    requestErea,
+    contentTitle
   },
   methods: {
     headerClass: function () {
@@ -185,6 +193,10 @@ export default {
 .toppage-appealing-point2 .wthite-button {
   position: relative;
   margin: 48px 0;
+}
+
+.c-slick {
+  background-color: #F2F2F2;
 }
 
 @media screen and (max-width:534px) {
