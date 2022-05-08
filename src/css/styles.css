@@ -31,6 +31,7 @@ a {
   padding: 16px 56px;
   font-size: 18px;
   box-shadow: 0px 3px 6px #00000029;
+  transition: 0.3s;
 }
 
 .breen-button {
@@ -41,6 +42,22 @@ a {
 .white-button {
   color: white;
   border: 1px solid white;
+}
+
+.breen-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #068273;
+  border: 1px solid #068273;
+  transition: all 0.5s 0s ease;
+}
+
+.white-button:hover {
+  cursor: pointer;
+  color: #068273;
+  background-color: white;
+  border: 1px solid #068273;
+  transition: all 0.5s 0s ease;
 }
 
 .button:hover, .white-button:hover {

@@ -14,7 +14,7 @@
             暮らしに寄り添ったサービスを提供します。<br>
             タイルのことはお任せ下さい。
           </p>
-          <div class="breen-button">事業内容</div>
+          <router-link to="/businessContents"><div class="breen-button">事業内容</div></router-link>
         </div>
       </div>
       <content-title>
@@ -24,7 +24,8 @@
       <div class="c-slick">
         <construction></construction>
       </div>
-      <construction-btn>タイルの使用例一覧をみる</construction-btn>
+      <router-link to="/constructionExample"><div class="breen-button mt-4">建設事例一覧をみる</div></router-link>
+      <!-- <construction-btn>タイルの使用例一覧をみる</construction-btn> -->
       <!-- <some-tiles></some-tiles>
       <tile-btn>タイル一覧をみる</tile-btn> -->
       <div class="toppage-appealing-point2">
@@ -34,7 +35,7 @@
             タイルを１枚貼ると寿命が１年伸びるんだって。<br>
              あなたも寿命伸ばしてみない？
           </p>
-          <div class="white-button">事業内容</div>
+          <router-link to="/constructionExample"><div class="white-button">事業内容</div></router-link>
         </div>
       </div>
       <request-erea></request-erea>
