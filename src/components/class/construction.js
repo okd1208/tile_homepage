@@ -24,7 +24,8 @@ export class Construction {
       text: data.text,
       storagePath: data.path,
       date: data.date,
-      created: new Date()
+      created: new Date(),
+      category: data.category
     })
     location.reload()
   }
@@ -38,7 +39,8 @@ export class Construction {
       fotoURL: document.getElementById('image').src,
       text: data.text,
       storagePath: data.path,
-      date: data.date
+      date: data.date,
+      category: data.category
     })
     location.reload()
   }

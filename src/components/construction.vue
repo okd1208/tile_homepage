@@ -3,7 +3,7 @@
     <Slick v-if="showSlide" ref="slick" :options="slickOptions" class="slick-outer mt-4">
       <div ref="item" class="slick-three-display" v-for="construction in consData.constructions" :key="construction.name">
         <router-link :to="{name: 'detail', params: {id: construction.name, tilesOrConstructions: 'construction'}}" class="signup-link">
-          <span class="c-type">公共</span>
+          <span class="c-type">{{ construction.category }}</span>
           <img :src="construction.fotoURL" width="100%">
           <p class="c-date">{{ construction.date }}</p>
           <p class="c-name">{{ construction.name }}</p>

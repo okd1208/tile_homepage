@@ -96,10 +96,11 @@ export default {
       this.text = data.text
       this.storagePath = data.storagePath
       document.getElementById('image').src = data.fotoURL
-      if (this.$route.name === 'construction') {
-        this.date = data.date.replace(/\//g, '-')
-      } else if (this.$route.name === 'topic') {
+      if (data.category) {
         this.category = data.category
+      }
+      if (data.date) {
+        this.date = data.date.replace(/\//g, '-')
       }
       console.log(this.getNewData)
     },
@@ -112,6 +113,7 @@ export default {
       this.text = ''
       this.date = ''
       this.fotoURL = ''
+      this.category = null
       this.selectItemData = null
       this.storagePath = null
       this.oldImagePath = null
@@ -122,10 +124,11 @@ export default {
   computed: {
     getNewData () {
       let data = {key: this.$store.state.editKey, name: this.targetName, text: this.text, path: this.storagePath}
-      if (this.$route.name === 'construction') {
-        data.date = this.date
-      } else if (this.$route.name === 'topic') {
+      if (this.category) {
         data.category = this.category
+      }
+      if (this.date) {
+        data.date = this.date
       }
       return data
     }

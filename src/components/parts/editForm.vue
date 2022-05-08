@@ -14,7 +14,14 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div v-if="editType === 'construction'" class="cp_iptxt">
-        <label>日付: </label>
+        <p>カテゴリー: </p>
+        <input v-model="category" type="radio" id="category1" value="公共">
+        <label for="category1">公共</label>
+        <input v-model="category" type="radio" id="category2" value="民家">
+        <label for="category2">民家</label>
+        <input v-model="category" type="radio" id="category3" value="ビル">
+        <label for="category3">ビル</label>
+        <p><label>日付: </label></p>
         <input v-model="date" rows="5" class="ef" type="date" required/>
       </div>
       <div v-if="editType === 'topic'" class="cp_iptxt">
@@ -47,7 +54,14 @@
         <span class="focus_line"><i></i></span>
       </div>
       <div v-if="editType === 'construction'" class="cp_iptxt">
-        <label>日付: </label>
+         <p>カテゴリー: </p>
+        <input v-model="category" type="radio" id="category1" value="公共">
+        <label for="category1">公共</label>
+        <input v-model="category" type="radio" id="category2" value="民家">
+        <label for="category2">民家</label>
+        <input v-model="category" type="radio" id="category3" value="ビル">
+        <label for="category3">ビル</label>
+        <p><label>日付: </label></p>
         <input v-model="date" class="ef" type="date" required/>
       </div>
       <div v-if="editType === 'topic'" class="cp_iptxt">
