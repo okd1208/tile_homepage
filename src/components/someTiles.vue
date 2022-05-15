@@ -3,10 +3,10 @@
     <h2 class="title s-fontsize-15rem">取り扱いタイル一覧</h2>
     <div>
       <ul class="tileParent">
-        <li v-for="tile in tileData.tiles" :key="tile.name" class="tile">
+        <li v-for="(tile, key) in tileData.tiles" :key="key" class="tile">
           <some-imgs>
             <template v-slot:img>
-              <router-link :to="{name: 'detail', params: {id: tile.name, tilesOrConstructions: 'tile'}}" class="signup-link">
+              <router-link :to="{name: 'detail', params: {id: key, tilesOrConstructions: 'tile'}}" class="signup-link">
                 <img class="hoverImg" :src="tile.fotoURL" width="100%">
               </router-link>
             </template>

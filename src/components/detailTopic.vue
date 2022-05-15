@@ -4,13 +4,11 @@
       <template v-slot:mainTitle>お知らせ</template>
       <template v-slot:subTitle>NEWS</template>
     </content-title>
-    <div v-for="topic in topics" :key="topic.id" class="topicDetail">
-      <div v-if="topic.id===$route.params.id">
-        <p class="topicTitle"><span class="topicDetailType" :class="topic.type">{{ topic.type }}</span>{{ topic.title }}</p>
-        <p class="topicDetailDate topicDate">投稿日： {{ topic.date }}</p>
-        <img :src="topic.img" width="40%">
-        <p class="topicDetalText">{{ topic.text }}</p>
-      </div>
+    <div v-if="targetTopic" class="topicDetail">
+      <p class="topicTitle"><span class="topicDetailType" :class="targetTopic.category">{{ targetTopic.category }}</span>{{ targetTopic.name }}</p>
+      <p class="topicDetailDate topicDate">投稿日： {{ getDate(targetTopic.created) }}</p>
+      <img :src="targetTopic.fotoURL" width="40%">
+      <p class="topicDetalText">{{ targetTopic.text }}</p>
     </div>
     <new-topic>その他の最新情報</new-topic>
     <div>
@@ -25,15 +23,24 @@
 <script>
 import contentTitle from '@/components/contentTitle'
 import newTopic from '@/components/newTopic.vue'
+import Mixin from '../mixin'
 export default {
   name: 'topicDetail',
+  watch: {
+    'topicData.topics': function (value) {
+      if (value) {
+        this.targetTopic = this.topicData.topics[this.$route.params.id]
+      }
+    }
+  },
+  mixins: [Mixin],
   components: {
     contentTitle,
     newTopic
   },
-  computed: {
-    topics () {
-      return this.$store.state.topics
+  data: function () {
+    return {
+      targetTopic: null
     }
   }
 }

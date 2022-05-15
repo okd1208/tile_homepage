@@ -5,12 +5,12 @@
       <template v-slot:subTitle>News</template>
     </content-title>
     <ul class="topics">
-     <li v-for="topic in topics" :key="topic.id" class="topic">
-      <router-link :to="{name: 'topicDetail', params: {id: topic.id}}" class="signup-link topicLink">
+     <li v-for="(topic,key) in topicData.topics" :key="key" class="topic">
+      <router-link :to="{name: 'topicDetail', params: {id: key}}" class="signup-link topicLink">
        <!-- <span class="topicType" :class="topic.color">{{ topic.type }}</span> -->
-       <span class="topic-date">{{ topic.date }}</span>
-       <span class="topic-type">{{ topic.type }}</span>
-       <span class="topic-title">{{ topic.title }}</span>
+       <span class="topic-date">{{ getDate(topic.created) }}</span>
+       <span class="topic-type">{{ topic.category }}</span>
+       <span class="topic-title">{{ topic.name }}</span>
       </router-link>
      </li>
     </ul>
@@ -25,11 +25,13 @@
 
 <script>
 import contentTitle from '@/components/contentTitle'
+import Mixin from '../mixin'
 export default {
   name: 'newTopic',
   components: {
     contentTitle
   },
+  mixins: [Mixin],
   data: function () {
     return {
     }

@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div v-for="tile in tileData.tiles" :key="tile.id">
-      <div v-if="tile.name === tileId">
-        <h1 class="detailTitle">{{ tile.name }}</h1>
-        <img class="detailImg" :src="tile.fotoURL" width=30%>
-        <p class="detailText">{{ tile.text }}</p>
-      </div>
+    <div v-if="targetTile">
+      <h1 class="detailTitle">{{ targetTile.name }}</h1>
+      <img class="detailImg" :src="targetTile.fotoURL" width=30%>
+      <p class="detailText">{{ targetTile.text }}</p>
     </div>
   </div>
 </template>
@@ -15,14 +13,19 @@
 import Mixin from '../mixin'
 export default {
   name: 'detailTile',
+  watch: {
+    'tileData.tiles': function (value) {
+      if (value) {
+        this.targetTile = this.tileData.tiles[this.$route.params.id]
+      }
+    }
+  },
   mixins: [Mixin],
   data: function () {
     return {
+      targetTile: null
     }
-  },
-  props: [
-    'tileId'
-  ]
+  }
 }
 </script>
 

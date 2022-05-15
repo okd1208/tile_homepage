@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div v-for="construction in consData.constructions" :key="construction.name">
-      <div v-if="construction.name === constructionId">
-        <h1 class="detailTitle">{{ construction.name }}</h1>
-        <img class="detailImg" :src="construction.fotoURL" width=30%>
-        <p class="detailText">{{ construction.text }}</p>
-      </div>
+    <div v-if="targetCons">
+      <h1 class="detailTitle">{{ targetCons.name }}</h1>
+      <img class="detailImg" :src="targetCons.fotoURL" width=30%>
+      <p class="detailText">{{ targetCons.text }}</p>
     </div>
   </div>
 </template>
@@ -14,14 +12,19 @@
 import Mixin from '../mixin'
 export default {
   name: 'detailTile',
+  watch: {
+    'consData.constructions': function (value) {
+      if (value) {
+        this.targetCons = this.consData.constructions[this.$route.params.id]
+      }
+    }
+  },
   mixins: [Mixin],
   data: function () {
     return {
+      targetCons: null
     }
-  },
-  props: [
-    'constructionId'
-  ]
+  }
 }
 </script>
 
