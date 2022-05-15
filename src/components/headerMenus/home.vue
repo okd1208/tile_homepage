@@ -1,8 +1,7 @@
 <template>
  <div>
     <div :class="header">
-      <h1 class="headerTitle">タイルの事を任せるなら、富永タイル</h1>
-      <h1 class="headerbody">Welcome to tileWorld!</h1>
+      <h1 class="headerTitle">タイルの事なら、<br>富永タイル。</h1>
     </div>
     <div class="body">
       <new-topic></new-topic>
@@ -95,7 +94,7 @@ export default {
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
   background-size: cover;
-  height: 800px;
+  height: 60vh;
 }
 .header1{
   background-image: url('~@/assets/home/home1.jpg');
@@ -113,28 +112,12 @@ export default {
   background-image: url('~@/assets/home/home5.jpg');
 }
 .headerTitle{
-  margin-left: 46px;
-  width: 30%;
-  font-size: 46px;
-  text-align: left;
-  position: relative;
-  top: 400px;
-  border-bottom: black 1px solid;
-  /* line-height: 600px; */
-  /* color: white; */
-  /* font-family: monospace; */
-  font-family: 'Yusei Magic', sans-serif;
-}
-.headerbody {
-  margin-left: 46px;
-  margin-top: 16px;
+  margin-left: 10vw;
   font-size: 40px;
   text-align: left;
   position: relative;
-  top: 400px;
-  /* line-height: 600px; */
-  /* color: white; */
-  font-family: monospace;
+  top: 40vh;
+  color: white;
 }
 .toppage-appealing-point1 {
   margin-top: 112px;
