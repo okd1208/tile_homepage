@@ -4,7 +4,7 @@
       <h1 class="headerTitle">タイルの事なら、<br>富永タイル。</h1>
     </div>
     <div class="body">
-      <new-topic></new-topic>
+      <new-topic display-count=3></new-topic>
       <div class="toppage-appealing-point1">
         <div>
           <h2>タイルで地域に貢献したい。</h2>

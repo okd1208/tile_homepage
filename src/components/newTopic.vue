@@ -5,7 +5,7 @@
       <template v-slot:subTitle>News</template>
     </content-title>
     <ul class="topics">
-     <li v-for="(topic,key) in topicData.topics" :key="key" class="topic">
+     <li v-for="(topic,key) in getTopics" :key="key" class="topic">
       <router-link :to="{name: 'topicDetail', params: {id: key}}" class="signup-link topicLink">
        <!-- <span class="topicType" :class="topic.color">{{ topic.type }}</span> -->
        <span class="topic-date">{{ getDate(topic.created) }}</span>
@@ -17,7 +17,7 @@
     <div class="news-page-guide">
       <p>
         <i class="fas fa-arrow-circle-right fa-lg"></i>
-        <router-link to="/">一覧はこちら</router-link>
+        <router-link to="/topicsList">一覧はこちら</router-link>
       </p>
     </div>
   </div>
@@ -36,9 +36,27 @@ export default {
     return {
     }
   },
+  props: {
+    displayCount: {
+      type: String,
+      default: null,
+      required: false
+    }
+  },
   computed: {
-    topics () {
-      return this.$store.state.topics
+    getTopics () {
+      if (this.displayCount && this.topicData.topics) {
+        var array = {}
+        for (let key in this.topicData.topics) {
+          array[key] = this.topicData.topics[key]
+          if (Object.keys(array).length === Number(this.displayCount)) {
+            break
+          }
+        }
+        return array
+      } else {
+        return this.topicData.topics
+      }
     }
   }
 }

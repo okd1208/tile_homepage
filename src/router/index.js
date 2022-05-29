@@ -10,6 +10,7 @@ import businessContents from '@/components/headerMenus/businessContents'
 import contact from '@/components/headerMenus/contact'
 import detail from '@/components/detail'
 import topicDetail from '@/components/detailTopic'
+import topicsList from '@/components/topicsList'
 import questions from '@/components/questions'
 import adminHome from '@/components/admin/home'
 import editTile from '@/components/admin/editTiles'
@@ -63,6 +64,11 @@ let router = new Router({
       path: '/topics/:id',
       name: 'topicDetail',
       component: topicDetail
+    },
+    {
+      path: '/topicsList',
+      name: 'topicsList',
+      component: topicsList
     },
     {
       path: '/questions',

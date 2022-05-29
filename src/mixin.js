@@ -102,7 +102,6 @@ export default {
       if (data.date) {
         this.date = data.date.replace(/\//g, '-')
       }
-      console.log(this.getNewData)
     },
     closeEditEria () {
       this.$store.state.editKey = null

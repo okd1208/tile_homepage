@@ -4,25 +4,22 @@
       <template v-slot:mainTitle>お知らせ</template>
       <template v-slot:subTitle>NEWS</template>
     </content-title>
-    <div v-if="targetTopic" class="topicDetail">
-      <p class="topicTitle"><span class="topicDetailType" :class="targetTopic.category">{{ targetTopic.category }}</span>{{ targetTopic.name }}</p>
-      <p class="topicDetailDate topicDate">投稿日： {{ getDate(targetTopic.created) }}</p>
-      <img :src="targetTopic.fotoURL" width="40%">
-      <p class="topicDetalText">{{ targetTopic.text }}</p>
+    <div class="topic-detail">
+      <div v-if="targetTopic">
+        <p class="topic-detail-date">投稿日： {{ getDate(targetTopic.created) }}</p>
+        <p class="topicTitle"><span class="topicDetailType" :class="targetTopic.category">{{ targetTopic.category }}</span>{{ targetTopic.name }}</p>
+        <img :src="targetTopic.fotoURL" width="90%">
+        <p class="topicDetalText">{{ targetTopic.text }}</p>
+      </div>
     </div>
-    <new-topic>その他の最新情報</new-topic>
     <div>
-      <h2>カテゴリー別でみる</h2>
-      <span class="topicDetailType news">news</span>
-      <span class="topicDetailType reqruit">採用</span>
-      <span class="topicDetailType blog">blog</span>
+      <router-link to="/topicsList"><div class="topic-list-btn">ニュース一覧</div></router-link>
     </div>
   </div>
 </template>
 
 <script>
 import contentTitle from '@/components/contentTitle'
-import newTopic from '@/components/newTopic.vue'
 import Mixin from '../mixin'
 export default {
   name: 'topicDetail',
@@ -35,8 +32,7 @@ export default {
   },
   mixins: [Mixin],
   components: {
-    contentTitle,
-    newTopic
+    contentTitle
   },
   data: function () {
     return {
@@ -47,38 +43,41 @@ export default {
 </script>
 
 <style scoped>
-.topicDetail {
+.topic-detail {
   margin-bottom: 100px;
+  width: 60%;
+  margin: auto;
+  text-align: left;
 }
 .topicDetailType {
-  /* font-size: 20px; */
+  font-size: 16px;
+  padding: 4px 8px;
   display: inline-block;
-  color: rgb(255, 255, 255);
+  color: #12887A;
   margin-right: 16px;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  border-radius: 50%;
+  border-radius: 20px;
+  border: 2px solid #12887A;
   /* border: 2px solid rgb(117, 185, 185); */
-  background-color: rgb(240, 193, 122);
-}
-.news {
-  background-color: rgb(117, 185, 185);
-}
-.blog {
-  background-color: rgb(172, 185, 117);
 }
 .topicTitle {
-  font-size: 32px;
+  font-size: 24px;
   /* margin: 32px 0; */
   margin-top: 32px;
 }
-.topicDetailDate {
-  text-align: right;
+.topic-detail-date {
   margin-right: 42px;
   font-size: 16px;
 }
 .topicDetalText {
   margin-top: 16px;
+  white-space: pre-line;
+}
+.topic-list-btn {
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 32px;
+  border-radius: 28px;
+  background-color: #12887A;
+  color: white;
 }
 </style>
