@@ -20,6 +20,8 @@ export default {
 
 <style>
 @import "./css/styles.css";
+@import "./css/slick-theme.css";
+@import "./css/slick.css";
 @font-face {
   font-family: 'Overpass';
   src: url('./fonts/Overpass-VariableFont_wght.ttf');

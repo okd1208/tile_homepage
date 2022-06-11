@@ -1,33 +1,64 @@
 <template>
 <div>
   <header-img class="constraction-img">
-    <template v-slot:Title>Tiles</template>
-    <template v-slot:Text>タイル使用建設例</template>
+    <template v-slot:Title>Works</template>
+    <template v-slot:Text>建設事例</template>
   </header-img>
-  <content-title>
-    <template v-slot:mainTitle>Tiles</template>
-    <template v-slot:subTitle>タイル使用建設例</template>
-  </content-title>
-  <construction></construction>
+  <div class="construction">
+    <h2 class="green-underbar">現場のプロフェッショナルな仕事</h2>
+    <div class="description">
+      発注者や関係機関との打ち合わせから始まり、協力会社の作業員を統括し、指揮・管理を<br>
+      行いつつ日々の工程や原価管理などを行なっています。
+    </div>
+    <div class="item-cards">
+      <div class="item-card" v-for="(construction, key) in consData.constructions" :key="key">
+        <item-card :itemData="construction" :itemId="key"></item-card>
+      </div>
+    </div>
+  </div>
   <request-erea></request-erea>
 </div>
 </template>
 
 <script>
-import contentTitle from '@/components/contentTitle'
-import construction from '@/components/construction.vue'
 import RequestErea from '@/components/requestErea'
 import headerImg from '@/components/headerImg.vue'
+import someImgs from '@/components/someImgs.vue'
+import itemCard from '@/components/parts/itemCard.vue'
+import Mixin from '../../mixin'
 export default {
   name: 'constructionExample',
   components: {
-    contentTitle,
-    construction,
     RequestErea,
-    headerImg
-  }
+    headerImg,
+    someImgs,
+    itemCard
+  },
+  mixins: [Mixin]
 }
 </script>
 
 <style scoped>
+.description {
+  text-align: 1.5rem;
+  margin: 48px 0 72px;
+}
+
+.item-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 32px 10%;
+  background-color: #F2F2F2;
+}
+.item-card {
+  text-align: left;
+  width: 30% !important;
+  margin: auto;
+  padding: 32px 0;
+}
+
+.construction{
+  margin-top: 96px;
+}
 </style>

@@ -64,9 +64,9 @@ export default {
 
 <style>
 .new-topic {
-  min-width: 1000px;
+  min-width: 600px;
   margin: auto;
-  padding: 0 183px;
+  width: 60%;
 }
 .topics {
   list-style: none;

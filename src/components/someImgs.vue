@@ -19,7 +19,7 @@ export default {
   opacity: 0;
   color: white;
   position: absolute;
-  top: 100px;
+  top: 48%;
   left: 10px;
   -webkit-transform: rotateX(-180deg);
   transform: rotateX(-180deg);

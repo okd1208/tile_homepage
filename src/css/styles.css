@@ -1,3 +1,13 @@
+/* デフォルトcss上書き */
+h2 {
+  font-size: 26px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 @media screen and (max-width: 534px) {
   .s-fontsize-15rem {
     font-size: 1.5rem
@@ -6,11 +16,6 @@
 
 .sinpleBtn {
   padding: 16px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 .green-underbar {
@@ -62,4 +67,26 @@ a {
 
 .button:hover, .white-button:hover {
   cursor: pointer;
+}
+
+.item-card .c-date {
+  margin: 16px 0 4px;
+  font-size: 16px;
+  color: #5C5C5C;
+}
+
+.item-card a:hover {
+  color: #5C5C5C;
+  text-decoration: none;
+}
+
+.item-card .c-type {
+  color: #068273;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  top: 16px;
+  right: 16px;
+  padding: 3px 16px;
+  border-radius: 5px;
 }

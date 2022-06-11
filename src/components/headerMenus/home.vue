@@ -34,7 +34,7 @@
             タイルを１枚貼ると寿命が１年伸びるんだって。<br>
              あなたも寿命伸ばしてみない？
           </p>
-          <router-link to="/constructionExample"><div class="white-button">事業内容</div></router-link>
+          <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
         </div>
       </div>
       <request-erea></request-erea>
@@ -44,7 +44,7 @@
 
 <script>
 import newTopic from '@/components/newTopic.vue'
-import construction from '@/components/construction.vue'
+import construction from '@/components/widgets/constructionSlick.vue'
 import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
