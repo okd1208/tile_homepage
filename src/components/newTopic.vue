@@ -123,4 +123,11 @@ export default {
   color: #068273;
   margin-right: 16px;
 }
+
+@media screen and (max-width:534px) {
+  .new-topic {
+    min-width: auto;
+    width: 80%;
+  }
+}
 </style>

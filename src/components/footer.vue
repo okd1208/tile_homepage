@@ -85,4 +85,11 @@ export default {
   color: rgb(184, 168, 77);
   transition: 0.3s;
 }
+
+@media screen and (max-width:960px) {
+  .footer {
+    display: flex;
+    padding: 64px 16px;
+  }
+}
 </style>

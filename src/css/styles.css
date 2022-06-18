@@ -8,9 +8,22 @@ a {
   color: black;
 }
 
+.sm-only {
+  display: none;
+}
+
 @media screen and (max-width: 534px) {
+  * {
+    font-size: 8px;
+  }
   .s-fontsize-15rem {
     font-size: 1.5rem
+  }
+  .sm-none {
+    display: none !important;
+  }
+  .sm-only {
+    display: block;
   }
 }
 
