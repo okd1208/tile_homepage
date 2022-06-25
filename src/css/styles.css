@@ -1,4 +1,7 @@
 /* デフォルトcss上書き */
+* {
+  font-weight: 500;
+}
 h2 {
   font-size: 26px;
 }
@@ -21,7 +24,7 @@ p {
 
 @media screen and (max-width: 520px) {
   * {
-    font-size: 8px;
+    font-size: 12px;
   }
   .s-fontsize-15rem {
     font-size: 1.5rem

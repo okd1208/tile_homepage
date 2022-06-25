@@ -138,7 +138,6 @@ export default {
 }
 .toppage-appealing-point1 p {
   margin-left: 88px;
-  font-weight: 500;
   font-size: 18px;
 }
 .toppage-appealing-point1 .breen-button {
@@ -168,7 +167,6 @@ export default {
   margin-bottom: 32px;
 }
 .toppage-appealing-point2 p {
-  font-weight: 500;
   font-size: 18px;
 }
 .toppage-appealing-point2 .wthite-button {

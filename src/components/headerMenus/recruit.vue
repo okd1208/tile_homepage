@@ -120,7 +120,6 @@ export default {
   font-size: 18px;
   letter-spacing: var(--unnamed-character-spacing-0);
   line-height: 1.7em;
-  font-weight: 500;
 }
 .recruite-three-image {
   display: flex;
@@ -139,7 +138,6 @@ export default {
 .business-content-explanatory {
   background-color: white;
   padding: 50px 50px 50px 350px;
-  font-weight: 500;
 }
 .job-description-table {
   margin: auto;

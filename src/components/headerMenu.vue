@@ -63,7 +63,6 @@ export default {
 }
 .company-logo h2 {
   font-size: 24px;
-  font-weight: 500;
   margin-top: 8px;
 }
 .header-menubar {
@@ -104,7 +103,7 @@ export default {
   }
   .company-logo h2 {
     font-size: 12px;
-    font-weight: 500;
+
     margin-top: 8px;
     display: inline;
   }
@@ -143,7 +142,7 @@ export default {
   /* Hamburger menbu text */
   .menu a {
     text-decoration: none;
-    font-weight: 500;
+
     letter-spacing: 2px;
     font-size: 16px;
     text-transform: capitalize;
