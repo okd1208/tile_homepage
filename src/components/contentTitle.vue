@@ -23,4 +23,14 @@ export default {
   font-size: 18px;
   margin-bottom: 40px;
 }
+
+@media screen and (max-width:520px) {
+  .main-title {
+    font-size: 22px;
+  }
+  .sub-title {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
 </style>

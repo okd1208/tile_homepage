@@ -183,7 +183,7 @@ export default {
   background-color: #F2F2F2;
 }
 
-@media screen and (max-width:534px) {
+@media screen and (max-width:520px) {
   .header1,.header2,.header3,.header4,.header5{
     transition: all 900ms 0s ease;
     margin-top: -60px;

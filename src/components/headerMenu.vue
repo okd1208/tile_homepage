@@ -97,7 +97,7 @@ export default {
   color: rgb(184, 168, 77) !important;
 }
 
-@media screen and (max-width:534px) {
+@media screen and (max-width:520px) {
   .company-logo {
     width: 100%;
   }
@@ -115,9 +115,6 @@ export default {
     display: inline;
   }
 
-  .header-menubar {
-    /* display: none; */
-  }
   .hamburger-menu {
     text-align: right;
   }

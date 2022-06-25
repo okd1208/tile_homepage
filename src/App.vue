@@ -40,7 +40,7 @@ export default {
 #headerMenu {
   z-index: 10;
 }
-@media screen and (max-width:534px) {
+@media screen and (max-width:520px) {
   #app, #headerMenu {
     width: 100%;
   }

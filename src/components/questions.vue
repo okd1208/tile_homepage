@@ -114,7 +114,7 @@ export default {
     margin-top: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 960px) {
  .qa-list dl {
       margin: 10px 0 0;
   }

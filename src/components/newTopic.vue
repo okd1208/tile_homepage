@@ -124,10 +124,25 @@ export default {
   margin-right: 16px;
 }
 
-@media screen and (max-width:534px) {
+@media screen and (max-width:520px) {
+  .topic {
+    padding: 18px 0;
+  }
   .new-topic {
     min-width: auto;
     width: 80%;
+  }
+  .topic-title {
+    margin-top: 4px;
+    display: block;
+  }
+  .topic,.topic-date, .topic-title {
+    font-size: 12px;
+  }
+  .topic-type {
+    font: 8px;
+    padding: 3px 6px;
+    margin-left: 16px;
   }
 }
 </style>
