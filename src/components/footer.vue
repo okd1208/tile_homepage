@@ -95,7 +95,6 @@ export default {
   }
   .footer-company-info h1 span{
     font-size: 22px;
-    
   }
   .footer-company-info p {
     line-height: 1.8em;
@@ -103,7 +102,6 @@ export default {
   }
   .footer-menu a {
     font-size: 12px;
-    font-weight: 500;
   }
   .footer-menu li {
     margin: 8px 0;

@@ -85,7 +85,6 @@ export default {
     padding: 24px 0px;
   }
   .contact-explanatory-text h3 {
-    font-weight: 500;
     font-size: 20px;
     margin-bottom: 8px;
   }

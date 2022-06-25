@@ -64,7 +64,6 @@ export default {
   }
   .headerImgText {
     font-size: 16px;
-    
   }
 }
 </style>

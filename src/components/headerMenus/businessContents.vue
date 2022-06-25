@@ -149,7 +149,6 @@ export default {
     line-height: 26px;
     width: 80%;
     margin: auto;
-    font-weight: 500;
   }
   .green-title {
     font-size: 16px;
@@ -200,7 +199,6 @@ export default {
   .business-flow-step img{
     width: 50%;
   }
-
   .business-flow-step > div{
     padding: 12px 0 0 12px;
   }
