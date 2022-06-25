@@ -1,18 +1,15 @@
 <template>
-<div>
-  <h2 class="requestEriaTitle">Contact</h2>
-  <div class="requestErea">
-    <div class="requestBox">
-      <router-link to="/questions" class="text-dark"><p class="BoxTest"><i class="far fa-question-circle"></i><span class="BoxText">よくある質問</span></p></router-link>
+  <div class="introduction-contact">
+    <div class="contact-explanatory-text">
+      <h3>お問い合わせ</h3>
+      <p>ご意見・ご質問など、お問い合わせは、<br> 下記フォームからお願いいたします。</p>
     </div>
-    <div class="requestBox">
-      <router-link to="/contact" class="text-dark"><p class="BoxTest"><i class="far fa-envelope"></i><span class="BoxText">お問い合わせ</span></p></router-link>
-    </div>
-    <div class="requestBox">
-      <router-link to="/questions" class="text-dark"><p class="BoxTest"><i class="fas fa-info-circle"></i><span class="BoxText">サポート（資料請求）</span></p></router-link>
+    <div class="number-and-link">
+      <h3><i class="fas fa-phone"></i>092-541-6034</h3>
+      <div class="contact-btn"><router-link to="/contact">お問い合わせ</router-link></div>
+      <p><router-link to="/questions">よくある質問はこちらから</router-link></p>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -22,56 +19,82 @@ export default {
 </script>
 
 <style scoped>
-.requestEriaTitle {
-  text-align: center;
-  margin-top: 82px;
-}
-.requestErea {
+.introduction-contact {
+  margin-top: 32px;
   display: flex;
-  margin-bottom: 82px;
+  background-color: #F2F2F2;
   justify-content: center;
-  transition-duration: 0.5s;
+  gap: 16px;
+  padding: 80px 0;
 }
-.requestBox {
-  transition-duration: 0.5s;
-  /* hover解除時のtaransitionができていない */
-  width: 20%;
-  /* background-color: antiquewhite; */
-  margin: 32px;
-  /* padding: 32px; */
-  height: 70px;
-  line-height: 70px;
-  border: 2px solid rgba(196, 194, 194, 0.836);
-  font-weight: bold;
-  text-align: left;
+.contact-explanatory-text {
+  background-color: white;
+  max-width: 400px;
+  width: 30%;
+  padding: 56px 48px;
 }
-.far, .fas{
+.contact-explanatory-text h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.contact-explanatory-text p {
+  font-size: 12px;
+}
+.number-and-link {
+  background-color: white;
+  padding: 32px 0;
+  width: 40%;
+  max-width: 600px;
+}
+.number-and-link p {
   display: inline-block;
-  margin-left: 32px;
-  margin-right: 52px;
-  text-align: left;
+  margin: 24px 0 0 0;
+  border-bottom: 1px solid gray;
 }
-.requestBox :hover{
-  background-color: rgba(90, 87, 87, 0.836);
-  color: aliceblue;
-  cursor: pointer;
-  transition-duration: 0.5s;
+.number-and-link h3 i {
+  line-height: 1.75rem;
+  transform: scale(-1, 1);
+  font-size: 22px;
+  margin-right: 16px;
+}
+.number-and-link h3 {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.contact-btn a {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 52px;
+  border-radius: 30px;
 }
 
-@media screen and (max-width:960px) {
-  .requestBox {
-    width: 90px;
-    margin: 3%;
-    height: 90px;
-    line-height: 90px;
-    border: 2px solid rgba(196, 194, 194, 0.836);
-    border-radius: 50%;
-    font-weight: normal;
-    font-size: 23px;
-    text-align: center;
+@media screen and (max-width: 520px) {
+  .introduction-contact {
+    margin-top: 32px;
+    display: block;
+    padding: 40px 0;
   }
-  .BoxText {
-    display: none;
+  .contact-explanatory-text, .number-and-link{
+    width: 80%;
+    margin: 8px auto;
+  }
+  .contact-explanatory-text {
+    padding: 24px 0px;
+  }
+  .contact-explanatory-text h3 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .number-and-link h3 i {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+  .number-and-link h3 {
+    font-size: 24px;
   }
 }
 </style>

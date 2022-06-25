@@ -87,12 +87,6 @@ export default {
   height: 20px;
   border-right: 1px solid #A3A3A3;
 }
-.contact-btn a {
-  background-color: #12887A;
-  padding: 8px 24px;
-  border-radius: 20px;
-  color: white;
-}
 .active-menu {
   color: rgb(184, 168, 77) !important;
 }

@@ -7,6 +7,13 @@ a {
   text-decoration: none;
   color: black;
 }
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+p {
+  margin-bottom: 0; 
+}
 
 .sm-only {
   display: none;
@@ -102,6 +109,13 @@ a {
   right: 16px;
   padding: 3px 16px;
   border-radius: 5px;
+}
+
+.contact-btn a {
+  background-color: #12887A;
+  padding: 8px 24px;
+  border-radius: 20px;
+  color: white !important;
 }
 
 @media screen and (max-width:520px) {
