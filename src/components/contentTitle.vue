@@ -27,6 +27,7 @@ export default {
 @media screen and (max-width:520px) {
   .main-title {
     font-size: 22px;
+    margin-top: 72px;
   }
   .sub-title {
     font-size: 13px;

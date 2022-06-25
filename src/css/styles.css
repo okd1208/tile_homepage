@@ -103,3 +103,10 @@ a {
   padding: 3px 16px;
   border-radius: 5px;
 }
+
+@media screen and (max-width:520px) {
+  .breen-button, .white-button{
+    padding: 16px 48px;
+    font-size: 12px;
+  }
+}

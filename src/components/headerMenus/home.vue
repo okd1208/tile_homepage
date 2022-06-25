@@ -201,5 +201,51 @@ export default {
     /* color: white; */
     font-family: monospace;
   }
+  .toppage-appealing-point1, .toppage-appealing-point2 {
+    margin-top: 72px;
+    background-size: 100%;
+    background-position: top;
+    height: auto;
+    overflow: visible;
+  }
+  .toppage-appealing-point1 > div {
+    margin-left: 48px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: 300px;
+    position: relative;
+    top: 220px;
+    text-align: left;
+  }
+  .toppage-appealing-point1 h2 {
+    padding: 18px 20px;
+    font-size: 22px;
+  }
+  .toppage-appealing-point1 p {
+    margin-left: 0px;
+    font-size: 10px;
+    padding: 0 32px;
+    line-height: 24px;
+  }
+  .toppage-appealing-point1 .breen-button {
+    position: static;
+    margin: auto;
+    font-size: 12px;
+  }
+  .toppage-appealing-point2 > div {
+    margin-right: 10%;
+    padding: 32px 0 32px 32px;
+    text-align: left;
+    color: white;
+    background-color: #068274d7;
+    margin-top: 48px;
+  }
+  .toppage-appealing-point2 h2 {
+    margin-bottom: 22px;
+  }
+  .toppage-appealing-point2 p {
+    font-size: 10px;
+    line-height: 24px;
+  }
 }
 </style>

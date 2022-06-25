@@ -58,7 +58,7 @@ export default {
   transition-duration: 0.5s;
 }
 
-@media screen and (max-width:1010px) {
+@media screen and (max-width:960px) {
   .requestBox {
     width: 90px;
     margin: 3%;

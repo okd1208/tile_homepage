@@ -144,5 +144,14 @@ export default {
     padding: 3px 6px;
     margin-left: 16px;
   }
+  .news-page-guide {
+    margin-top: 18px;
+  }
+  .news-page-guide a {
+    font-size: 10px;
+  }
+  .news-page-guide i {
+    margin-right: 8px;
+  }
 }
 </style>
