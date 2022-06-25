@@ -26,6 +26,7 @@
         </ul>
       </div>
     </div>
+    <p class="copy-right">Copyright &copy; 2022 tominagatileu All rights reserved.</p>
   </footer>
 </template>
 
@@ -60,6 +61,7 @@ export default {
 }
 .footer-menu {
   display: flex;
+  justify-content: center;
 }
 .footer-menu li {
   list-style: none;
@@ -86,10 +88,29 @@ export default {
   transition: 0.3s;
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width:520px) {
   .footer {
-    display: flex;
-    padding: 64px 16px;
+    display: block;
+    padding: 16px;
+  }
+  .footer-company-info h1 span{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .footer-company-info p {
+    line-height: 1.8em;
+    font-size: 14px;
+  }
+  .footer-menu a {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .footer-menu li {
+    margin: 8px 0;
+  }
+  .footer-menu ul {
+    padding-left: 0;
+    width: 30%;
   }
 }
 </style>
