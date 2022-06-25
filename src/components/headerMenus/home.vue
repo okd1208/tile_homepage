@@ -37,7 +37,6 @@
           <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
         </div>
       </div>
-      <request-erea></request-erea>
     </div>
  </div>
 </template>
@@ -48,7 +47,6 @@ import construction from '@/components/widgets/constructionSlick.vue'
 import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
-import requestErea from '@/components/requestErea'
 import contentTitle from '@/components/contentTitle'
 export default {
   name: 'home',
@@ -65,7 +63,6 @@ export default {
     constructionBtn,
     tileBtn,
     someTiles,
-    requestErea,
     contentTitle
   },
   methods: {

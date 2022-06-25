@@ -2,17 +2,20 @@
   <div id="app">
     <header-menu id="headerMenu"></header-menu>
     <router-view class="aaaa" />
+    <request-erea></request-erea>
     <footerMenu></footerMenu>
   </div>
 </template>
 
 <script>
 import headerMenu from '@/components/headerMenu'
+import requestErea from '@/components/requestErea'
 import footerMenu from '@/components/footer'
 export default {
   name: 'App',
   components: {
     headerMenu,
+    requestErea,
     footerMenu
   }
 }

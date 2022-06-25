@@ -50,26 +50,37 @@ export default {
   margin-left: auto;
   margin-right: auto;
   min-width: 1000px;
-  margin-bottom: 136px;
-  /* border-top: 2px solid rgba(255, 255, 255, 0.966); */
 }
 .OverViewTable tr:first-child {
   border-top: 2px solid #D1D1D1;
 }
 .OverViewTableTr {
-  /* height: 46px; */
   border-bottom: 2px solid #D1D1D1;
-  /* margin-bottom: 100px; */
 }
 .contentsTitle {
   padding: 24px 137px 24px 48px;
   font-weight: bold;
   width: 300px;
   color: #068273;
-  /* background-color: rgb(117, 185, 185); */
 }
 .contentsText {
   font-weight: bold;
   text-align: left;
+}
+@media screen and (max-width: 520px) {
+  .OverViewTable {
+    width: 80%;
+    min-width: auto;
+  }
+  .OverViewTable tr:first-child {
+    border-top: 1px solid #D1D1D1;
+  }
+  .OverViewTableTr {
+    border-bottom: 1px solid #D1D1D1;
+  }
+  .contentsTitle {
+    padding: 16px 48px 16px 16px;
+    width: auto;
+  }
 }
 </style>

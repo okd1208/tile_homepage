@@ -42,7 +42,6 @@ export default {
 }
 .headerImgBack > div {
   padding-top: 98px;
-  height: 200px;
 }
 .headerImgTitle {
   font-size: 46px;
@@ -52,5 +51,20 @@ export default {
 .headerImgText {
   font-size: 28px;
   font-weight: 400;
+}
+@media screen and (max-width: 520px) {
+  .headerImgBack {
+    height: 184px;
+  }
+  .headerImgBack > div {
+    padding-top: 70px;
+  }
+  .headerImgTitle {
+    font-size: 26px;
+  }
+  .headerImgText {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 </style>

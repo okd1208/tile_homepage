@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .introduction-contact {
-  margin-top: 32px;
+  margin-top: 136px;
   display: flex;
   background-color: #F2F2F2;
   justify-content: center;
@@ -73,7 +73,7 @@ export default {
 
 @media screen and (max-width: 520px) {
   .introduction-contact {
-    margin-top: 32px;
+    margin-top: 72px;
     display: block;
     padding: 40px 0;
   }
