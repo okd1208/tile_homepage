@@ -214,7 +214,6 @@ export default {
   }
   .toppage-appealing-point1 h2 {
     padding: 18px 20px;
-    font-size: 22px;
   }
   .toppage-appealing-point1 p {
     margin-left: 0px;

@@ -177,7 +177,6 @@ export default {
     margin-top: 24px;
   }
   .business-flow > h2 {
-    font-size: 22px;
     margin:136px 0 48px 0;
   }
   .business-flow > h2::after {

@@ -46,4 +46,10 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 520px) {
+  .item-card .c-date {
+    margin: 8px 0 4px;
+    font-size: 8px;
+  }
+}
 </style>

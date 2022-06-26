@@ -39,11 +39,13 @@ export default {
 </script>
 
 <style scoped>
+.construction{
+  margin-top: 96px;
+}
 .description {
   text-align: 1.5rem;
   margin: 48px 0 72px;
 }
-
 .item-cards {
   display: flex;
   flex-wrap: wrap;
@@ -57,8 +59,19 @@ export default {
   margin: auto;
   padding: 32px 0;
 }
-
-.construction{
-  margin-top: 96px;
+@media screen and (max-width: 520px) {
+  .construction{
+    margin-top: 72px;
+  }
+  .description {
+    margin: 32px 32px 64px;
+  }
+  .item-cards {
+    padding: 24px 16px;
+  }
+  .item-card {
+    width: 45% !important;
+    padding: 8px 0;
+  }
 }
 </style>

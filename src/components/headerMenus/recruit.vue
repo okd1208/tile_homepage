@@ -109,7 +109,6 @@ export default {
   padding: 59px 60px 54px;
 }
 .recruit-message h2 {
-  font-size: 26px;
   font-weight: bold;
   border-bottom: 2px solid #068273;
   display: inline-block;
@@ -159,7 +158,6 @@ export default {
   margin-top: 110px;
 }
 .recruit-flow h2 {
-  font-size: 26px;
   margin-bottom: 80px;
 }
 .recruit-flow-step {
@@ -218,7 +216,6 @@ export default {
     padding: 32px 8px;
   }
   .recruit-message h2 {
-    font-size: 22px;
     border-bottom: 2px solid #068273;
     display: inline-block;
     padding-bottom: 2px;
@@ -250,7 +247,6 @@ export default {
     margin-top: 40px;
   }
   .recruit-flow h2 {
-    font-size: 18px;
     margin-bottom: 36px;
   }
   .recruit-flow-step {
