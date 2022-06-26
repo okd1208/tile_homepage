@@ -190,8 +190,8 @@ export default {
 .entry-bottan {
   color: white;
   background-color: #068273;
-  width: 300px;
-  padding: 24px 0;
+  display: inline-block;
+  padding: 24px 160px;
   margin: 142px auto;
   font-size: 26px;
   letter-spacing: 5.2px;
@@ -205,6 +205,68 @@ export default {
   transition: 0.3s;
   letter-spacing: 8.2px;
   font-size: 28px;
+}
+
+@media screen and (max-width: 520px) {
+  .bg-green {
+    height: 360px;
+    margin-top: 80px;
+  }
+  .recruit-message {
+    width: 90%;
+    margin: 40px auto 32px;
+    padding: 32px 8px;
+  }
+  .recruit-message h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #068273;
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+  .recruit-message p {
+    font-size: 12px;
+    line-height: 2em;
+  }
+  .business-content {
+    padding: 42px 16px;
+    margin-top: 32px;
+  }
+  .business-content-explanatory {
+    padding: 16px;
+  }
+  .business-content-explanatory p {
+    line-height: 2em;
+  }
+  .job-description-table {
+    width: 90%;
+  }
+  .job-description-table th {
+    min-width: 80px;
+    width: 20%;
+    padding: 16px;
+  }
+  .recruit-flow {
+    margin-top: 40px;
+  }
+  .recruit-flow h2 {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+  .recruit-flow-step {
+    width: 90%;
+  }
+  .recruit-flow-step div {
+    font-size: 18px;
+    border: 1px solid #068273;
+    padding: 48px 8px;
+  }
+  .entry-bottan {
+    padding: 16px 48px;
+    margin: 56px auto 0;
+    font-size: 22px;
+    border-radius: 32px;
+  }
 }
 </style>
 
