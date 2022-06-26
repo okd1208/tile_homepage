@@ -135,4 +135,30 @@ export default {
   font-weight: bold;
   margin-bottom: 32px;
 }
+
+@media screen and (max-width: 520px) {
+  .header{
+    margin: 48px 0;
+  }
+  .contactpage-form > div {
+    width: 90%;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  .contactpage-form label {
+    width: 37%;
+  }
+  .contactpage-form input, .contactpage-form select, .contactpage-form textarea {
+    width: 50%;
+  }
+  .contactpage-form span {
+    font-size: 10px;
+  }
+  .contactpage-form > .contact-submit-btn {
+    padding: 16px 52px;
+    border-radius: 32px;
+    margin-top: 32px;
+    font-size: 18px;
+  }
+}
 </style>
