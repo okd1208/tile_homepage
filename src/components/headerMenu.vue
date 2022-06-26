@@ -9,15 +9,15 @@
       </div>
     </div>
     <div class="hamburger-menu sm-only">
-      <input type="checkbox" class="menu-btn" id="menu-btn">
+      <input type="checkbox" class="menu-btn" id="menu-btn" v-model="isOpenMenu">
       <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
-      <ul class="menu">
-        <li><router-link :class="{'active-menu':$route.name === 'home'}" to="/">ホーム</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'OverView'}" to="/OverView">会社情報</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'businessContents'}" to="/businessContents">事業内容</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'recruit'}" to="/recruit">採用情報</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'constructionExample'}" to="/constructionExample">施工例</router-link></li>
-        <li><router-link :class="{'active-menu':$route.name === 'contact'}" to="/contact">お問い合わせ</router-link></li>
+      <ul class="menu" :class="{'d-none': isClosing}">
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'home'}" to="/">ホーム</router-link></li>
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'OverView'}" to="/OverView">会社情報</router-link></li>
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'businessContents'}" to="/businessContents">事業内容</router-link></li>
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'recruit'}" to="/recruit">採用情報</router-link></li>
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'constructionExample'}" to="/constructionExample">施工例</router-link></li>
+        <li @click="headerMenuToggle"><router-link :class="{'active-menu':$route.name === 'contact'}" to="/contact">お問い合わせ</router-link></li>
       </ul>
     </div>
     <nav>
@@ -38,9 +38,18 @@ export default {
   name: 'headerMenu',
   data: function () {
     return {
+      isOpenMenu: false,
+      isClosing: false
     }
   },
   methods: {
+    headerMenuToggle () {
+      this.isClosing = true
+      this.isOpenMenu = false
+      setTimeout(() => {
+        this.isClosing = false
+      }, 100)
+    }
   }
 }
 </script>
@@ -142,7 +151,6 @@ export default {
   /* Hamburger menbu text */
   .menu a {
     text-decoration: none;
-
     letter-spacing: 2px;
     font-size: 16px;
     text-transform: capitalize;
