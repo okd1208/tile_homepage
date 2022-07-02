@@ -34,7 +34,25 @@ export default {
         slidesToScroll: 3,
         pauseOnFocus: false,
         prevArrow: '<button type="button" class="slick-prev"></button>',
-        nextArrow: '<button type="button" class="slick-next"></button>'
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        responsive: [
+          {
+            breakpoint: 960,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 520,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+              centerPadding: '15%'
+            }
+          }
+        ]
       }
     }
   },
@@ -68,5 +86,16 @@ export default {
 
 .construction{
   margin-top: 64px;
+}
+@media screen and (max-width: 520px) {
+  .slick-outer {
+    width:  100%;
+  }
+  .slick-prev {
+      left: 0;
+  }
+  .slick-next {
+      right: 0;
+  }
 }
 </style>
