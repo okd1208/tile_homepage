@@ -46,10 +46,9 @@ export default {
   margin-right: auto;
   margin-top: 32px;
 }
-
 .qa-list dl {
     position: relative;
-    margin: 30px 0 0;
+    margin: 32px 0 0;
     cursor: pointer;
     border: 1px solid #DDD;
 }
@@ -108,13 +107,13 @@ export default {
     padding: 20px 20px 20px 60px;
 }
 .qa-list dl dd p {
-    margin: 30px 0 0;
+    margin: 32px 0 0;
 }
 .qa-list dl dd p:first-child{
     margin-top: 0;
 }
 
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
  .qa-list dl {
       margin: 10px 0 0;
   }
@@ -148,6 +147,30 @@ export default {
   }
   .qa-list dl dd p:first-child{
       margin-top: 0;
+  }
+} */
+
+@media screen and (max-width: 520px) {
+ .Qcategory {
+      width: 90%;
+      margin-top: 8px;
+  }
+  .qa-list dl, .qa-list dl dd p {
+      margin: 12px 0 0;
+  }
+  .qa-list dl dt, .qa-list dl dd {
+     padding: 12px 12px 12px 32px;
+  }
+  .qa-list dl dt::before, .qa-list dl dd::before {
+      font-size: 16px;
+      top: 12px;
+      left: 12px;
+  }
+  .qa-list dl::after {
+      top: 16px;
+      right: 16px;
+      width: 6px;
+      height: 6px;
   }
 }
 </style>

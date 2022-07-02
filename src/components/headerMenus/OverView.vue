@@ -35,7 +35,7 @@ export default {
         {title: '創業', text: '1891年（明治24年）10月30日'},
         {title: '設立', text: '1918年（大正07年）09月'},
         {title: '資本金', text: '344億3,372万円（2019年12月31日現在）'},
-        {title: '本社所在地', text: '〒130-8644 東京都墨田区本所1-3-7　TEL：03-3621-6211'},
+        {title: '所在地', text: '〒130-8644 東京都墨田区本所1-3-7　TEL：03-3621-6211'},
         {title: '代表者', text: '田中圭'},
         {title: '事業内容', text: 'タイル、れんが'},
         {title: '売上', text: '連結：3,475億円［IFRS］　個別：2,694億円（2019年12月期）'}
@@ -79,8 +79,10 @@ export default {
     border-bottom: 1px solid #D1D1D1;
   }
   .contentsTitle {
-    padding: 16px 48px 16px 16px;
+    padding: 16px;
+    min-width: 4em;
     width: auto;
+    box-sizing: content-box;
   }
 }
 </style>

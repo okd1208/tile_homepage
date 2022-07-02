@@ -47,15 +47,15 @@ export default {
   margin: 48px 0 72px;
 }
 .item-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   padding: 32px 10%;
   background-color: #F2F2F2;
 }
 .item-card {
   text-align: left;
-  width: 30% !important;
+  width: 90% !important;
   margin: auto;
   padding: 32px 0;
 }
@@ -68,9 +68,9 @@ export default {
   }
   .item-cards {
     padding: 24px 16px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .item-card {
-    width: 45% !important;
     padding: 8px 0;
   }
 }
