@@ -17,9 +17,6 @@ import editTile from '@/components/admin/editTiles'
 import editConstruction from '@/components/admin/editConstruction'
 import editTopic from '@/components/admin/editTopic'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
 Vue.use(BootstrapVue)
 Vue.use(Router)
 

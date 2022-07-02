@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style>
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
 @import "./css/styles.css";
 @import "./css/slick-theme.css";
 @import "./css/slick.css";
