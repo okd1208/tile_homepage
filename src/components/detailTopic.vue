@@ -1,14 +1,14 @@
 <template>
   <div>
-    <content-title>
-      <template v-slot:mainTitle>お知らせ</template>
-      <template v-slot:subTitle>NEWS</template>
-    </content-title>
+     <header-img className="businessContents">
+      <template v-slot:Title>お知らせ</template>
+      <template v-slot:Text>NEWS</template>
+    </header-img>
     <div class="topic-detail">
       <div v-if="targetTopic">
         <p class="topic-detail-date">投稿日： {{ getDate(targetTopic.created) }}</p>
         <p class="topicTitle"><span class="topicDetailType" :class="targetTopic.category">{{ targetTopic.category }}</span>{{ targetTopic.name }}</p>
-        <img :src="targetTopic.fotoURL" width="90%">
+        <img :src="targetTopic.fotoURL">
         <p class="topicDetalText">{{ targetTopic.text }}</p>
       </div>
     </div>
@@ -21,6 +21,7 @@
 <script>
 import contentTitle from '@/components/contentTitle'
 import Mixin from '../mixin'
+import headerImg from '../components/headerImg.vue'
 export default {
   name: 'topicDetail',
   watch: {
@@ -32,7 +33,8 @@ export default {
   },
   mixins: [Mixin],
   components: {
-    contentTitle
+    contentTitle,
+    headerImg
   },
   data: function () {
     return {
@@ -79,5 +81,28 @@ export default {
   border-radius: 28px;
   background-color: #12887A;
   color: white;
+}
+.topic-detail img{
+  width: 90%;
+}
+@media screen and (max-width: 520px) {
+  .topic-detail {
+    margin-top: 72px;
+    width: 90%;
+  }
+  .topic-detail-date {
+    font-size: 12px;
+  }
+  .topicTitle {
+    font-size: 14px;
+    margin: 8px 0 24px;
+  }
+  .topicDetailType {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+  .topic-detail img{
+    width: 100%;
+  }
 }
 </style>
