@@ -6,7 +6,7 @@
     </div>
     <div class="number-and-link">
       <h3><i class="fas fa-phone"></i>092-541-6034</h3>
-      <div class="contact-btn"><router-link to="/contact">お問い合わせ</router-link></div>
+      <div class="round-gr-btn"><router-link to="/contact">お問い合わせ</router-link></div>
       <p><router-link to="/questions">よくある質問はこちらから</router-link></p>
     </div>
   </div>
@@ -63,7 +63,7 @@ export default {
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-.contact-btn a {
+.round-gr-btn a {
   display: inline-block;
   font-size: 18px;
   font-weight: 600;

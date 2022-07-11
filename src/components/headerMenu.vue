@@ -27,7 +27,7 @@
         <li><router-link :class="{'active-menu':$route.name === 'businessContents'}" to="/businessContents">事業内容</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'recruit'}" to="/recruit">採用情報</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'constructionExample'}" to="/constructionExample">施工例</router-link></li>
-        <li class="contact-btn"><router-link to="/contact">お問い合わせ</router-link></li>
+        <li class="round-gr-btn"><router-link to="/contact">お問い合わせ</router-link></li>
       </ul>
     </nav>
   </header>

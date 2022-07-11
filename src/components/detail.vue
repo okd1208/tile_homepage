@@ -6,10 +6,6 @@
         <detail-tile :tile-id=$route.params.id></detail-tile>
       </div>
       <div v-else>
-        <content-title>
-          <template v-slot:mainTitle>Tiles</template>
-          <template v-slot:subTitle>タイル使用建設例</template>
-        </content-title>
         <detail-construction :construction-id=$route.params.id></detail-construction>
       </div>
     </div>
@@ -34,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .detailTitle {
   margin: 32px;
 }
