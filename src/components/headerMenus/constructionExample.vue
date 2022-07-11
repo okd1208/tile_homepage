@@ -16,12 +16,10 @@
       </div>
     </div>
   </div>
-  <request-erea></request-erea>
 </div>
 </template>
 
 <script>
-import RequestErea from '@/components/requestErea'
 import headerImg from '@/components/headerImg.vue'
 import someImgs from '@/components/someImgs.vue'
 import itemCard from '@/components/parts/itemCard.vue'
@@ -29,7 +27,6 @@ import Mixin from '../../mixin'
 export default {
   name: 'constructionExample',
   components: {
-    RequestErea,
     headerImg,
     someImgs,
     itemCard
