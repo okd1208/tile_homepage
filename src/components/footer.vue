@@ -88,6 +88,15 @@ export default {
   transition: 0.3s;
 }
 
+@media screen and (max-width:960px) {
+  .footer {
+    padding: 32px;
+  }
+  .footer-menu ul {
+    padding-left: 12px;
+  }
+}
+
 @media screen and (max-width:520px) {
   .footer {
     display: block;

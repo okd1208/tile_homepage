@@ -75,6 +75,9 @@ export default {
   font-size: 22px;
   padding: 12px 40px;
 }
+.topic-detail img{
+  width: 90%;
+}
 @media screen and (max-width: 960px) {
   .topic-detail {
     width: 80%;
