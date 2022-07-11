@@ -53,6 +53,9 @@ export default {
   font-weight: 400;
 }
 @media screen and (max-width: 520px) {
+  .headerImg {
+    margin-top: 60px;
+  }
   .headerImgBack {
     height: 184px;
   }

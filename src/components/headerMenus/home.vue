@@ -192,6 +192,9 @@ export default {
     position: relative;
     font-family: monospace;
   }
+  .headerTitle{
+    top: 350px;
+  }
   .toppage-appealing-point1, .toppage-appealing-point2 {
     margin-top: 72px;
     background-size: 100%;
