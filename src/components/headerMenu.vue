@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="company-logo">
+    <div class="company-logo" :class="{'bg-white' :!headerToPenetrate || isOpenMenu, 'bg-transparent' :headerToPenetrate && !isOpenMenu}">
       <div>
         <router-link to="/">
           <img src="@/assets/logo/company_logo.png">
@@ -39,7 +39,8 @@ export default {
   data: function () {
     return {
       isOpenMenu: false,
-      isClosing: false
+      isClosing: false,
+      scrollY: 0
     }
   },
   methods: {
@@ -49,16 +50,37 @@ export default {
       setTimeout(() => {
         this.isClosing = false
       }, 100)
+    },
+    getScrollY () {
+      this.scrollY = window.pageYOffset
     }
+  },
+  computed: {
+    headerToPenetrate () {
+      if (this.$route.name === 'home' && this.scrollY <= 0) {
+        return true
+      }
+      return false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.getScrollY)
   }
 }
 </script>
 
 <style scoped>
 .company-logo {
-  background-color: white;
   position: absolute;
   width: 352px;
+}
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.5s ease-in 0.1ms;
+}
+.bg-white {
+  background-color: white;
+  transition: 0.2s;
 }
 .company-logo a {
   text-decoration: none;

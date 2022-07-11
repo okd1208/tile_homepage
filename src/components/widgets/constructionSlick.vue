@@ -89,7 +89,7 @@ export default {
 }
 @media screen and (max-width: 520px) {
   .slick-outer {
-    width:  100%;
+    width: 100%;
   }
   .slick-prev {
       left: 0;

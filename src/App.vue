@@ -43,11 +43,15 @@ export default {
   z-index: 1;
 }
 #headerMenu {
-  z-index: 10;
+  z-index: 1001;
 }
 @media screen and (max-width:520px) {
   #app, #headerMenu {
     width: 100%;
+  }
+  #headerMenu {
+    position: fixed;
+    top: 0;
   }
 }
 </style>

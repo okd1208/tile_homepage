@@ -183,17 +183,13 @@ export default {
     transition: all 900ms 0s ease;
     margin-top: -60px;
     background-size: cover;
-    height: 350px;
+    height: 480px;
   }
   .headerbody,.headerTitle {
     margin-left: 46px;
-    /* margin-top: 16px; */
-    font-size: 20px;
+    font-size: 26px;
     text-align: left;
     position: relative;
-    top: 180px;
-    /* line-height: 600px; */
-    /* color: white; */
     font-family: monospace;
   }
   .toppage-appealing-point1, .toppage-appealing-point2 {
