@@ -12,8 +12,8 @@
         <p class="topicDetalText">{{ targetTopic.text }}</p>
       </div>
     </div>
-    <div>
-      <router-link to="/topicsList"><div class="topic-list-btn">ニュース一覧</div></router-link>
+    <div class="topic-list-btn round-gr-btn">
+      <router-link to="/topicsList">ニュース一覧</router-link>
     </div>
   </div>
 </template>
@@ -46,9 +46,8 @@ export default {
 
 <style scoped>
 .topic-detail {
-  margin-bottom: 100px;
+  margin: 96px auto;
   width: 60%;
-  margin: auto;
   text-align: left;
 }
 .topicDetailType {
@@ -59,35 +58,34 @@ export default {
   margin-right: 16px;
   border-radius: 20px;
   border: 2px solid #12887A;
-  /* border: 2px solid rgb(117, 185, 185); */
 }
 .topicTitle {
   font-size: 24px;
-  /* margin: 32px 0; */
-  margin-top: 32px;
+  margin: 24px 0 40px;
 }
 .topic-detail-date {
   margin-right: 42px;
   font-size: 16px;
 }
 .topicDetalText {
-  margin-top: 16px;
+  margin-top: 48px;
   white-space: pre-line;
 }
-.topic-list-btn {
-  display: inline-block;
-  font-size: 16px;
-  padding: 8px 32px;
-  border-radius: 28px;
-  background-color: #12887A;
-  color: white;
+.topic-list-btn a {
+  font-size: 22px;
+  padding: 12px 40px;
 }
-.topic-detail img{
-  width: 90%;
+@media screen and (max-width: 960px) {
+  .topic-detail {
+    width: 80%;
+  }
+  .topic-detail img{
+    width: 100%;
+  }
 }
 @media screen and (max-width: 520px) {
   .topic-detail {
-    margin-top: 72px;
+    margin: 72px auto 36px;
     width: 90%;
   }
   .topic-detail-date {
@@ -101,8 +99,12 @@ export default {
     font-size: 10px;
     padding: 2px 4px;
   }
-  .topic-detail img{
-    width: 100%;
+  .topicDetalText {
+    margin-top: 32px;
+  }
+  .topic-list-btn a {
+    font-size: 14px;
+    padding: 8px 20px;
   }
 }
 </style>
