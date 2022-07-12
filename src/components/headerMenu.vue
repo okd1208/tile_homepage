@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="company-logo" :class="{'bg-white' :!headerToPenetrate || isOpenMenu, 'bg-transparent' :headerToPenetrate && !isOpenMenu}">
+    <div class="company-logo" :class="{'bg-md-white' :!headerToPenetrate || isOpenMenu, 'bg-md-transparent' :headerToPenetrate && !isOpenMenu}">
       <div>
         <router-link to="/">
           <img src="@/assets/logo/company_logo.png">
@@ -8,7 +8,7 @@
         </router-link>
       </div>
     </div>
-    <div class="hamburger-menu sm-only">
+    <div class="hamburger-menu sm-md-only">
       <input type="checkbox" class="menu-btn" id="menu-btn" v-model="isOpenMenu">
       <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
       <ul class="menu" :class="{'d-none': isClosing}">
@@ -21,7 +21,7 @@
       </ul>
     </div>
     <nav>
-      <ul class="header-menubar sm-none">
+      <ul class="header-menubar pc-only">
         <li><router-link :class="{'active-menu':$route.name === 'home'}" to="/">ホーム</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'OverView'}" to="/OverView">会社情報</router-link></li>
         <li><router-link :class="{'active-menu':$route.name === 'businessContents'}" to="/businessContents">事業内容</router-link></li>
@@ -73,14 +73,7 @@ export default {
 .company-logo {
   position: absolute;
   width: 352px;
-}
-.bg-transparent {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.5s ease-in 0.1ms;
-}
-.bg-white {
   background-color: white;
-  transition: 0.2s;
 }
 .company-logo a {
   text-decoration: none;
@@ -121,7 +114,15 @@ export default {
   color: rgb(184, 168, 77) !important;
 }
 
-@media screen and (max-width:520px) {
+@media screen and (max-width:960px) {
+  .bg-md-transparent {
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.5s ease-in 0.1ms;
+  }
+  .bg-md-white {
+    background-color: white;
+    transition: 0.2s;
+  }
   .company-logo {
     width: 100%;
   }
@@ -130,22 +131,13 @@ export default {
     text-align: left;
   }
   .company-logo img {
-    width: 40px;
+    width: 80px;
   }
   .company-logo h2 {
-    font-size: 12px;
-
+    font-size: 18px;
     margin-top: 8px;
     display: inline;
   }
-
-  .hamburger-menu {
-    text-align: right;
-  }
-  .hamburger-menu * {
-    text-align: center;
-  }
-
   /* Nav items */
   .menu {
     list-style: none;
@@ -153,7 +145,7 @@ export default {
     width: 100%;
     height: auto;
     top: 0;
-    margin-top: 52px;
+    margin-top: 100px;
     padding: 0 0 10px 0;
     clear: both;
     background-color: white;
@@ -174,7 +166,7 @@ export default {
   .menu a {
     text-decoration: none;
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 20px;
     text-transform: capitalize;
     color: #a19f9f;;
     opacity: 0;
@@ -200,17 +192,18 @@ export default {
 
   .menu-icon {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    right: 0;
     cursor: pointer;
-    padding: 24px 14px;
+    padding: 48px 24px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .navicon {
     background: #ddd;
     display: block;
-    height: 3px;
-    width: 26px;
+    height: 4px;
+    width: 32px;
     position: relative;
     transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
   }
@@ -227,11 +220,11 @@ export default {
   }
 
   .navicon:before {
-    top: 9px;
+    top: 12px;
   }
 
   .navicon:after {
-    bottom: 9px;
+    bottom: 12px;
   }
 
   /* Hamburger Menu Animation Start */
@@ -255,5 +248,50 @@ export default {
     transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
   }
   /* Hamburger Menu Animation End */
+}
+@media screen and (max-width:520px) {
+  .company-logo {
+    width: 100%;
+  }
+  .company-logo div {
+    margin: 12px;
+    text-align: left;
+  }
+  .company-logo img {
+    width: 40px;
+  }
+  .company-logo h2 {
+    font-size: 12px;
+    margin-top: 8px;
+    display: inline;
+  }
+
+  .hamburger-menu {
+    text-align: right;
+  }
+  .hamburger-menu * {
+    text-align: center;
+  }
+
+  /* Nav items */
+  .menu {
+    margin-top: 52px;
+  }
+  .menu a {
+    font-size: 16px;
+  }
+  .menu-icon {
+    padding: 24px 14px
+  }
+  .navicon {
+    height: 3px;
+    width: 26px;
+  }
+  .navicon:before {
+    top: 9px;
+  }
+  .navicon:after {
+    bottom: 9px;
+  }
 }
 </style>

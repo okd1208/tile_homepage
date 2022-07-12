@@ -19,10 +19,18 @@ p {
   margin-bottom: 0; 
 }
 
-.sm-only {
+.sm-only, .sm-md-only {
   display: none;
 }
 
+@media screen and (max-width: 960px) {
+  .sm-md-only {
+    display: block;
+  }
+  .pc-only {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 520px) {
   * {
     font-size: 12px;
@@ -32,9 +40,6 @@ p {
   }
   .s-fontsize-15rem {
     font-size: 1.5rem
-  }
-  .sm-none {
-    display: none !important;
   }
   .sm-only {
     display: block;
