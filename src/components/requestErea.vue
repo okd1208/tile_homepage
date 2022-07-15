@@ -2,7 +2,7 @@
   <div class="introduction-contact">
     <div class="contact-explanatory-text">
       <h3>お問い合わせ</h3>
-      <p>ご意見・ご質問など、お問い合わせは、<br> 下記フォームからお願いいたします。</p>
+      <p>ご意見・ご質問など、お問い合わせは、<br class="pc-only"> 下記フォームからお願いいたします。</p>
     </div>
     <div class="number-and-link">
       <h3><i class="fas fa-phone"></i>092-541-6034</h3>
@@ -71,6 +71,15 @@ export default {
   border-radius: 30px;
 }
 
+@media screen and (max-width: 960px) {
+  .contact-explanatory-text {
+    width: 35%;
+    padding: 56px 32px;
+  }
+  .number-and-link{
+    width: 45%;
+  }
+}
 @media screen and (max-width: 520px) {
   .introduction-contact {
     margin-top: 72px;
