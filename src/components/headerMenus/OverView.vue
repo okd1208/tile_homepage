@@ -67,10 +67,16 @@ export default {
   font-weight: bold;
   text-align: left;
 }
+
+@media screen and (max-width: 960px) {
+  .OverViewTable {
+    min-width: auto;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .OverViewTable {
     width: 80%;
-    min-width: auto;
   }
   .OverViewTable tr:first-child {
     border-top: 1px solid #D1D1D1;

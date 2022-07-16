@@ -12,8 +12,8 @@
     <div class="business-appeal-content">
       <h2 class="green-title">誰よりも何処よりも早く、丁寧に、をもっとウニ。</h2>
       <p>
-        弊社では、主にタイルをメインとした取引を行っております。<br>
-        弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っており<br>
+        弊社では、主にタイルをメインとした取引を行っております。<br class="pc-only">
+        弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っており<br class="pc-only">
         ます。弊社では、主にタイルをメインとした取引を行っております。
       </p>
     </div>
@@ -33,21 +33,21 @@
         <h2>タイル工事までの流れ</h2>
         <div>
           <div class="business-flow-step">
-            <img src="@/assets/town.jpg">
+            <img src="@/assets/businessFlow/step1.png">
             <div>
               <h3>ヒアリング</h3>
               <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
             </div>
           </div>
           <div class="business-flow-step">
-            <img src="@/assets/town.jpg">
+            <img src="@/assets/businessFlow/step2.png">
             <div>
               <h3>見積もり</h3>
               <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
             </div>
           </div>
           <div class="business-flow-step">
-            <img src="@/assets/town.jpg">
+            <img src="@/assets/businessFlow/step3.png">
             <div>
               <h3>工事</h3>
               <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
@@ -75,13 +75,14 @@ export default {
 <style scoped>
 .green-title {
   color: #068273;
+  margin-bottom: 32px;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 0 3px 6px #00000029;
 }
 .business-main-content {
   margin-top: 125px;
-  padding: 94px 114px 0;
+  padding: 96px 114px;
   background-color: #F2F2F2;
 }
 .business-content-container {
@@ -95,18 +96,18 @@ export default {
 }
 .business-content {
   width: 50%;
-  padding: 76px 0 32px 67px;
+  padding: 76px 0 76px 67px;
   text-align: left;
 }
-.business-content p {
+/* .business-content p {
   margin-top: 70px;
-}
+} */
 .business-flow > h2 {
   font-weight: bold;
   font-size: 26px;
   display: inline-block;
   position: relative;
-  margin:164px 0 85px 0;
+  margin: 96px 0 85px 0;
 }
 .business-flow > h2::after {
   content: "";
@@ -118,10 +119,12 @@ export default {
 }
 .business-flow > div {
   display: flex;
-   justify-content: space-around;
+  justify-content: space-around;
+  margin: auto;
+  width: clamp(100px, 100%, 1200px);
 }
 .business-flow-step {
-  width: 25%;
+  width: clamp(200px, 25%, 300px);
 }
 .business-flow-step img{
   width: 100%;

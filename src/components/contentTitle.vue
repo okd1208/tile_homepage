@@ -31,7 +31,7 @@ export default {
   }
   .sub-title {
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 }
 </style>

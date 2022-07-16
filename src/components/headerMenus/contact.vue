@@ -136,6 +136,12 @@ export default {
   margin-bottom: 32px;
 }
 
+@media screen and (max-width: 960px) {
+  .contactpage-form > div {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .header{
     margin: 48px 0;

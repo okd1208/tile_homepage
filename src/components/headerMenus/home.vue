@@ -208,10 +208,11 @@ export default {
     margin-top: auto;
     margin-bottom: 300px;
     position: relative;
-    top: 220px;
+    top: 200px;
     text-align: left;
   }
   .toppage-appealing-point1 h2 {
+    margin-bottom: 24px;
     padding: 18px 20px;
   }
   .toppage-appealing-point1 p {
@@ -222,7 +223,7 @@ export default {
   }
   .toppage-appealing-point1 .breen-button {
     position: static;
-    margin: auto;
+    margin: 24px 0 0 32px;
     font-size: 12px;
   }
   .toppage-appealing-point2 > div {

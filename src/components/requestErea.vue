@@ -72,6 +72,9 @@ export default {
 }
 
 @media screen and (max-width: 960px) {
+  .introduction-contact {
+    margin-top: 72px;
+  }
   .contact-explanatory-text {
     width: 35%;
     padding: 56px 32px;
@@ -82,7 +85,6 @@ export default {
 }
 @media screen and (max-width: 520px) {
   .introduction-contact {
-    margin-top: 72px;
     display: block;
     padding: 40px 0;
   }
@@ -91,7 +93,7 @@ export default {
     margin: 8px auto;
   }
   .contact-explanatory-text {
-    padding: 24px 0px;
+    padding: 24px;
   }
   .contact-explanatory-text h3 {
     font-size: 20px;

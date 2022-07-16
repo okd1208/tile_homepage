@@ -205,6 +205,19 @@ export default {
   font-size: 28px;
 }
 
+@media screen and (max-width: 960px) {
+  .business-content {
+    padding: 80px;
+    margin-top: 48px;
+  }
+  .business-content-explanatory {
+    padding: 48px;
+  }
+  .job-description-table, .recruit-flow-step {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .bg-green {
     height: 360px;
@@ -253,7 +266,7 @@ export default {
     width: 90%;
   }
   .recruit-flow-step div {
-    font-size: 18px;
+    font-size: 14px;
     border: 1px solid #068273;
     padding: 48px 8px;
   }

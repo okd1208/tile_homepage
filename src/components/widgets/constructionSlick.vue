@@ -88,6 +88,9 @@ export default {
   margin-top: 64px;
 }
 @media screen and (max-width: 520px) {
+  .construction{
+    margin-top: 0px;
+  }
   .slick-outer {
     width: 100%;
   }
@@ -96,6 +99,9 @@ export default {
   }
   .slick-next {
       right: 0;
+  }
+  .item-card {
+    padding: 32px 0 52px;
   }
 }
 </style>
