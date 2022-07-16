@@ -86,22 +86,21 @@ export default {
   background-color: #F2F2F2;
 }
 .business-content-container {
+  width: clamp(100px, 100%, 1200px);
+  margin: auto;
   background-color: white;
 }
 .business-floot-img {
   position: absolute;
-  right: 0;
-  width: 40%;
+  margin-left: 96px;
+  width: clamp(100px, 40%, 540px);
   margin-top: -32px;
 }
 .business-content {
   width: 50%;
-  padding: 76px 0 76px 67px;
+  padding: 76px 0 128px 67px;
   text-align: left;
 }
-/* .business-content p {
-  margin-top: 70px;
-} */
 .business-flow > h2 {
   font-weight: bold;
   font-size: 26px;
@@ -168,11 +167,12 @@ export default {
     right: 8px;
     width: 55%;
     margin-top: 0;
+    margin-left: auto;
     top: 272px;
   }
   .business-content {
     width: auto;
-    padding: 32px 16px 67px;
+    padding: 48px 16px 67px;
     text-align: center;
   }
   .business-content p {
@@ -180,6 +180,7 @@ export default {
     margin-top: 24px;
   }
   .business-flow > h2 {
+    font-size: 22px;
     margin:136px 0 48px 0;
   }
   .business-flow > h2::after {

@@ -13,23 +13,23 @@
     <div>
         <form class="contactpage-form">
             <div>
-                <label>名前</label><span>必須</span>
+                <label>名前</label>
                 <input v-model="fullName" type="text" name="name" value="">
             </div>
             <div>
-                <label>フリガナ(空白なし)</label><span>必須</span>
+                <label>フリガナ(空白なし)</label>
                 <input v-model="ruby" type="text" name="furigana" value="">
             </div>
             <div>
-                <label>メールアドレス</label><span>必須</span>
+                <label>メールアドレス</label>
                 <input v-model="email" type="text" name="email" value="">
             </div>
             <div>
-                <label>電話番号(ハイフンあり)</label><span>必須</span>
+                <label>電話番号(ハイフンあり)</label>
                 <input v-model="phoneNumber" type="text" name="tel" placeholder="例）080-1234-5678" value="">
             </div>
             <div>
-                <label>お問い合わせ項目</label><span>必須</span>
+                <label>お問い合わせ項目</label>
                 <select v-model="contactType" name="item">
                     <option value="">お問い合わせ項目を選択してください</option>
                     <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
@@ -37,7 +37,7 @@
                 </select>
             </div>
             <div>
-                <label for="content">お問い合わせ内容</label><span>必須</span>
+                <label for="content">お問い合わせ内容</label>
                 <textarea v-model="contactContent" name="content" style="color:000000;vertical-align:top" rows="5"></textarea>
             </div>
             <p @click="submitContactForm" class="contact-submit-btn" type="submit">確認画面へ</p>
@@ -100,17 +100,19 @@ export default {
   width: 50%;
   margin: auto;
   text-align: left;
-  margin-bottom: 60px;
+  margin: 1px auto 60px;
 }
 .contactpage-form label {
-  width: 35%;
+  width: 30%;
 }
 .contactpage-form input::before{
    content: "→";
    margin-right: 0;
 }
 .contactpage-form input, .contactpage-form select, .contactpage-form textarea {
-  width: 55%;
+  margin-left: 1px;
+  font-family: Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  width: 60%;
 }
 .contactpage-form span {
   background-color: #068273;
@@ -152,10 +154,10 @@ export default {
     margin-bottom: 32px;
   }
   .contactpage-form label {
-    width: 37%;
+    width: 40%;
   }
   .contactpage-form input, .contactpage-form select, .contactpage-form textarea {
-    width: 50%;
+    width: 57%;
   }
   .contactpage-form span {
     font-size: 10px;
