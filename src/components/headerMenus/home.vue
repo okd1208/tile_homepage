@@ -115,6 +115,7 @@ export default {
   position: relative;
   top: 40vh;
   color: white;
+  font-weight: 500;
 }
 .toppage-appealing-point1 {
   margin-top: 112px;
@@ -194,6 +195,10 @@ export default {
   }
   .headerTitle{
     top: 350px;
+  }
+  .toppage-appealing-point2 {
+    background-image: url("~@/assets/Building.jpg");
+    padding: 80px 0 120px 0;
   }
   .toppage-appealing-point1, .toppage-appealing-point2 {
     margin-top: 72px;

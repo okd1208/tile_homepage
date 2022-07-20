@@ -44,6 +44,9 @@ p {
   .sm-only {
     display: block;
   }
+  .md-pc-only {
+    display: none;
+  }
 }
 
 .sinpleBtn {

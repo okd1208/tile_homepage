@@ -109,7 +109,10 @@ export default {
     line-height: 1.8em;
     font-size: 14px;
   }
-  .footer-menu a {
+  .footer-menu {
+    display: none;
+  }
+  /* .footer-menu a {
     font-size: 12px;
   }
   .footer-menu li {
@@ -118,6 +121,6 @@ export default {
   .footer-menu ul {
     padding-left: 0;
     width: 30%;
-  }
+  } */
 }
 </style>

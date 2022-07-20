@@ -20,7 +20,7 @@
         <div class="recruite-three-image">
           <div><img src="@/assets/home2.jpeg"></div>
           <div><img src="@/assets/home2.jpeg"></div>
-          <div><img src="@/assets/home2.jpeg"></div>
+          <div class="md-pc-only"><img src="@/assets/home2.jpeg"></div>
         </div>
       </div>
       <div class="business-content">
