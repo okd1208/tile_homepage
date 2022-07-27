@@ -31,8 +31,8 @@
         <div>
           <h2>タイルを仕事に。</h2>
           <p>
-            タイルを１枚貼ると寿命が１年伸びるんだって。<br>
-             あなたも寿命伸ばしてみない？
+            あなたの手で、街に彩をつけて見ませんか？<br>
+             見学もできますので、ご気軽にお問い合わせください。
           </p>
           <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
         </div>
@@ -91,22 +91,23 @@ export default {
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
   background-size: cover;
+  background-position: center;
   height: 60vh;
 }
 .header1{
-  background-image: url('~@/assets/home/home1.jpg');
+  background-image: url('~@/assets/home/home01.jpg');
 }
 .header2{
-  background-image: url('~@/assets/home/home2.jpg');
+  background-image: url('~@/assets/home/home02.jpg');
 }
 .header3{
-  background-image: url('~@/assets/home/home3.jpeg');
+  background-image: url('~@/assets/home/home03.jpg');
 }
 .header4{
-  background-image: url('~@/assets/home/home4.jpg');
+  background-image: url('~@/assets/home/home04.jpg');
 }
 .header5{
-  background-image: url('~@/assets/home/home5.jpg');
+  background-image: url('~@/assets/home/home09.jpg');
 }
 .headerTitle{
   margin-left: 10vw;

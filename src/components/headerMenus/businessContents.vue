@@ -10,7 +10,7 @@
       <template v-slot:subTitle>Philosophy</template>
     </content-title>
     <div class="business-appeal-content">
-      <h2 class="green-title">誰よりも何処よりも早く、丁寧に、をもっとウニ。</h2>
+      <h2 class="green-title">タイルで街を華やかにして社会に貢献し、人々を幸せにします。</h2>
       <p>
         弊社では、主にタイルをメインとした取引を行っております。<br class="pc-only">
         弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っており<br class="pc-only">

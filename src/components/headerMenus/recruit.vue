@@ -10,11 +10,7 @@
         <div class="recruit-message">
           <h2>採用メッセージ</h2>
           <p>
-            専門知識や技術は入社後に習得でき、人としてのたくさんの学びや刺激に溢れています。<br>
-            ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？
-            ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？
-            ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？
-            ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？
+            誰かの「住まい」を快適、魅力的にしたり、<br>「街づくり」に関わるやりがいのある仕事、一生モノの技術をココで身につけよう。
           </p>
         </div>
         <div class="recruite-three-image">
@@ -29,7 +25,7 @@
           <template v-slot:subTitle>Business Content</template>
         </content-title>
         <div class="business-content-explanatory">
-          <p>ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？ぜひ私たちと一緒に働きませんか？</p>
+          <p>タイル張り技術士及び配送業務</p>
         </div>
       </div>
       <div>
@@ -47,13 +43,11 @@
       <div class="recruit-flow">
         <h2 class="green-underbar">採用フロー</h2>
         <div class="recruit-flow-step">
-          <div>書 類 提 出</div>
+          <div>見学 <span style="color:gray">※任意</span></div>
           <i class="fas fa-play"></i>
-          <div>１ 次 面 接</div>
+          <div>面 接</div>
           <i class="fas fa-play"></i>
-          <div>２ 次 面 接</div>
-          <i class="fas fa-play"></i>
-          <div>最 終 面 接</div>
+          <div>相談 <span style="color:gray">※任意</span></div>
           <i class="fas fa-play"></i>
           <div>採 用</div>
         </div>
@@ -73,14 +67,14 @@ export default {
   data: function () {
     return {
       contents: [
-        {title: '募集職種', text: '総合職、技術職、事務'},
-        {title: '募集人数', text: '１５名'},
-        {title: '募集対象', text: '２０２２年卒業の方'},
-        {title: '提出書類', text: '履歴書、成績証明書、卒業見込証明書、健康診断書'},
-        {title: '初任給', text: '大学卒・大学院卒　月給233,000円（2022年4月予定）'},
-        {title: '賞与', text: '年3回（6・12・4月）　2019年度実績'},
-        {title: '勤務時間', text: '午前8時30分～午後5時'},
-        {title: '勤務地', text: '福岡'}
+        {title: '募集職種', text: 'タイル張り技術士見習い(未経験でも可)'},
+        {title: '募集人数', text: '3名'},
+        {title: '募集対象', text: '40歳以下'},
+        {title: '提出書類', text: '身分証明書のみ(運転免許書、保健所など)'},
+        {title: '給与', text: '月給22万円〜（研修期間あり）'},
+        {title: '賞与', text: '年2回（7月・12月）'},
+        {title: '勤務時間', text: '8:00～17:30'},
+        {title: '勤務地', text: '福岡・佐賀 近隣'}
       ]
     }
   },
