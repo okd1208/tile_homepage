@@ -19,7 +19,7 @@ export default {
   opacity: 0;
   color: white;
   position: absolute;
-  top: 100px;
+  top: 48%;
   left: 10px;
   -webkit-transform: rotateX(-180deg);
   transform: rotateX(-180deg);
@@ -27,6 +27,7 @@ export default {
   transition: all 0.6s ease;
 }
 .imgWrap{
+  height: 100%;
   /* border: 1px solid #ddd; */
   position: relative;
   /* z-index: 1; */

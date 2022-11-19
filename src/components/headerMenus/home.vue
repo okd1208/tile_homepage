@@ -1,35 +1,53 @@
 <template>
  <div>
     <div :class="header">
-      <h1 class="headerTitle">タイルの事を任せるなら、冨永タイル</h1>
-      <h1 class="headerbody">Welcome to tileWorld!</h1>
+      <h1 class="headerTitle">タイルの事なら、<br>富永タイル。</h1>
     </div>
     <div class="body">
-      <new-topic>お知らせ</new-topic>
-      <construction></construction>
-      <construction-btn>タイルの使用例一覧をみる<br>click!</construction-btn>
-      <some-tiles></some-tiles>
-      <tile-btn>タイル一覧を見てみる<br>click</tile-btn>
-      <!-- <div class="bodyFooter">
-        <div class="contact">
-          <h2 class="footerTitle"><span class="icon"><i class="far fa-envelope"></i></span>お問い合わせ</h2>
+      <new-topic display-count=3></new-topic>
+      <div class="toppage-appealing-point1">
+        <div>
+          <h2>タイルで地域に貢献したい。</h2>
+          <p>
+            富永タイルはどこまでも一途にお客様のニーズに応え、<br>
+            暮らしに寄り添ったサービスを提供します。<br>
+            タイルのことはお任せ下さい。
+          </p>
+          <router-link to="/businessContents"><div class="breen-button">事業内容</div></router-link>
         </div>
-        <div class="question">
-          <h2 class="footerTitle"><span class="icon"><i class="far fa-question-circle"></i></span>よくある質問</h2>
+      </div>
+      <content-title>
+        <template v-slot:mainTitle>建設事例</template>
+        <template v-slot:subTitle>Works</template>
+      </content-title>
+      <div class="c-slick">
+        <construction></construction>
+      </div>
+      <router-link to="/constructionExample"><div class="breen-button mt-4">建設事例一覧をみる</div></router-link>
+      <!-- <construction-btn>タイルの使用例一覧をみる</construction-btn> -->
+      <!-- <some-tiles></some-tiles>
+      <tile-btn>タイル一覧をみる</tile-btn> -->
+      <div class="toppage-appealing-point2">
+        <div>
+          <h2>タイルを仕事に。</h2>
+          <p>
+            あなたの手で、街に彩をつけて見ませんか？<br>
+             見学もできますので、ご気軽にお問い合わせください。
+          </p>
+          <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
         </div>
-      </div> -->
-      <request-erea></request-erea>
+      </div>
     </div>
  </div>
 </template>
 
 <script>
 import newTopic from '@/components/newTopic.vue'
-import construction from '@/components/construction.vue'
+import construction from '@/components/widgets/constructionSlick.vue'
 import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
-import requestErea from '@/components/requestErea'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'home',
   data: function () {
@@ -45,7 +63,7 @@ export default {
     constructionBtn,
     tileBtn,
     someTiles,
-    requestErea
+    contentTitle
   },
   methods: {
     headerClass: function () {
@@ -58,7 +76,6 @@ export default {
         if (this.img === 6) {
           this.img = 1
         }
-        console.log(this.img)
         this.headerClass()
       }, 3000)
     }
@@ -73,96 +90,162 @@ export default {
 /* @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap'); */
 .header1,.header2,.header3,.header4,.header5{
   transition: all 900ms 0s ease;
-  margin-top: -60px;
   background-size: cover;
-  height: 800px;
+  background-position: center;
+  height: 60vh;
 }
 .header1{
-  background-image: url('~@/assets/home/home1.jpg');
+  background-image: url('~@/assets/home/home01.jpg');
 }
 .header2{
-  background-image: url('~@/assets/home/home2.jpg');
+  background-image: url('~@/assets/home/home02.jpg');
 }
 .header3{
-  background-image: url('~@/assets/home/home3.jpeg');
+  background-image: url('~@/assets/home/home03.jpg');
 }
 .header4{
-  background-image: url('~@/assets/home/home4.jpg');
+  background-image: url('~@/assets/home/home04.jpg');
 }
 .header5{
-  margin-top: -60px;
-  background-image: url('~@/assets/home/home5.jpg');
+  background-image: url('~@/assets/home/home09.jpg');
 }
 .headerTitle{
-  margin-left: 46px;
-  width: 30%;
-  font-size: 46px;
-  text-align: left;
-  position: relative;
-  top: 400px;
-  border-bottom: black 1px solid;
-  /* line-height: 600px; */
-  /* color: white; */
-  /* font-family: monospace; */
-  font-family: 'Yusei Magic', sans-serif;
-}
-.headerbody {
-  margin-left: 46px;
-  margin-top: 16px;
+  margin-left: 10vw;
   font-size: 40px;
   text-align: left;
   position: relative;
-  top: 400px;
-  /* line-height: 600px; */
-  /* color: white; */
-  font-family: monospace;
+  top: 40vh;
+  color: white;
+  font-weight: 500;
 }
-.bodyFooter {
-  display: flex;
-  margin-top: 64px;
+.toppage-appealing-point1 {
+  margin-top: 112px;
+  background-image: url("~@/assets/home2.jpeg");
+  background-position: left;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  height: 500px;
+  overflow: hidden;
 }
-.contact,.question{
-  width: 50%;
-  height: 200px;
+.toppage-appealing-point1 > div {
+  margin-left: 50%;
+  text-align: left;
+  margin-top: 128px;
 }
-.contact {
-  background-color:rgb(192, 228, 228);
+.toppage-appealing-point1 h2 {
+  margin-bottom: 32px;
+  background-color: #068274d7;
+  color: white;
+  padding: 12px 0 8px 88px;
 }
-.question {
-  background-color:rgb(189, 210, 238);
+.toppage-appealing-point1 p {
+  margin-left: 88px;
+  font-size: 18px;
 }
-.footerTitle {
-  line-height: 120px;
-  margin-top: 40px;
-}
-.icon {
-  /* display: inline-block;
-  width: 100px; */
-  /* height: 100px; */
-  /* background-color: white; */
-  /* border-radius: 50%; */
-  /* text-align: left; */
-  margin-right: 8px;
-  /* padding-top: -32px; */
+.toppage-appealing-point1 .breen-button {
+  position: relative;
+  top: 48px;
+  left: 50%;
 }
 
-@media screen and (max-width:534px) {
+.toppage-appealing-point2 {
+  margin-top: 112px;
+  background-image: url("~@/assets/home2.jpeg");
+  background-position: right;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  height: 500px;
+  overflow: hidden;
+}
+.toppage-appealing-point2 > div {
+  margin-right: 50%;
+  padding: 32px 0 32px 184px;
+  text-align: left;
+  color: white;
+  background-color: #068274d7;
+  margin-top: 48px;
+}
+.toppage-appealing-point2 h2 {
+  margin-bottom: 32px;
+}
+.toppage-appealing-point2 p {
+  font-size: 18px;
+}
+.toppage-appealing-point2 .wthite-button {
+  position: relative;
+  margin: 48px 0;
+}
+
+.c-slick {
+  background-color: #F2F2F2;
+}
+
+@media screen and (max-width:520px) {
   .header1,.header2,.header3,.header4,.header5{
     transition: all 900ms 0s ease;
     margin-top: -60px;
     background-size: cover;
-    height: 350px;
+    height: 480px;
   }
   .headerbody,.headerTitle {
     margin-left: 46px;
-    /* margin-top: 16px; */
-    font-size: 20px;
+    font-size: 26px;
     text-align: left;
     position: relative;
-    top: 180px;
-    /* line-height: 600px; */
-    /* color: white; */
     font-family: monospace;
+  }
+  .headerTitle{
+    top: 350px;
+  }
+  .toppage-appealing-point2 {
+    background-image: url("~@/assets/Building.jpg");
+    padding: 80px 0 120px 0;
+  }
+  .toppage-appealing-point1, .toppage-appealing-point2 {
+    margin-top: 72px;
+    background-size: 100%;
+    background-position: top;
+    height: auto;
+    overflow: visible;
+  }
+  .toppage-appealing-point1 > div {
+    margin-left: 48px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: 300px;
+    position: relative;
+    top: 200px;
+    text-align: left;
+  }
+  .toppage-appealing-point1 h2 {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+  }
+  .toppage-appealing-point1 p {
+    margin-left: 0px;
+    font-size: 10px;
+    padding: 0 32px;
+    line-height: 24px;
+  }
+  .toppage-appealing-point1 .breen-button {
+    position: static;
+    margin: 24px 0 0 32px;
+    font-size: 12px;
+  }
+  .toppage-appealing-point2 > div {
+    margin-right: 10%;
+    padding: 32px 0 32px 32px;
+    text-align: left;
+    color: white;
+    background-color: #068274d7;
+    margin-top: 48px;
+  }
+  .toppage-appealing-point2 h2 {
+    margin-bottom: 22px;
+  }
+  .toppage-appealing-point2 p {
+    font-size: 10px;
+    line-height: 24px;
   }
 }
 </style>

@@ -1,252 +1,280 @@
 <template>
-<div>
-  <div class="recruitMent">
-    <header-img className="recruitImg">
-      <template v-slot:Title>RECRUITMENT</template>
-      <template v-slot:Text>採用情報</template>
-    </header-img>
-    <p class="RecuritTableTitle">募集要項</p>
-    <table class="RecruitTable">
-      <tr v-for="content in contents" :key="content.title" class="RecruitTableTr">
-        <td class="contentsTitle">{{ content.title }}</td>
-        <td class="contentsText">{{ content.text }}</td>
-      </tr>
-    </table>
-    <div class="flow">
-      <p class="Recruitflow">採用フロー</p>
-      <div class="flowParent">
-        <div class="step">
-          step1
+  <div>
+    <div class="recruitMent">
+      <header-img className="recruitImg">
+        <template v-slot:Title>RECRUITMENT</template>
+        <template v-slot:Text>採用情報</template>
+      </header-img>
+      <div>
+        <div class="bg-green"></div>
+        <div class="recruit-message">
+          <h2>採用メッセージ</h2>
+          <p>
+            誰かの「住まい」を快適、魅力的にしたり、<br>「街づくり」に関わるやりがいのある仕事、一生モノの技術をココで身につけよう。
+          </p>
         </div>
-        <div class="flowbox">
-          <p class="stepTitle">書類提出</p>
-          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+        <div class="recruite-three-image">
+          <div><img src="@/assets/home2.jpeg"></div>
+          <div><img src="@/assets/home2.jpeg"></div>
+          <div class="md-pc-only"><img src="@/assets/home2.jpeg"></div>
         </div>
       </div>
-      <h2 class="flowArrow">↓</h2>
-        <!-- step -->
-      <div class="flowParent">
-        <div class="step">
-          step2
-        </div>
-        <div class="flowbox">
-          <p class="stepTitle">１次面接</p>
-          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+      <div class="business-content">
+        <content-title>
+          <template v-slot:mainTitle>業務内容</template>
+          <template v-slot:subTitle>Business Content</template>
+        </content-title>
+        <div class="business-content-explanatory">
+          <p>タイル張り技術士及び配送業務</p>
         </div>
       </div>
-      <h2 class="flowArrow">↓</h2>
-        <!-- step -->
-      <div class="flowParent">
-        <div class="step">
-          step3
+      <div>
+        <content-title>
+          <template v-slot:mainTitle>募集要項</template>
+          <template v-slot:subTitle>Job Description</template>
+        </content-title>
+        <table class="job-description-table">
+          <tr v-for="content in contents" :key="content.title">
+            <th class="contentsTitle">{{ content.title }}</th>
+            <td class="contentsText">{{ content.text }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="recruit-flow">
+        <h2 class="green-underbar">採用フロー</h2>
+        <div class="recruit-flow-step">
+          <div>見学 <span style="color:gray">※任意</span></div>
+          <i class="fas fa-play"></i>
+          <div>面 接</div>
+          <i class="fas fa-play"></i>
+          <div>相談 <span style="color:gray">※任意</span></div>
+          <i class="fas fa-play"></i>
+          <div>採 用</div>
         </div>
-        <div class="flowbox">
-          <p class="stepTitle">２次面接</p>
-          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
+        <div class="entry-bottan">
+          ENTRY
         </div>
       </div>
-      <h2 class="flowArrow">↓</h2>
-        <!-- step -->
-      <div class="flowParent">
-        <div class="step">
-          step4
-        </div>
-        <div class="flowbox">
-          <p class="stepTitle">最終面接</p>
-          <p class="stepText">まずはこのホームページより書類を提出していただきます。</p>
-        </div>
-      </div>
-      <h2 class="flowArrow">↓</h2>
-      <h2 class="finishStep">採用</h2>
     </div>
   </div>
-  <div class="Btn">
-    <div class="EntryBtn">
-      <h4 class="Btntext">ENTRY</h4>
-    </div>
-    <!-- <div class="TryBtn">
-      <h4 class="Btntext">まずは話を聞いてみる</h4>
-    </div> -->
-  </div>
-</div>
 </template>
 
 <script>
 import headerImg from '@/components/headerImg.vue'
-import bodyHeader from '@/components/header.vue'
+import contentTitle from '@/components/contentTitle'
 export default {
   name: 'recruit',
   data: function () {
     return {
       contents: [
-        {title: '募集職種', text: '総合職、技術職、事務'},
-        {title: '募集人数', text: '１５名'},
-        {title: '募集対象', text: '２０２２年卒業の方'},
-        {title: '提出書類', text: '履歴書、成績証明書、卒業見込証明書、健康診断書'},
-        {title: '初任給', text: '大学卒・大学院卒　月給233,000円（2022年4月予定）'},
-        {title: '賞与', text: '年3回（6・12・4月）　2019年度実績'},
-        {title: '勤務時間', text: '午前8時30分～午後5時'},
-        {title: '勤務地', text: '福岡'}
+        {title: '募集職種', text: 'タイル張り技術士見習い(未経験でも可)'},
+        {title: '募集人数', text: '3名'},
+        {title: '募集対象', text: '40歳以下'},
+        {title: '提出書類', text: '身分証明書のみ(運転免許書、保健所など)'},
+        {title: '給与', text: '月給22万円〜（研修期間あり）'},
+        {title: '賞与', text: '年2回（7月・12月）'},
+        {title: '勤務時間', text: '8:00～17:30'},
+        {title: '勤務地', text: '福岡・佐賀 近隣'}
       ]
     }
   },
   components: {
-    bodyHeader,
+    contentTitle,
     headerImg
   }
 }
 </script>
 
 <style scoped>
-/* .recruitMentTitleErea {
-  background-color: rgb(238, 238, 238);
+.bg-green {
+  background-color: #068273;
+  position: absolute;
   height: 450px;
-  margin-top: 100px;
-  text-align: center;
-  background-image: url('~@/assets/recruit/recruit5.jpeg');
-  1800:600
-  background-size: cover;
+  margin-top: 163px;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
 }
-.recruitMentTitleText {
-  height: 450px;
-  text-align: center;
-  padding-top: 160px;
-  font-size: 46px;
-  padding-left: 100px;
-  background-color: rgba(78, 77, 77, 0.548);
-  color: white;
+.recruit-message {
+  position: relative;
+  background-color: white;
+  width: 80%;
+  margin: 76px auto 66px;
+  padding: 59px 60px 54px;
 }
-.recruitMentTitle {
-  font-size: 52px;
-  font-family: serif;
-  letter-spacing: 2px;
-}
-.recruitMentText {
-  font-family: serif;
-  font-size: 32px;
-} */
-.recruitTable {
-  margin:20px auto;
-  background-color: whitesmoke;
-  /* text-align: left; */
-  /* border: yellow 1px solid; */
-}
-.RecruitTable {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 32px;
-  width: 60%;
-  text-align: left;
-  border-top: 1px solid rgba(241, 236, 236, 0.966);
-}
-.RecruitTableTr {
-  height: 100px;
-  border-bottom: 1px solid rgba(241, 236, 236, 0.966);
-}
-.contentsTitle {
-  width: 140px;
-  /* text-align: left; */
+.recruit-message h2 {
   font-weight: bold;
-  /* background-color: rgba(224, 222, 222, 0.966); */
-}
-.contentsText {
-  /* text-align: left; */
-  padding: 24px;
-}
-.RecuritTableTitle {
-  font-family: serif;
-  text-align: center;
-  font-size: 32px;
-  margin-top: 100px;
-}
-.Recruitflow {
-  font-size: 28px;
-  margin-bottom: 28px;
-}
-.flow {
-  margin-top: 64px;
-  font-family: serif;
-}
-.flowParent {
- font-size: 20px;
- display: flex;
- margin: 0 auto;
- background-color: rgba(236, 240, 241, 0.699);
- width: 60%;
-}
-.step {
+  border-bottom: 2px solid #068273;
   display: inline-block;
-  background-color: rgb(197, 132, 48);
-  line-height: 130px;
-  color: aliceblue;
-  width: 150px;
-  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
 }
-.stepTitle {
-  font-weight: bold;
-  margin: 32px 0 16px 32px;
-  font-size: 20px;
-  text-align: left;
+.recruit-message p {
+  font-size: 18px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  line-height: 1.7em;
 }
-.stepText {
-  margin-left: 32px;
-  text-align: left;
-  font-size: 16px;
+.recruite-three-image {
+  display: flex;
+  width: 70%;
+  margin: auto;
 }
-.flowBox {
-  background-color: rgba(236, 240, 241, 0.699);
+.recruite-three-image img {
+  width: 100%;
+  position: relative;
 }
-.flowArrow {
-  /* margin-top: 50px; */
+.business-content {
+  background-color: #F2F2F2;
+  padding: 42px 183px;
+  margin-top: 78px;
 }
-.finishStep {
-  font-weight: bold;
-  color: rgb(197, 132, 48);
-  margin-bottom: 100px;
+.business-content-explanatory {
+  background-color: white;
+  padding: 50px 50px 50px 350px;
 }
-.Btn {
-  /* display: flex; */
-  /* margin: 10px auto; */
-  margin-top: 36px;
-  margin-bottom: 64px;
-}
-/* .EntryBtn,.TryBtn {
-  width: 700px;
-  height: 200px;
-  margin: 10px auto;
-} */
-.EntryBtn {
-  background-color: rgb(197, 132, 48);
+.job-description-table {
+  margin: auto;
   width: 60%;
-  height: 100px;
-  margin: 10px auto;
-  /* background-image: url('~@/assets/recruit/recruit2.jpeg'); */
-  /* 7:2 */
-  /* background-size: cover; */
+  text-align: left;
 }
-.EntryBtn:hover .Btntext{
+.job-description-table tr {
+  border-bottom: 2px solid #D1D1D1;
+}
+.job-description-table tr:first-child {
+  border-top: 2px solid #D1D1D1;
+}
+.job-description-table th {
+  padding: 36px 42px;
+  color: #068273;
+  font-weight: 300;
+}
+.recruit-flow {
+  margin-top: 110px;
+}
+.recruit-flow h2 {
+  margin-bottom: 80px;
+}
+.recruit-flow-step {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.recruit-flow-step div {
+  font-family: -apple-system;
+  font-weight: bold;
+  font-size: 20px;
+  text-orientation: upright;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  text-align: center;
+  border: 2px solid #068273;
+  padding: 121px 22px;
+}
+.recruit-flow-step div:last-child {
+  color: white;
+  background-color: #068273;
+}
+.recruit-flow-step i {
+  margin: auto 0;
+  color: #068273;
+}
+.entry-bottan {
+  color: white;
+  background-color: #068273;
+  display: inline-block;
+  padding: 24px 160px;
+  margin: 142px auto;
+  font-size: 26px;
+  letter-spacing: 5.2px;
+  font-weight: 300;
+  box-shadow: 0px 3px 6px #00000029;
+  transition: 0.3s;
+}
+.entry-bottan:hover {
   cursor: pointer;
-  background-color: rgb(143, 96, 35);
-  transition-duration: 0.3s;
-  font-size: 22px;
-  letter-spacing: 8px;
+  background-color: #0682749d;
+  transition: 0.3s;
+  letter-spacing: 8.2px;
+  font-size: 28px;
 }
-.Btntext {
-  line-height: 100px;
-  /* background-color: rgba(109, 108, 108, 0.753); */
-  color: aliceblue;
-  transition-duration: 0.4s;
-  font-family: serif;
-  letter-spacing: 10px;
+
+@media screen and (max-width: 960px) {
+  .business-content {
+    padding: 80px;
+    margin-top: 48px;
+  }
+  .business-content-explanatory {
+    padding: 48px;
+  }
+  .job-description-table, .recruit-flow-step {
+    width: 80%;
+  }
 }
-/* .TryBtn {
-  background-color: rgb(187, 211, 212);
-  background-image: url('~@/assets/recruit/recruit3.jpeg');
-  background-size: cover;
-} */
-/* .TryBtn:hover .Btntext{
-  cursor: pointer;
-  background-color: rgba(109, 108, 108, 0.541);
-  transition-duration: 0.4s;
-} */
+
+@media screen and (max-width: 520px) {
+  .bg-green {
+    height: 360px;
+    margin-top: 80px;
+  }
+  .recruit-message {
+    width: 90%;
+    margin: 40px auto 32px;
+    padding: 32px 8px;
+  }
+  .recruit-message h2 {
+    border-bottom: 2px solid #068273;
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+  .recruit-message p {
+    font-size: 12px;
+    line-height: 2em;
+  }
+  .business-content {
+    padding: 42px 16px;
+    margin-top: 32px;
+  }
+  .business-content-explanatory {
+    padding: 16px;
+  }
+  .business-content-explanatory p {
+    line-height: 2em;
+  }
+  .job-description-table {
+    width: 90%;
+  }
+  .job-description-table th {
+    min-width: 80px;
+    width: 20%;
+    padding: 16px;
+  }
+  .recruit-flow {
+    margin-top: 40px;
+  }
+  .recruit-flow h2 {
+    margin-bottom: 36px;
+  }
+  .recruit-flow-step {
+    width: 90%;
+  }
+  .recruit-flow-step div {
+    font-size: 14px;
+    border: 1px solid #068273;
+    padding: 48px 8px;
+  }
+  .entry-bottan {
+    padding: 16px 48px;
+    margin: 56px auto 0;
+    font-size: 22px;
+    border-radius: 32px;
+  }
+}
+</style>
+
+<style>
+.business-content .main-title {
+  margin-top: 0 !important;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/tiles"><a class="btn btn--orange"><slot></slot></a></router-link>
+  <router-link to="/tiles"><a class="btn btn--orange sinpleBtn"><slot></slot></a></router-link>
 </template>
 
 <script>

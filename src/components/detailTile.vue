@@ -1,51 +1,30 @@
 <template>
   <div>
-    <div v-for="tile in tiles" :key="tile.id">
-      <div v-if="tile.id === tileId">
-        <h1 class="detailTitle">{{ tile.title }}</h1>
-        <img class="detailImg" :src="tile.img" width=30%>
-        <p class="detailText">{{ tile.text }}</p>
-      </div>
+    <div v-if="targetTile">
+      <h1 class="detailTitle">{{ targetTile.name }}</h1>
+      <img class="detailImg" :src="targetTile.fotoURL" width=30%>
+      <p class="detailText">{{ targetTile.text }}</p>
     </div>
   </div>
 </template>
 
 <script>
+// import firebase from 'firebase'
+import Mixin from '../mixin'
 export default {
   name: 'detailTile',
+  watch: {
+    'tileData.tiles': function (value) {
+      if (value) {
+        this.targetTile = this.tileData.tiles[this.$route.params.id]
+      }
+    }
+  },
+  mixins: [Mixin],
   data: function () {
     return {
-      // tile: this.$store.state.tiles.find({'id': 2})
+      targetTile: null
     }
-  },
-  props: [
-    'tileId'
-  ],
-  methods: {
-    // getTileId () {
-    //   return this.tileId
-    // }
-  },
-  computed: {
-    tiles () {
-      // console.log('oooooooooooooo')
-      // console.log(this.tileId)
-      return this.$store.state.tiles
-    }
-    // tile () {
-    // return {
-    // tile: this.$store.state.tiles.find(1)
-    // }
-    // }
-    // tile: function () {
-    //   console.log(this.tileId)
-    //   return this.tiles.filter(
-    // function (value) {
-    //   console.log(this.tileId)
-    //   return value.id === this.tileId
-    // }
-    //   )
-    // }
   }
 }
 </script>

@@ -1,19 +1,22 @@
 <template>
 <div>
-  <body-header>取り扱いタイル一覧</body-header>
+  <content-title>
+    <template v-slot:mainTitle>取り扱いタイル</template>
+    <template v-slot:subTitle>tiles</template>
+  </content-title>
   <some-tiles></some-tiles>
   <request-erea></request-erea>
 </div>
 </template>
 
 <script>
-import bodyHeader from '@/components/header.vue'
+import contentTitle from '@/components/contentTitle'
 import someTiles from '@/components/someTiles.vue'
 import RequestErea from '@/components/requestErea'
 export default {
   name: 'tiles',
   components: {
-    bodyHeader,
+    contentTitle,
     someTiles,
     RequestErea
   }
