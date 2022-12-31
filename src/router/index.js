@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store/index.js'
 import BootstrapVue from 'bootstrap-vue'
 import home from '@/components/headerMenus/home'
 import recruit from '@/components/headerMenus/recruit'
@@ -82,7 +83,7 @@ let router = new Router({
       path: '/admin',
       name: 'adminHome',
       component: adminHome,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
       children: [
         {
           path: 'tile',
@@ -114,6 +115,14 @@ let router = new Router({
     } else {
       return { x: 0, y: 0 }
     }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth) && !store.getters.isLoggedIn) {
+    next({ path: '/auth/admin/login', query: { redirect: to.fullPath } })
+  } else {
+    next()
   }
 })
 
