@@ -12,6 +12,7 @@ import detail from '@/components/detail'
 import topicDetail from '@/components/detailTopic'
 import topicsList from '@/components/topicsList'
 import questions from '@/components/questions'
+import adminLogin from '@/components/auth/adminLogin'
 import adminHome from '@/components/admin/home'
 import editTile from '@/components/admin/editTiles'
 import editConstruction from '@/components/admin/editConstruction'
@@ -71,6 +72,11 @@ let router = new Router({
       path: '/questions',
       name: 'questions',
       component: questions
+    },
+    {
+      path: '/auth/admin/login',
+      name: 'adminLogin',
+      component: adminLogin
     },
     {
       path: '/admin',
