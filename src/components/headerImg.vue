@@ -20,13 +20,19 @@ export default {
 
 <style scoped>
 .OverView {
-  background-image: url('~@/assets/OverView.jpeg');
+  background-image: url('~@/assets/OverView.jpg');
 }
 .recruitImg {
   background-image: url('~@/assets/recruit/recruit5.jpeg');
 }
 .businessContents {
   background-image: url('~@/assets/businessContents.jpeg');
+}
+.constraction-img {
+  background-image: url('~@/assets/constructionExample.jpg');
+}
+.contact-img {
+  background-image: url('~@/assets/contactPage.jpg');
 }
 .headerImg {
   background-color: rgb(238, 238, 238);
