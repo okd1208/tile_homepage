@@ -11,7 +11,7 @@
       <p v-for="m in errorMessage" :key="m">{{m}}</p>
     </div>
     <div>
-        <form class="contactpage-form">
+        <form ref="form" class="contactpage-form">
             <div>
                 <label>名前</label>
                 <input v-model="fullName" type="text" name="name" value="">
@@ -26,11 +26,11 @@
             </div>
             <div>
                 <label>電話番号(ハイフンあり)</label>
-                <input v-model="phoneNumber" type="text" name="tel" placeholder="例）080-1234-5678" value="">
+                <input v-model="tel" type="text" name="tel" placeholder="例）080-1234-5678" value="">
             </div>
             <div>
                 <label>お問い合わせ項目</label>
-                <select v-model="contactType" name="item">
+                <select v-model="contactType" name="contact_type">
                     <option value="">お問い合わせ項目を選択してください</option>
                     <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
                     <option value="ご意見・ご感想">ご意見・ご感想</option>
@@ -48,13 +48,14 @@
 
 <script>
 import headerImg from '@/components/headerImg.vue'
+import emailjs from '@emailjs/browser'
 export default {
   name: 'contact',
   data: function () {
     return {
       fullName: null,
       ruby: null,
-      phoneNumber: null,
+      tel: null,
       email: null,
       contactType: '',
       contactContent: null,
@@ -76,7 +77,7 @@ export default {
       if (!this.email || !this.email.match(/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/)) {
         this.errorMessage.push('メールアドレスを正しい形式で入力してください。')
       }
-      if (!this.phoneNumber || !this.phoneNumber.match(/\d{2,4}-\d{2,4}-\d{4}/)) {
+      if (!this.tel || !this.tel.match(/\d{2,4}-\d{2,4}-\d{4}/)) {
         this.errorMessage.push('電話番号を正しい形式で入力してください。')
       }
       if (!this.contactType) {
@@ -87,6 +88,18 @@ export default {
       } else if (this.contactContent.length > 1000) {
         this.errorMessage.push('お問い合わせ内容を1000文字以内に変更してください。')
       }
+      console.log(this.errorMessage)
+      if (this.errorMessage.length === 0) {
+        this.submit()
+      }
+    },
+    submit () {
+      emailjs.sendForm('service_xfjlq3q', 'template_iazv4ap', this.$refs.form, 'qAzLeH0J2l1FfJgXj')
+        .then((result) => {
+          console.log('SUCCESS!', result.text)
+        }, (error) => {
+          console.log('FAILED...', error.text)
+        })
     }
   }
 }
