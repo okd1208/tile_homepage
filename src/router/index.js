@@ -19,6 +19,7 @@ import adminHome from '@/components/admin/home'
 import editTile from '@/components/admin/editTiles'
 import editConstruction from '@/components/admin/editConstruction'
 import editTopic from '@/components/admin/editTopic'
+import NotFoundComponent from '@/components/notFoundComponent'
 
 Vue.use(BootstrapVue)
 Vue.use(Router)
@@ -109,9 +110,14 @@ let router = new Router({
       ]
     },
     {
-      path: '/:tilesOrConstructions/:id',
+      path: '/detail/:tilesOrConstructions/:id',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '*',
+      name: 'NotFoundComponent',
+      component: NotFoundComponent
     }
   ],
   // 画面遷移時にページスクロール状態を元に戻す
