@@ -20,19 +20,19 @@ export default {
 
 <style scoped>
 .OverView {
-  background-image: url('~@/assets/OverView.jpg');
+  background-image: url('~@/assets/headerImg/OverView.jpg');
 }
 .recruitImg {
-  background-image: url('~@/assets/recruit/recruit5.jpeg');
+  background-image: url('~@/assets/headerImg/recruit.jpeg');
 }
 .businessContents {
-  background-image: url('~@/assets/businessContents.jpeg');
+  background-image: url('~@/assets/headerImg/businessContents.jpeg');
 }
 .constraction-img {
-  background-image: url('~@/assets/constructionExample.jpg');
+  background-image: url('~@/assets/headerImg/constructionExample.jpg');
 }
 .contact-img {
-  background-image: url('~@/assets/contactPage.jpg');
+  background-image: url('~@/assets/headerImg/contactPage.jpg');
 }
 .headerImg {
   background-color: rgb(238, 238, 238);

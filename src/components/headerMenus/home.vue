@@ -95,19 +95,19 @@ export default {
   height: 60vh;
 }
 .header1{
-  background-image: url('~@/assets/home/home01.jpg');
+  background-image: url('~@/assets/topSlide/home01.jpg');
 }
 .header2{
-  background-image: url('~@/assets/home/home02.jpg');
+  background-image: url('~@/assets/topSlide/home02.jpg');
 }
 .header3{
-  background-image: url('~@/assets/home/home03.jpg');
+  background-image: url('~@/assets/topSlide/home03.jpg');
 }
 .header4{
-  background-image: url('~@/assets/home/home04.jpg');
+  background-image: url('~@/assets/topSlide/home04.jpg');
 }
 .header5{
-  background-image: url('~@/assets/home/home09.jpg');
+  background-image: url('~@/assets/topSlide/home09.jpg');
 }
 .headerTitle{
   margin-left: 10vw;
