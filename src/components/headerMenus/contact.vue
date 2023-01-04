@@ -7,7 +7,7 @@
     <div class="header">
       <p>事業に関することや、サービスに関することなど<br>お気軽にお問い合わせください。</p>
     </div>
-    <div v-if="errorMessage != []" class="error-massage">
+    <div v-if="errorMessage != []" id="error-massage">
       <p v-for="m in errorMessage" :key="m">{{m}}</p>
     </div>
     <div>
@@ -88,18 +88,30 @@ export default {
       } else if (this.contactContent.length > 1000) {
         this.errorMessage.push('お問い合わせ内容を1000文字以内に変更してください。')
       }
-      console.log(this.errorMessage)
+
       if (this.errorMessage.length === 0) {
         this.submit()
+      } else {
+        this.scrollErrorMessage()
       }
     },
     submit () {
       emailjs.sendForm('service_xfjlq3q', 'template_iazv4ap', this.$refs.form, 'qAzLeH0J2l1FfJgXj')
         .then((result) => {
-          console.log('SUCCESS!', result.text)
+          this.$router.push({ path: '/contact/complete' })
         }, (error) => {
-          console.log('FAILED...', error.text)
+          this.errorMessage.push('メールが正しく送信されませんでした。しばらく時間を置いてお試しください。')
+          this.errorMessage.push(error)
+          this.scrollErrorMessage()
         })
+    },
+    scrollErrorMessage () {
+      const targetElem = document.getElementById('error-massage')
+      targetElem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+      })
     }
   }
 }
@@ -145,7 +157,7 @@ export default {
   padding: 21px 63px;
   font-size: 18px;
 }
-.error-massage {
+#error-massage {
   color: red;
   font-weight: bold;
   margin-bottom: 32px;
