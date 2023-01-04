@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '@/store/index.js'
+import firebase from 'firebase'
 import BootstrapVue from 'bootstrap-vue'
 import home from '@/components/headerMenus/home'
 import recruit from '@/components/headerMenus/recruit'
@@ -118,12 +118,29 @@ let router = new Router({
   }
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth) && !store.getters.isLoggedIn) {
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth) && !await getLoginUser()) {
     next({ path: '/auth/admin/login', query: { redirect: to.fullPath } })
   } else {
     next()
   }
 })
+
+async function getLoginUser () {
+  if (firebase.auth().currentUser) {
+    return firebase.auth().currentUser
+  }
+  var user = await initFirebaseAuth()
+  return user
+}
+
+var initFirebaseAuth = () => {
+  return new Promise((resolve) => {
+    var unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      resolve(user)
+      unsubscribe()
+    })
+  })
+}
 
 export default router

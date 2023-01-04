@@ -16,20 +16,8 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    onUserLoginStatusChanged (state, isLoggedIn) {
-      state.isLoggedIn = isLoggedIn
-    },
-    updateUserId (state, userEmail) {
-      state.userEmail = userEmail
-    }
   },
   getters: {
-    isLoggedIn (state) {
-      return state.isLoggedIn
-    },
-    userEmail (state) {
-      return state.userEmail
-    }
   }
   // mutations
 })

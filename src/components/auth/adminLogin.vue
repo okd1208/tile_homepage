@@ -33,9 +33,7 @@ export default {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
           console.log(userCredential.user.email)
-          this.$store.commit('updateUserId', userCredential.user)
-          this.$store.commit('onUserLoginStatusChanged', true)
-          this.$router.push('/admin')
+          this.$router.replace(this.$route.query.redirect || '/admin')
         })
         .catch((error) => {
           console.log(`${error.code}: ${error.message}`)
