@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-menu id="headerMenu"></header-menu>
-    <router-view class="aaaa" />
+    <router-view class="top-index" />
     <request-erea></request-erea>
     <footerMenu></footerMenu>
   </div>
@@ -39,7 +39,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.aaaa {
+.top-index {
   z-index: 1;
 }
 #headerMenu {

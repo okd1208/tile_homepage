@@ -77,7 +77,7 @@ export default {
           this.img = 1
         }
         this.headerClass()
-      }, 3000)
+      }, 6000)
     }
   },
   created () {
@@ -108,6 +108,15 @@ export default {
 }
 .header5{
   background-image: url('~@/assets/topSlide/home09.jpg');
+}
+/* 遅延読み込みさせるため */
+.body:after {
+  content: "";
+  background-image: url('~@/assets/topSlide/home01.jpg'),
+    url('~@/assets/topSlide/home02.jpg'),
+    url('~@/assets/topSlide/home03.jpg'),
+    url('~@/assets/topSlide/home04.jpg'),
+    url('~@/assets/topSlide/home09.jpg')
 }
 .headerTitle{
   margin-left: 10vw;
