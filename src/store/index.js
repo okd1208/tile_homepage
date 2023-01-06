@@ -5,10 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isLoggedIn: false,
     userEmail: null,
     openAdminMenu: 'tile',
-    editKey: null
+    editKey: null,
+    isAdminPage: false
   },
   mutations: {
   },

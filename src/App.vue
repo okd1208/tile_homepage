@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <header-menu id="headerMenu"></header-menu>
+    <header-menu v-if="!$store.state.isAdminPage" id="headerMenu"></header-menu>
     <router-view class="top-index" />
-    <request-erea></request-erea>
-    <footerMenu></footerMenu>
+    <request-erea v-if="!$store.state.isAdminPage"></request-erea>
+    <footerMenu v-if="!$store.state.isAdminPage"></footerMenu>
   </div>
 </template>
 

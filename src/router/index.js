@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store/index'
 import firebase from 'firebase'
 import BootstrapVue from 'bootstrap-vue'
 import home from '@/components/headerMenus/home'
@@ -92,7 +93,7 @@ let router = new Router({
       path: '/admin',
       name: 'adminHome',
       component: adminHome,
-      meta: { requiresAuth: true },
+      meta: { requiresAdminAuth: true },
       children: [
         {
           path: 'tile',
@@ -133,9 +134,15 @@ let router = new Router({
 })
 
 router.beforeEach(async (to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth) && !await getLoginUser()) {
-    next({ path: '/auth/admin/login', query: { redirect: to.fullPath } })
+  if (to.matched.some(record => record.meta.requiresAdminAuth)) {
+    if (!await getLoginUser()) {
+      next({ path: '/auth/admin/login', query: { redirect: to.fullPath } })
+    } else {
+      store.state.isAdminPage = true
+      next()
+    }
   } else {
+    store.state.isAdminPage = false
     next()
   }
 })
@@ -145,6 +152,7 @@ async function getLoginUser () {
     return firebase.auth().currentUser
   }
   var user = await initFirebaseAuth()
+  store.state.userEmail = user.email
   return user
 }
 
