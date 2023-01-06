@@ -1,21 +1,22 @@
 <template>
   <div class="edit">
-    <table class="tilesTable" border="1">
+    <table class="tilesTable">
       <tr>
         <th class="editTitle">タイトル</th>
-        <th class="editScript">内容</th>
+        <th>カテゴリー</th>
+        <!-- <th class="editScript">内容</th> -->
         <th class="editDate">日付</th>
         <th class="editImg">画像</th>
       </tr>
       <tr class="editTr" v-for="(topic,key) in topicData.topics" :key="key"
        v-bind:class="{ 'd-none': ($store.state.editKey !== key && $store.state.editKey) }"
        >
-        <td>{{ topic.name }}<br><br>{{ topic.category }}</td>
-        <td>{{ topic.text }}</td>
+        <td class="edit-item" @click="selectItem(key, topic)">{{ topic.name }}</td>
+        <td>{{ topic.category }}</td>
+        <!-- <td>{{ topic.text }}</td> -->
         <td>作成日：{{ getDate(topic.created) }}</td>
         <td><img :src="topic.fotoURL" width="90%"></td>
-        <button @click="remove(key, topic.storagePath)">削除</button>
-        <button @click="selectItem(key, topic)">編集</button>
+        <div class="delete-btn" @click="remove(key, topic.storagePath)">削除</div>
       </tr>
     </table>
       <edit-form ref="child" editType='topic'></edit-form>

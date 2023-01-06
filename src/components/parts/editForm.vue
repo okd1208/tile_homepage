@@ -1,7 +1,7 @@
 <template>
   <div>
     <form class="itemEditEria" v-if="$store.state.editKey">
-      <p id="closeEditBtn"><button @click="closeEditEria">X</button></p>
+      <p style="text-align: right"><span id="closeEditBtn" @click="closeEditEria"></span></p>
       <h3>編集</h3>
       <div class="cp_iptxt">
         <input v-model="targetName" class="ef" placeholder="" type="text" />
@@ -80,7 +80,7 @@
       <loading-ui :class="{invisible: !isLoading}"></loading-ui>
       <p class="btn04" :class="{loading: isLoading || !targetName}" @click="addData">登録</p>
     </form>
-      <img src="" id="image" width="30%">
+    <img src="" id="image" width="30%">
   </div>
 </template>
 
@@ -111,7 +111,7 @@ export default {
 /* inputタグモーション */
 .cp_iptxt {
   position: relative;
-  width: 80%;
+  z-index: 2;
   margin: 40px 3%;
   text-align: left;
 }
@@ -127,6 +127,8 @@ export default {
   width: 100%;
   letter-spacing: 1px;
   padding-left: 7em;
+  position: relative;
+  z-index: 2;
 }
 .cp_iptxt textarea[type='text'] {
   font: 15px/24px sans-serif;
@@ -134,6 +136,8 @@ export default {
   width: 100%;
   letter-spacing: 1px;
   padding-left: 7em;
+  position: relative;
+  z-index: 2;
 }
 .cp_iptxt input[type='text']:focus {
   outline: none;
@@ -150,6 +154,7 @@ export default {
 .ef ~ .focus_line:before,
 .ef ~ .focus_line:after {
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 0;
@@ -167,6 +172,7 @@ export default {
 .ef ~ .focus_line i:before,
 .ef ~ .focus_line i:after {
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 2px;
@@ -197,7 +203,7 @@ export default {
 }
 .ef ~ label {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 10px;
   left: 14px;
   width: 100%;

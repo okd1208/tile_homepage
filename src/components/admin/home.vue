@@ -80,12 +80,29 @@ export default {
   border-left: 3px solid rgba(238, 240, 152, 0.747);
 }
 .edit {
-  margin-top: 16px;
+  min-height: 100vh;
+  background-color: rgb(243, 243, 243);
+  padding: 48px 0;
+}
+.edit tr {
+  border-bottom: 2px solid rgb(221, 221, 221);
+}
+.edit-item:hover {
+  cursor: pointer;
+  color: rgb(0, 153, 255);
+}
+.delete-btn {
+  line-height: 150px;
+  min-width: 32px;
+}
+.delete-btn:hover {
+  cursor: pointer;
+  color: rgb(236, 31, 8);
 }
 .editTr {
   height: 150px;
 }
-.editTitle {
+.editDate {
   width: 200px;
 }
 .editScript{
@@ -95,6 +112,7 @@ export default {
   width: 200px;
 }
 .tilesTable, .constructionsTable {
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -104,18 +122,38 @@ export default {
   margin-right: auto;
   margin-top: 32px;
   padding: 32px;
-  width: 60%;
-  background-color: rgba(169, 226, 228, 0.274);
+  width: 80%;
+  background-color: rgb(255, 255, 255);
 }
 #closeEditBtn {
-  float: right;
-  margin-right: 20px;
-  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: rgb(255, 75, 75);
+  border-radius: 50%;
+  transition: 0.4s;
 }
+#closeEditBtn::before, #closeEditBtn::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 19%;
+  width: 20px;
+  height: 4px;
+  background: rgb(250, 250, 250);
+}
+#closeEditBtn::before {
+  transform: rotate(135deg);
+}
+#closeEditBtn::after {
+  transform: rotate(45deg);
+}
+
 #closeEditBtn:hover {
   cursor: pointer;
-  color: rgb(56, 56, 56);
-  font-size: 20px;
+  background: rgba(255, 75, 75, 0.5);
+  transition: 0.4s;
 }
 .admin-header {
   background-color: rgb(211, 211, 211);
