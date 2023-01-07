@@ -99,6 +99,9 @@ export default {
       date: null
     }
   },
+  mounted () {
+    this.closeEditEria()
+  },
   methods: {
     selectItem (data) {
       this.selectEditItem(data)

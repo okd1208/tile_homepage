@@ -94,6 +94,7 @@ let router = new Router({
       name: 'adminHome',
       component: adminHome,
       meta: { requiresAdminAuth: true },
+      redirect: '/admin/tile',
       children: [
         {
           path: 'tile',
@@ -152,7 +153,9 @@ async function getLoginUser () {
     return firebase.auth().currentUser
   }
   var user = await initFirebaseAuth()
-  store.state.userEmail = user.email
+  if (user) {
+    store.state.userEmail = user.email
+  }
   return user
 }
 
