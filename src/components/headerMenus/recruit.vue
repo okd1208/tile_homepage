@@ -51,9 +51,9 @@
           <i class="fas fa-play"></i>
           <div>採 用</div>
         </div>
-        <div class="entry-bottan">
-          ENTRY
-        </div>
+        <router-link to="/entryForm">
+          <div class="entry-bottan">ENTRY</div>
+      </router-link>
       </div>
     </div>
   </div>

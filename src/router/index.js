@@ -10,6 +10,7 @@ import constructionExample from '@/components/headerMenus/constructionExample'
 import tiles from '@/components/headerMenus/tiles'
 import businessContents from '@/components/headerMenus/businessContents'
 import contact from '@/components/headerMenus/contact'
+import entryForm from '@/components/entryForm'
 import contactComplete from '@/components/contactForm/thanksPage'
 import detail from '@/components/detail'
 import topicDetail from '@/components/detailTopic'
@@ -53,6 +54,11 @@ let router = new Router({
       path: '/contact',
       name: 'contact',
       component: contact
+    },
+    {
+      path: '/entryForm',
+      name: 'entryForm',
+      component: entryForm
     },
     {
       path: '/contact/complete',

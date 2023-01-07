@@ -34,6 +34,9 @@ export default {
 .contact-img {
   background-image: url('~@/assets/headerImg/contactPage.jpg');
 }
+.recruit-contact-img {
+  background-image: url('~@/assets/headerImg/entryForm.jpg');
+}
 .headerImg {
   background-color: rgb(238, 238, 238);
   text-align: center;
