@@ -32,7 +32,7 @@ export default {
     login () {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
-          console.log(userCredential.user.email)
+          this.$store.state.userEmail = userCredential.user.email
           this.$router.replace(this.$route.query.redirect || '/admin')
         })
         .catch((error) => {

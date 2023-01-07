@@ -11,7 +11,7 @@
     </div>
     <div>
       <div class="admin-header">
-        <p>user :{{ $store.state.userEmail }}</p>
+        <p>user :{{ $store.state.userEmail }}<span class="logout-btn" @click="logout">Logout</span></p>
       </div>
       <router-view />
     </div>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import Mixin from '../../mixin'
 import editTiles from './editTiles'
 import editConstruction from './editConstruction'
@@ -34,9 +35,27 @@ export default {
   data () {
     return {
     }
+  },
+  methods: {
+    logout () {
+      firebase.auth().signOut().then(() => {
+        this.$store.state.userEmail = null
+        this.$router.go({path: this.$router.currentRoute.path, force: true})
+      })
+    }
   }
 }
 </script>
+
+<style scoped>
+.logout-btn {
+  margin-left: 1.5rem;
+}
+.logout-btn:hover {
+  cursor: pointer;
+  color: rgb(0, 153, 255);
+}
+</style>
 
 <style>
 .flex {
