@@ -4,9 +4,9 @@
       <div class="footer-company-info">
         <h1><img src="@/assets/logo/company_logo.png"><span>富永タイル株式会社</span></h1>
         <p>
-          〒825-0075<br>
+          〒815-0075 <br>
           福岡県福岡市南区長丘5丁目1-26<br>
-          TEL:0120-331-3433
+          TEL:092-541-6034
         </p>
       </div>
       <div class="footer-menu">

@@ -10,22 +10,23 @@
       <template v-slot:subTitle>Philosophy</template>
     </content-title>
     <div class="business-appeal-content">
-      <h2 class="green-title">タイルで街を華やかにして社会に貢献し、人々を幸せにします。</h2>
+      <h2 class="green-title">タイルで街を華やかにして社会に貢献し、<br class="pc-only">人々を幸せにします。</h2>
       <p>
-        弊社では、主にタイルをメインとした取引を行っております。<br class="pc-only">
-        弊社では、主にタイルをメインとした取引を行っております。弊社では、主にタイルをメインとした取引を行っており<br class="pc-only">
-        ます。弊社では、主にタイルをメインとした取引を行っております。
+        弊社ではタイルの卸業から張り付つけまでタイルに関するすべての仕事に携わっています。<br class="pc-only">
+        一般のお客様へは少数のタイルの販売から海外タイルの仕入れ販売まで対応いたします。<br class="pc-only">
+        タイル張り施工は大型マンション、商業施設、 戸建住宅まで幅広く対応しております。<br class="pc-only">
+        タイルに関してはお気軽にお問い合わせください。
       </p>
     </div>
     <div class="business-main-content">
       <div class="business-content-container">
         <img class="business-floot-img" src="@/assets/town.jpg">
         <div class="business-content">
-          <h2 class="green-title">誰よりも何処よりも早く、丁寧に。</h2>
+          <h2 class="green-title">より幅広いお客様のために。</h2>
           <p>
-            弊社では、主にタイルをメインとした取引を行っております。
-            弊社では、主にタイルをメインとした取引を行っております。メインとした取引を行っております。<br>
-            弊社では、主にタイルをメインとした取引を行っております。
+            弊社では工事現場はもちろんのこと個人のお客様のご相談にも対応いたします。
+            DIY、リフォーム、部分施工などお気軽にご相談ください。
+            タイルの貼り付け方などもお教えいたします。
           </p>
         </div>
       </div>
@@ -36,21 +37,31 @@
             <img src="@/assets/businessFlow/step1.png">
             <div>
               <h3>ヒアリング</h3>
-              <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+              <p>お客様の声を聞きご希望のタイルを見本を交えて決めていただきます。<br>
+                当社倉庫に現物のタイルも数多く取り揃えておりますので実際に見て触って決めることができます。</p>
             </div>
           </div>
           <div class="business-flow-step">
             <img src="@/assets/businessFlow/step2.png">
             <div>
-              <h3>見積もり</h3>
-              <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+              <h3>現地視察</h3>
+              <p>現場を見て施工方法を考えます。 またここで工事日数などおおよその事を決めていきます。<br>
+                 お客様にも立ち会っていただき施工後のイメージをより具体的にしていきます。</p>
             </div>
           </div>
           <div class="business-flow-step">
             <img src="@/assets/businessFlow/step3.png">
             <div>
-              <h3>工事</h3>
-              <p>ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。ここにテキストが入る。</p>
+              <h3>見積</h3>
+              <p>タイル費用、職人への技術費用、 人件費、 などわかりやすくご説明します。 </p>
+            </div>
+          </div>
+          <div class="business-flow-step">
+            <img src="@/assets/businessFlow/step3.png">
+            <div>
+              <h3>施工</h3>
+              <p>実際にタイル職人が現場へ向かい施工いたします。 確かな腕を持った職人ばかりなので安心してお待ちください。<br>
+                また気さくな職人が多いので不安や質問等お気軽に声をかけてください。</p>
             </div>
           </div>
         </div>
@@ -123,7 +134,7 @@ export default {
   width: clamp(100px, 100%, 1200px);
 }
 .business-flow-step {
-  width: clamp(200px, 25%, 300px);
+  width: clamp(150px, 20%, 300px);
 }
 .business-flow-step img{
   width: 100%;

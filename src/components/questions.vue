@@ -25,10 +25,9 @@ export default {
     return {
       isActive: false,
       questions: [
-        {q: '営業時間は何時までですか？', a: '20時です。', isOpen: false},
-        {q: '質問3', a: 'アンサー3', isOpen: false},
-        {q: '採用期間はいつからいつですか？', a: '通年で採用活動を行っていますので、いつでも応募可能です。', isOpen: false},
-        {q: '質問', a: 'アンサー', isOpen: false}
+        {q: '営業時間は何時までですか？', a: '8時~18時30分までです。', isOpen: false},
+        {q: 'タイルを探しているのですが...', a: '弊社倉庫は一般開放しているので是非お気軽にご来店ください。', isOpen: false},
+        {q: 'タイルの貼り方がわかりません。', a: 'ご来店もしくはお電話にてお教えいたします。難しい施工でしたら弊社職人にご依頼ください。', isOpen: false}
       ]
     }
   },
@@ -48,9 +47,9 @@ export default {
 }
 .qa-list dl {
     position: relative;
-    margin: 32px 0 0;
+    margin: 12px 0 0;
     cursor: pointer;
-    border: 1px solid #DDD;
+    border: 1px solid #F2F2F2;
 }
 .qa-list dl:first-child {
   margin-top: 0;
@@ -79,7 +78,7 @@ export default {
     margin: 0;
     padding: 20px 20px 20px 60px;
     font-weight: bold;
-    background: #DDD;
+    background: #F2F2F2;
 }
 .qa-list dl dt::before {
     font-size: 22px;
@@ -89,7 +88,7 @@ export default {
     left: 20px;
     display: block;
     content: 'Q.';
-    color: #3285bf;
+    color: #068273;
 }
 .qa-list dl dd::before {
     font-size: 22px;
@@ -99,7 +98,7 @@ export default {
     display: block;
     content: 'A.';
     font-weight: bold;
-    color: #3285bf;
+    color: rgb(237, 56, 56);
 }
 .qa-list dl dd {
     position: relative;
