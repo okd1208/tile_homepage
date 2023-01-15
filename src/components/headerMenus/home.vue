@@ -37,6 +37,7 @@
           <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
         </div>
       </div>
+      <availableTiles></availableTiles>
     </div>
  </div>
 </template>
@@ -48,6 +49,7 @@ import someTiles from '@/components/someTiles.vue'
 import constructionBtn from '@/components/constructionBtn.vue'
 import tileBtn from '@/components/tileBtn'
 import contentTitle from '@/components/contentTitle'
+import availableTiles from '@/components/availableTiles'
 export default {
   name: 'home',
   data: function () {
@@ -63,7 +65,8 @@ export default {
     constructionBtn,
     tileBtn,
     someTiles,
-    contentTitle
+    contentTitle,
+    availableTiles
   },
   methods: {
     headerClass: function () {
