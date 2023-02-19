@@ -1,6 +1,6 @@
 <template>
   <router-link :to="{name: 'detail', params: {id: itemId, tilesOrConstructions: 'construction'}}" class="signup-link">
-    <span class="c-type">{{ itemData.category }}</span>
+    <!-- <span class="c-type">{{ itemData.category }}</span> -->
     <!-- <img :src="itemData.fotoURL" width="100%"> -->
     <some-imgs>
       <template v-slot:img>
@@ -12,7 +12,7 @@
         View more
       </template>
     </some-imgs>
-    <p class="c-date">{{ itemData.date }}</p>
+    <!-- <p class="c-date">{{ itemData.date }}</p> -->
     <p class="c-name">{{ itemData.name }}</p>
   </router-link>
 </template>
@@ -51,5 +51,8 @@ export default {
     margin: 8px 0 4px;
     font-size: 8px;
   }
+}
+.c-name {
+  margin-top: 16px;
 }
 </style>

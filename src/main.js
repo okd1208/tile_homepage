@@ -17,6 +17,7 @@ var firebaseConfig = {
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
+firebase.firestore().settings({ ignoreUndefinedProperties: true })
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
