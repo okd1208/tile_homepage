@@ -13,11 +13,11 @@
             誰かの「住まい」を快適、魅力的にしたり、<br>「街づくり」に関わるやりがいのある仕事、一生モノの技術をココで身につけよう。
           </p>
         </div>
-        <div class="recruite-three-image">
+        <!-- <div class="recruite-three-image">
           <div><img src="@/assets/home2.jpeg"></div>
           <div><img src="@/assets/home2.jpeg"></div>
           <div class="md-pc-only"><img src="@/assets/home2.jpeg"></div>
-        </div>
+        </div> -->
       </div>
       <div class="business-content">
         <content-title>
@@ -89,7 +89,7 @@ export default {
 .bg-green {
   background-color: #068273;
   position: absolute;
-  height: 450px;
+  height: 160px;
   margin-top: 163px;
   left: 0;
   right: 0;
@@ -114,7 +114,7 @@ export default {
   letter-spacing: var(--unnamed-character-spacing-0);
   line-height: 1.7em;
 }
-.recruite-three-image {
+/* .recruite-three-image {
   display: flex;
   width: 70%;
   margin: auto;
@@ -122,7 +122,7 @@ export default {
 .recruite-three-image img {
   width: 100%;
   position: relative;
-}
+} */
 .business-content {
   background-color: #F2F2F2;
   padding: 42px 183px;
@@ -130,7 +130,7 @@ export default {
 }
 .business-content-explanatory {
   background-color: white;
-  padding: 50px 50px 50px 350px;
+  padding: 50px;
 }
 .job-description-table {
   margin: auto;
@@ -214,7 +214,7 @@ export default {
 
 @media screen and (max-width: 520px) {
   .bg-green {
-    height: 360px;
+    height: 148px;
     margin-top: 80px;
   }
   .recruit-message {
@@ -234,7 +234,7 @@ export default {
   }
   .business-content {
     padding: 42px 16px;
-    margin-top: 32px;
+    margin-top: 104px;
   }
   .business-content-explanatory {
     padding: 16px;
