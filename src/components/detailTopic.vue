@@ -8,7 +8,7 @@
       <div v-if="targetTopic">
         <p class="topic-detail-date">投稿日： {{ getDate(targetTopic.created) }}</p>
         <p class="topicTitle"><span class="topicDetailType" :class="targetTopic.category">{{ targetTopic.category }}</span>{{ targetTopic.name }}</p>
-        <img :src="targetTopic.fotoURL">
+        <img v-if="targetTopic.fotoURL" :src="targetTopic.fotoURL" @error="replaceDefaultImage">
         <p class="topicDetalText">{{ targetTopic.text }}</p>
       </div>
     </div>
@@ -39,6 +39,11 @@ export default {
   data: function () {
     return {
       targetTopic: null
+    }
+  },
+  methods: {
+    replaceDefaultImage () {
+      this.targetTopic.fotoURL = require('@/assets/no-image.png')
     }
   }
 }
