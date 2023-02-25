@@ -5,7 +5,7 @@
     <some-imgs>
       <template v-slot:img>
         <router-link :to="{name: 'detail', params: {id: itemId, tilesOrConstructions: 'construction'}}" class="signup-link">
-          <img :src="itemData.fotoURL" width="100%">
+          <img class="cardImg" ref="cardImg" :src="itemData.fotoURL" width="100%" :height="cardImgheight">
         </router-link>
       </template>
       <template v-slot:title>
@@ -28,6 +28,7 @@ export default {
   mixins: [Mixin],
   data: function () {
     return {
+      cardImgheight: 300
     }
   },
   props: {
@@ -41,6 +42,10 @@ export default {
       default: null,
       required: true
     }
+  },
+  mounted () {
+    const cardWidth = this.$refs.cardImg.clientWidth
+    this.cardImgheight = cardWidth * 2 / 3
   }
 }
 </script>
@@ -54,5 +59,8 @@ export default {
 }
 .c-name {
   margin-top: 16px;
+}
+.cardImg {
+  object-fit: cover;
 }
 </style>

@@ -11,7 +11,7 @@
       </h2>
       <img class="detailImg" :src="targetCons.fotoURL">
       <!-- <p class="detailDate"><span class="detail-item">施工日</span>：{{ targetCons.date }}</p> -->
-      <p class="detailText"><span class="detail-item">説明</span>：{{ targetCons.text }}</p>
+      <p class="detailText"><span v-if="targetCons.text" class="detail-item">説明：</span>{{ targetCons.text }}</p>
     </div>
     <div class="round-gr-btn back-list-btn">
       <router-link to="/constructionExample">一覧に戻る</router-link>

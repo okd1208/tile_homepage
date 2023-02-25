@@ -56,7 +56,7 @@ export default {
   margin: auto;
   padding: 32px 0;
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 960px) {
   .construction{
     margin-top: 72px;
   }
