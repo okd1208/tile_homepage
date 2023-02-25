@@ -27,12 +27,31 @@ export default {
   async created () {
     this.storageRef = firebase.storage().ref()
     this.db = firebase.firestore()
-    this.tileData = new Tile(this.db)
-    this.consData = new Construction(this.db)
-    this.topicData = new Topic(this.db)
-    await this.tileData.loadData()
-    await this.consData.loadData()
-    await this.topicData.loadData()
+
+    if (this.$store.state.topicData) {
+      this.topicData = this.$store.state.topicData
+    } else {
+      this.topicData = new Topic(this.db)
+      await this.topicData.loadData()
+      this.$store.state.topicData = this.topicData
+    }
+
+    if (this.$store.state.tileData) {
+      this.tileData = this.$store.state.tileData
+    } else {
+      this.tileData = new Tile(this.db)
+      await this.tileData.loadData()
+      this.$store.state.tileData = this.tileData
+    }
+
+    if (this.$store.state.consData) {
+      this.consData = this.$store.state.consData
+    } else {
+      this.consData = new Construction(this.db)
+      await this.consData.loadData()
+      this.$store.state.consData = this.consData
+    }
+
     if (this.$route.name === 'tile') {
       this.targetData = this.tileData
     } else if (this.$route.name === 'construction') {

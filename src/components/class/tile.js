@@ -5,7 +5,7 @@ export class Tile {
   }
 
   async loadData () {
-    await this.tilesRef.get().then(querySnapshot => {
+    await this.tilesRef.orderBy('created', 'desc').get().then(querySnapshot => {
       const obj = {}
       for (let i = 0; i < querySnapshot.size; i++) {
         obj[querySnapshot.docs[i].id] = querySnapshot.docs[i].data()

@@ -5,7 +5,7 @@ export class Construction {
   }
 
   async loadData () {
-    await this.constructionsRef.get().then(querySnapshot => {
+    await this.constructionsRef.orderBy('created', 'desc').get().then(querySnapshot => {
       const obj = {}
       for (let i = 0; i < querySnapshot.size; i++) {
         obj[querySnapshot.docs[i].id] = querySnapshot.docs[i].data()

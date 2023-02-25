@@ -45,18 +45,15 @@ export default {
   },
   computed: {
     getTopics () {
-      if (this.displayCount && this.topicData.topics) {
-        var array = {}
-        for (let key in this.topicData.topics) {
-          array[key] = this.topicData.topics[key]
-          if (Object.keys(array).length === Number(this.displayCount)) {
-            break
-          }
+      const topics = this.topicData.topics
+      const topicsObj = {}
+      for (const key in topics) {
+        topicsObj[key] = topics[key]
+        if (Object.keys(topicsObj).length === Number(this.displayCount)) {
+          break
         }
-        return array
-      } else {
-        return this.topicData.topics
       }
+      return topicsObj
     }
   }
 }

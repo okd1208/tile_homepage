@@ -1,7 +1,7 @@
 <template>
   <div class="construction">
-    <Slick v-if="showSlide" ref="slick" :options="slickOptions" class="slick-outer mt-4">
-      <div ref="item" class="item-card" v-for="(construction, key) in consData.constructions" :key="key">
+    <Slick v-if="showSlide && consData" ref="slick" :options="slickOptions" class="slick-outer mt-4">
+      <div ref="item" class="item-card" v-for="(construction, key) in getConstructions" :key="key">
         <item-card :itemData="construction" :itemId="key"></item-card>
       </div>
     </Slick>
@@ -25,6 +25,7 @@ export default {
     return {
       showSlide: true,
       isSlickUpdated: false,
+      displayCount: 12,
       slickOptions: {
         arrows: true,
         dots: true,
@@ -63,9 +64,22 @@ export default {
     }
   },
   updated () {
-    if (this.$refs.item.length > 0 && !this.isSlickUpdated) {
+    if (this.$refs.item && !this.isSlickUpdated) {
       this.isSlickUpdated = true
       this.reInit()
+    }
+  },
+  computed: {
+    getConstructions () {
+      const constructions = this.consData.constructions
+      const constructionsObj = {}
+      for (const key in constructions) {
+        constructionsObj[key] = constructions[key]
+        if (Object.keys(constructionsObj).length === this.displayCount) {
+          break
+        }
+      }
+      return constructionsObj
     }
   }
 }

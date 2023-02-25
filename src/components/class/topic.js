@@ -5,7 +5,7 @@ export class Topic {
   }
 
   async loadData () {
-    await this.topicsRef.get().then(querySnapshot => {
+    await this.topicsRef.orderBy('created', 'desc').get().then(querySnapshot => {
       const obj = {}
       for (let i = 0; i < querySnapshot.size; i++) {
         obj[querySnapshot.docs[i].id] = querySnapshot.docs[i].data()

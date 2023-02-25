@@ -8,7 +8,10 @@ export default new Vuex.Store({
     userEmail: null,
     openAdminMenu: 'tile',
     editKey: null,
-    isAdminPage: false
+    isAdminPage: false,
+    tileData: null,
+    topicData: null,
+    consData: null
   },
   mutations: {
   },
