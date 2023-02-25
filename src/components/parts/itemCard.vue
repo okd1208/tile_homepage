@@ -5,7 +5,7 @@
     <some-imgs>
       <template v-slot:img>
         <router-link :to="{name: 'detail', params: {id: itemId, tilesOrConstructions: 'construction'}}" class="signup-link">
-          <img class="cardImg" ref="cardImg" :src="itemData.fotoURL" width="100%" :height="cardImgheight">
+          <img class="cardImg" ref="cardImg" :src="itemData.fotoURL" width="100%" :height="cardImgheight" @error="replaceDefaultImage">
         </router-link>
       </template>
       <template v-slot:title>
@@ -46,6 +46,11 @@ export default {
   mounted () {
     const cardWidth = this.$refs.cardImg.clientWidth
     this.cardImgheight = cardWidth * 2 / 3
+  },
+  methods: {
+    replaceDefaultImage () {
+      this.itemData.fotoURL = require('@/assets/no-image.png')
+    }
   }
 }
 </script>

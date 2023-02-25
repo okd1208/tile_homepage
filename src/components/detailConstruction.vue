@@ -9,7 +9,7 @@
         <!-- <span class="detailCategory">{{ targetCons.category }}</span> -->
         {{ targetCons.name }}
       </h2>
-      <img class="detailImg" :src="targetCons.fotoURL">
+      <img class="detailImg" :src="targetCons.fotoURL" @error="replaceDefaultImage">
       <!-- <p class="detailDate"><span class="detail-item">施工日</span>：{{ targetCons.date }}</p> -->
       <p class="detailText"><span v-if="targetCons.text" class="detail-item">説明：</span>{{ targetCons.text }}</p>
     </div>
@@ -38,6 +38,11 @@ export default {
   data: function () {
     return {
       targetCons: null
+    }
+  },
+  methods: {
+    replaceDefaultImage () {
+      this.targetCons.fotoURL = require('@/assets/no-image.png')
     }
   }
 }
