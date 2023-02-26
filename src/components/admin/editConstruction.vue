@@ -1,6 +1,6 @@
 <template>
   <div class="edit">
-    <p>※画像比率は３：２</p>
+    <p>※画像比率は３：２推奨</p>
     <table class="constructionsTable">
       <tr>
         <th class="editTitle">建設工事名</th>
