@@ -20,7 +20,6 @@
     </div>
     <div class="business-main-content">
       <div class="business-content-container">
-        <img class="business-floot-img" src="@/assets/town.jpg">
         <div class="business-content">
           <h2 class="green-title">より幅広いお客様のために。</h2>
           <p>
@@ -29,36 +28,47 @@
             タイルの貼り付け方などもお教えいたします。
           </p>
         </div>
+        <div>
+          <img class="business-floot-img" src="@/assets/town.jpg">
+        </div>
       </div>
       <div class="business-flow">
         <h2>タイル工事までの流れ</h2>
         <div>
           <div class="business-flow-step">
-            <img src="@/assets/businessFlow/step1.png">
-            <div>
+            <div class="image">
+              <img src="@/assets/businessFlow/step1.png">
+            </div>
+            <div class="description">
               <h3>ヒアリング</h3>
               <p>お客様の声を聞きご希望のタイルを見本を交えて決めていただきます。<br>
                 当社倉庫に現物のタイルも数多く取り揃えておりますので実際に見て触って決めることができます。</p>
             </div>
           </div>
           <div class="business-flow-step">
-            <img src="@/assets/businessFlow/step2.png">
-            <div>
+            <div class="image">
+              <img src="@/assets/businessFlow/step2.png">
+            </div>
+            <div class="description">
               <h3>現地視察</h3>
               <p>現場を見て施工方法を考えます。 またここで工事日数などおおよその事を決めていきます。<br>
                  お客様にも立ち会っていただき施工後のイメージをより具体的にしていきます。</p>
             </div>
           </div>
           <div class="business-flow-step">
-            <img src="@/assets/businessFlow/step3.png">
-            <div>
+            <div class="image">
+              <img src="@/assets/businessFlow/step3.png">
+            </div>
+            <div class="description">
               <h3>見積</h3>
               <p>タイル費用、職人への技術費用、 人件費、 などわかりやすくご説明します。 </p>
             </div>
           </div>
           <div class="business-flow-step">
-            <img src="@/assets/businessFlow/step3.png">
-            <div>
+            <div class="image">
+              <img src="@/assets/businessFlow/step4.png">
+            </div>
+            <div class="description">
               <h3>施工</h3>
               <p>実際にタイル職人が現場へ向かい施工いたします。 確かな腕を持った職人ばかりなので安心してお待ちください。<br>
                 また気さくな職人が多いので不安や質問等お気軽に声をかけてください。</p>
@@ -84,6 +94,9 @@ export default {
 </script>
 
 <style scoped>
+img {
+  width: 100%;
+}
 .green-title {
   color: #068273;
   margin-bottom: 32px;
@@ -97,19 +110,20 @@ export default {
   background-color: #F2F2F2;
 }
 .business-content-container {
-  width: clamp(100px, 100%, 1200px);
-  margin: auto;
   background-color: white;
+  display: flex;
 }
-.business-floot-img {
-  position: absolute;
-  margin-left: 96px;
-  width: clamp(100px, 40%, 540px);
-  margin-top: -32px;
+.business-content-container > div {
+  width: 50%;
 }
+.business-content-container img {
+  height: clamp(100px, 100%, 360px);
+  object-fit: cover;
+}
+
 .business-content {
   width: 50%;
-  padding: 76px 0 128px 67px;
+  padding: 64px;
   text-align: left;
 }
 .business-flow > h2 {
@@ -136,7 +150,7 @@ export default {
 .business-flow-step {
   width: clamp(150px, 20%, 300px);
 }
-.business-flow-step img{
+.business-flow-step .image {
   width: 100%;
 }
 
@@ -156,7 +170,7 @@ export default {
   border-bottom: 3px solid #068273;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 960px) {
   .business-appeal-content p {
     font-size: 12px;
     line-height: 26px;
@@ -165,31 +179,31 @@ export default {
   }
   .green-title {
     font-size: 16px;
-    width: 12em;
     margin: 0 auto 24px;
   }
   .business-main-content {
     margin-top: 64px;
-    padding: 24px 16px 40px;
+    padding: 24px 80px 40px;
     position: relative;
-  }
-  .business-floot-img {
-    position: absolute;
-    right: 8px;
-    width: 55%;
-    margin-top: 0;
-    margin-left: auto;
-    top: 272px;
   }
   .business-content {
     width: auto;
-    padding: 48px 16px 67px;
+    padding: 48px 16px 12px;
     text-align: center;
   }
   .business-content p {
     line-height: 26px;
     margin-top: 24px;
   }
+
+  .business-content-container {
+    display: block;
+    padding: 0 20% 64px;
+  }
+  .business-content-container > div {
+    width: auto;
+  }
+
   .business-flow > h2 {
     font-size: 22px;
     margin:136px 0 48px 0;
@@ -210,7 +224,7 @@ export default {
     margin: 0 auto 40px;
     width: 90%;
   }
-  .business-flow-step img{
+  .business-flow-step .image, .business-flow-step .description {
     width: 50%;
   }
   .business-flow-step > div{
@@ -231,6 +245,24 @@ export default {
   .business-flow-step p {
     font-size: 10px;
     line-height: 2em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .green-title {
+    width: 80%;
+  }
+  .business-flow-step {
+    display: block;
+  }
+  .business-flow-step .image, .business-flow-step .description {
+    width: auto;
+  }
+  .business-main-content {
+    padding: 24px 16px 40px;
+  }
+  .business-content-container {
+    padding: 0 32px 32px;
   }
 }
 </style>
