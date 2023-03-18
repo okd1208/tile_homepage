@@ -81,6 +81,16 @@ export default {
   components: {
     contentTitle,
     headerImg
+  },
+  head: {
+    title: {
+      inner: '富永タイル株式会社',
+      separator: '',
+      complement: '採用ページ'
+    },
+    meta: [
+      { name: 'description', content: '富永タイル株式会社のコーポレートサイトです。富永タイル株式会社は、タイルで街を華やかにして社会に貢献し、人々を幸せにすることをモットーに活動する会社です。' }
+    ]
   }
 }
 </script>

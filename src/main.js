@@ -5,6 +5,9 @@ import App from './App'
 import store from './store'
 import router from './router'
 import firebase from 'firebase'
+import VueHead from 'vue-head'
+
+Vue.use(VueHead)
 
 Vue.config.productionTip = false
 var firebaseConfig = {

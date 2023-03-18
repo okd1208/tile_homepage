@@ -26,7 +26,7 @@
         </ul>
       </div>
     </div>
-    <p class="copy-right">Copyright &copy; 2022 tominagatileu All rights reserved.</p>
+    <p class="copy-right">Copyright &copy; 2023 tominagatile All rights reserved.</p>
   </footer>
 </template>
 
