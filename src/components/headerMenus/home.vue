@@ -167,7 +167,7 @@ export default {
 
 .toppage-appealing-point2 {
   margin-top: 112px;
-  background-image: url("~@/assets/home2.jpeg");
+  background-image: url("~@/assets/Building.jpg");
   background-position: right;
   background-size: 60%;
   background-repeat: no-repeat;
