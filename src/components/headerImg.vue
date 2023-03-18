@@ -40,6 +40,7 @@ export default {
 .headerImg {
   background-color: rgb(238, 238, 238);
   text-align: center;
+  background-position: center;
   /* 1800:600 */
   background-size: cover;
 }

@@ -8,40 +8,69 @@
       <p>事業に関することや、サービスに関することなど<br>お気軽にお問い合わせください。</p>
     </div>
     <div v-if="errorMessage != []" id="error-massage">
-      <p v-for="m in errorMessage" :key="m">{{m}}</p>
+      <p v-for="m in errorMessage" :key="m">{{ m }}</p>
     </div>
-    <div>
-        <form ref="recruitForm" class="contactpage-form">
-            <div>
-                <label>名前</label>
-                <input v-model="fullName" type="text" name="name" value="">
-            </div>
-            <div>
-                <label>フリガナ(空白なし)</label>
-                <input v-model="ruby" type="text" name="furigana" value="">
-            </div>
-            <div>
-                <label>メールアドレス</label>
-                <input v-model="email" type="text" name="email" value="">
-            </div>
-            <div>
-                <label>電話番号(ハイフンあり)</label>
-                <input v-model="tel" type="text" name="tel" placeholder="例）080-1234-5678" value="">
-            </div>
-            <div>
-                <label>希望内容</label>
-                <select v-model="contactType" name="contact_type">
-                    <option value="">希望内容を選択してください</option>
-                    <option value="話を聞きたい">話を聞きたい</option>
-                    <option value="選考に進みたい">選考に進みたい</option>
-                </select>
-            </div>
-            <div>
-                <label for="content">質問事項等あればご記載ください</label>
-                <textarea v-model="contactContent" name="content" style="color:000000;vertical-align:top" rows="5"></textarea>
-            </div>
-            <p @click="submitContactForm" class="contact-submit-btn" type="submit">確認画面へ</p>
-        </form>
+    <div :class="{ hidden: isConfirm }">
+      <form ref="recruitForm" class="contactpage-form">
+        <div>
+          <label>名前</label>
+          <input v-model="fullName" type="text" name="name" value="">
+        </div>
+        <div>
+          <label>フリガナ(空白なし)</label>
+          <input v-model="ruby" type="text" name="furigana" value="">
+        </div>
+        <div>
+          <label>メールアドレス</label>
+          <input v-model="email" type="text" name="email" value="">
+        </div>
+        <div>
+          <label>電話番号(ハイフンあり)</label>
+          <input v-model="tel" type="text" name="tel" placeholder="例）080-1234-5678" value="">
+        </div>
+        <div>
+          <label>希望内容</label>
+          <select v-model="contactType" name="contact_type">
+            <option value="">希望内容を選択してください</option>
+            <option value="話を聞きたい">話を聞きたい</option>
+            <option value="選考に進みたい">選考に進みたい</option>
+          </select>
+        </div>
+        <div>
+          <label for="content">質問事項等あればご記載ください</label>
+          <textarea v-model="contactContent" name="content" style="color:000000;vertical-align:top" rows="5"></textarea>
+        </div>
+        <p @click="confirmForm" class="contact-submit-btn" type="submit">確認画面へ</p>
+      </form>
+    </div>
+    <div v-if="isConfirm">
+      <table>
+        <tr>
+          <td>名前</td>
+          <td>{{ fullName }}</td>
+        </tr>
+        <tr>
+          <td>フリガナ(空白なし)</td>
+          <td>{{ ruby }}</td>
+        </tr>
+        <tr>
+          <td>メールアドレス</td>
+          <td>{{ email }}</td>
+        </tr>
+        <tr>
+          <td>電話番号(ハイフンあり)</td>
+          <td>{{ tel }}</td>
+        </tr>
+        <tr>
+          <td>希望内容</td>
+          <td>{{ contactType }}</td>
+        </tr>
+        <tr>
+          <td>質問事項等</td>
+          <td>{{ contactContent }}</td>
+        </tr>
+      </table>
+      <p @click="submitContactForm" class="contact-submit-btn" type="submit">送信する</p>
     </div>
   </div>
 </template>
@@ -59,14 +88,20 @@ export default {
       email: null,
       contactType: '',
       contactContent: null,
-      errorMessage: []
+      errorMessage: [],
+      isConfirm: false
     }
   },
   components: {
     headerImg
   },
   methods: {
-    submitContactForm () {
+    confirmForm () {
+      if (!this.isFormErr()) {
+        this.isConfirm = true
+      }
+    },
+    isFormErr () {
       this.errorMessage = []
       if (!this.fullName || !this.fullName.match(/\S/g)) {
         this.errorMessage.push('名前を入力してください。')
@@ -81,16 +116,22 @@ export default {
         this.errorMessage.push('電話番号を正しい形式で入力してください。')
       }
       if (!this.contactType) {
-        this.errorMessage.push('お問い合わせ項目を選択してください。')
+        this.errorMessage.push('希望内容を選択してください。')
       }
       if (this.contactContent.length > 1000) {
-        this.errorMessage.push('お問い合わせ内容を1000文字以内に変更してください。')
+        this.errorMessage.push('質問事項等の内容を1000文字以内に変更してください。')
       }
 
       if (this.errorMessage.length === 0) {
-        this.submit()
+        return false
       } else {
         this.scrollErrorMessage()
+        return true
+      }
+    },
+    submitContactForm () {
+      if (!this.isFormErr()) {
+        this.submit()
       }
     },
     submit () {
@@ -148,7 +189,7 @@ export default {
   position: relative;
   right: 0;
 }
-.contactpage-form > .contact-submit-btn {
+.contact-submit-btn {
   background-color: #068273;
   color: white;
   display: inline-block;
@@ -161,9 +202,38 @@ export default {
   margin-bottom: 32px;
 }
 
+table {
+  margin: 0 auto 80px;
+  min-width: 960px;
+}
+tr:first-child {
+    border-top: 2px solid #d1d1d1;
+}
+tr {
+  border-bottom: 2px solid #d1d1d1;
+}
+tr td:first-child {
+  padding: 24px 137px 24px 48px;
+  font-weight: 700;
+  width: 400px;
+  color: #068273;
+  text-align: left;
+}
+tr td:last-child {
+  font-weight: 700;
+  text-align: left;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
 @media screen and (max-width: 960px) {
   .contactpage-form > div {
     width: 90%;
+  }
+  table {
+    min-width: auto;
   }
 }
 
@@ -185,11 +255,31 @@ export default {
   .contactpage-form span {
     font-size: 10px;
   }
-  .contactpage-form > .contact-submit-btn {
+  .contact-submit-btn {
     padding: 16px 52px;
     border-radius: 32px;
     margin-top: 32px;
     font-size: 18px;
+  }
+  table {
+    margin: 0 auto;
+  }
+  tr:first-child {
+      border-top: 1px solid #d1d1d1;
+  }
+  tr {
+    border-bottom: 1px solid #d1d1d1;
+  }
+  tr td:first-child {
+    padding: 16px;
+    min-width: 4em;
+    width: auto;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  tr td:last-child {
+    min-width: 100px;
+    padding-right: 8px;
   }
 }
 </style>
