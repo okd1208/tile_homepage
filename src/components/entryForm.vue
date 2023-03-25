@@ -70,7 +70,8 @@
           <td>{{ contactContent }}</td>
         </tr>
       </table>
-      <p @click="submitContactForm" class="contact-submit-btn" type="submit">送信する</p>
+      <div><p @click="submitContactForm" class="contact-submit-btn" type="submit">送信する</p></div>
+      <div><p @click="backToForm" class="back-btn" type="submit"><i class="fas fa-chevron-left"></i> 戻る</p></div>
     </div>
   </div>
 </template>
@@ -133,6 +134,9 @@ export default {
       if (!this.isFormErr()) {
         this.submit()
       }
+    },
+    backToForm () {
+      this.isConfirm = false
     },
     submit () {
       emailjs.sendForm('service_xfjlq3q', 'template_b9uvozr', this.$refs.recruitForm, 'qAzLeH0J2l1FfJgXj')
@@ -222,6 +226,12 @@ tr td:first-child {
 tr td:last-child {
   font-weight: 700;
   text-align: left;
+}
+.back-btn {
+  color: #068273;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 16px;
 }
 
 .hidden {
