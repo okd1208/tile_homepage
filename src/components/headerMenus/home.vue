@@ -34,7 +34,7 @@
             あなたの手で、街に彩をつけて見ませんか？<br>
              見学もできますので、ご気軽にお問い合わせください。
           </p>
-          <router-link to="/constructionExample"><div class="white-button">採用情報</div></router-link>
+          <router-link to="/recruit"><div class="white-button">採用情報</div></router-link>
         </div>
       </div>
       <availableTiles></availableTiles>
